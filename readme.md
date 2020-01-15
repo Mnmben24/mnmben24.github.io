@@ -30,4 +30,3 @@ For the scope of this demo, we will be retrieving a static JSON file instead of 
 
 ## Demo
 Demo: [https://incredibleweb.github.io/pwa-tutorial/](https://incredibleweb.github.io/pwa-tutorial/)
-# mnmben24.github.io
