@@ -4,8 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sky-High Airport Arrivals</title>
+    <title>Franklin Online</title>
     <link async rel="stylesheet" href="./css/style.css">
+    <link async rel="stylesheet" href="./css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,600,300italic,600italic" rel="stylesheet" type="text/css">
     <link rel="manifest" href="./manifest.json">
     <meta name="theme-color" content="#29BDBB">
@@ -13,22 +14,64 @@
 </head>
 
 <body>
-    <header>
-        <div class="content">
-            <h3>Arrivals</h3>
-        </div>
-    </header>
-    <div class="container">
-        <div id="main" class="content">
-            <ul class="arrivals-list" data-bind="foreach: arrivals">
-                <li class="item">
-                    <span class="title" data-bind="html: title"></span>
-                    <span class="status" data-bind="html: status"></span>
-                    <span class="time" data-bind="html: time"></span>
-                </li>
-            </ul>
-        </div>
-    </div>
+  <script>
+  function onStart()
+  {
+        <!--Interface.indexSetup();-->
+        document.getElementById('logoDiv').style.backgroundColor =  "#12476F";
+        <!--document.getElementById('body').backgroundColor = 000;
+        <!--Interface.setCurrentFlow('');-->
+        <!--Interface.setCurrentHead('');-->
+        addTile("m1","FPS MH Series","fps_mh.png")
+        addTile("m2","FPS SS Series","fps_ss_series.png")
+        addTile("m3","FPS FS Series","fps_fs_series.png")
+        addTile("m4","SVM Borehole Pump","svm_borehole_pump.png")
+        <!--addTile()-->
+
+  }
+
+  function onChoice(id)
+  {
+      document.getElementById('grid').innerHTML = id
+      var url = "ProductPage.html";
+      window.location = url;
+  }
+
+  function alert(e)
+  {
+    Interface.showToast(e);
+  }
+
+  function addTile(id,name,img) {
+      var tile = document.createElement('div');
+      tile.id = id;
+      tile.className = "tile";
+      tile.onclick = function(){onChoice(tile.id);};
+      tile.style.backgroundImage = "url('./images/"+img+"')";
+      tile.style.backgroundColor = "#ffffff"
+      var txt = document.createElement('div');
+      txt.className = "textWrapper";
+      var h2 = document.createElement('h2');
+      h2.innerHTML = name;
+      var div2 = document.createElement('div');
+      div2.className = "content";
+      txt.appendChild(h2);
+      txt.appendChild(div2);
+      tile.appendChild(txt);
+      h2.align = "center"
+      document.getElementById("grid").appendChild(tile);
+  }
+
+
+  </script>
+  <div id= "logoDiv" style="width:105.2%; margin-left:-10px; margin-top:-15px; padding-top: 15px;" align="center" onclick="addTile()"><img src="./images/logo.png" height="49" border="0" /></div>
+  <label id="id" style="visibility: none;"></label>
+<!-- Header -->
+<div id="grid" class="imageGrid">
+    <!-- Dynamic Images from Index inserted here -->
+  </div>
+
+</div>
     <script src="./js/build/vendor.min.js"></script>
     <script src="./js/build/script.min.js"></script>
 </body>
