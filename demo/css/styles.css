@@ -1,0 +1,236 @@
+.button	{
+  display: inline-block;
+  border-radius: 4px;
+  background-colour: white
+  border: black;
+  color: black;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.data {
+  width: 95%;
+  margin-left: 5px;
+}
+
+.img	{
+	height: 120px;
+	width: 140px;
+	overflow:	hidden;
+  margin-left: 0px;
+}
+
+.bodyMain	{
+width:100%;
+  align-content: center;
+//	border:	5px solid black;
+	font-family:	"Calibri";
+}
+
+.head	{
+	margin-top:	10px;
+	margin-bottom:	0px;
+	width:100%;
+	margin-left:	0px;
+  margin-right: 10px;
+}
+
+.btnDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  background-color: #144A74;
+	width:105%;
+	margin-left:	-10px;
+  margin-top: -15px;
+  margin-right: 0px;
+  padding-left: 10px
+  align: center;
+  padding-top: 15px;
+
+}
+
+.lbl {
+	font-size: 16px;
+	text-align: center;
+  width: 50px;
+  height: 30px;
+}
+
+.lbls {
+	font-size: 16px;
+	text-align: center;
+  width: 100%;
+}
+
+.unitsBox {
+	width:80px;
+	height: 35px;
+	text-align: center;
+	font-size: 14px;
+}
+
+.headImg
+{
+  margin: auto;
+  height:60px;
+  width: 100%;
+  margin-left: 35px;
+}
+
+
+img	{
+	max-width:100%;
+	max-height:100%;
+}
+
+.label	{
+	width: 100px;
+	height: 40px;
+}
+
+.matBox {
+	width:165px;
+	height:35px;
+	text-align: center;
+	font-size: 20px;
+}
+.matBoxP {
+	width:150px;
+	height:35px;
+	height: 35px;
+	text-align: center;
+	font-size: 14px;
+}
+
+.txtBox {
+		width:80px;
+  	height: 35px;
+  	text-align: center;
+  	font-size: 14px;
+}
+
+.specify	{
+	color:	#FFF;
+	width:102%;
+	text-align:	center;
+	margin-top:	0;
+	margin-right:	0;
+  margin-left: -5px;
+	height:	32px;
+  background-color: #144A74
+}
+
+.head	{
+	display:	inline-block;
+	margin-top:	0px;
+	margin-bottom:	0px;
+	width:	100%;
+}
+
+.logo {
+  width:100%;
+  align-items: center;
+}
+
+.headimg
+{
+  height:49px;
+  border:0px;
+	width: 100%;
+  align: center;
+}
+
+.imageGrid .tile {
+	width:13.5%;
+  min-height: 11em;
+	line-height: 1.2;
+	display:inline-block;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-color:	#fff;
+	overflow: hidden;
+	position: relative;
+	border:	2px solid black;
+	border-radius: 15px;
+	color:#000;
+	font-family:"Verdana",sans-serif;
+	margin: 1px;
+}
+
+.imageGrid .tile:before {
+	content: '';
+	background-color: rgb(15,15,15,0.0);
+	display: block;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	position: absolute;
+}
+
+.imageGrid .tile:hover:before {
+	display: none;
+}
+
+.imageGrid .tile .textWrapper {
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	top: 65%;
+	left: 0%;
+	transform: translate(-50%, -50%);
+	font-size: .98em;
+}
+
+.imageGrid .tile:hover {
+	transform: translateY(-8px);
+	text-shadow: 12px 12px 12px #000;
+	transition-timing-function: ease;
+	transition: 0.2s;
+}
+
+.imageGrid .tile:active	{
+	transform: translateY(8px);
+	img: rgba(15,15,15,0.1);
+}
+
+.imageGrid .tile .textWrapper .content {
+	display: none;
+}
+
+.imageGrid .tile:hover .textWrapper .content {
+	display: block;
+}
+
+.imageGrid .tile:hover .textWrapper h2 {
+	margin: 0;
+	transform: translateY(-6px);
+	transition-timing-function: ease;
+	transition: 0.4s;
+  background-color: #fff
+}
+
+
+@media (max-width: 1000px) {
+	.imageGrid .tile {
+		width: 48%;
+		max-width:	100%;
+		min-height:13em;
+	}
+}
+
+@media (max-width: 700px) {
+	.imageGrid .tile {
+		width: 48%;
+		max-width:	100%;
+		min-height:13em;
+	}
+}

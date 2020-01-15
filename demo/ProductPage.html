@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+  <script>
+  function runOnLoad()
+  {
+  /*  var urlParam = new URLSearchParams(window.location.search);*/
+    var flow  = Interface.getCurrentFlow();
+    var head = Interface.getCurrentHead();
+    document.getElementById('inputA').value = flow;
+    document.getElementById('inputB').value = head;
+
+    Interface.getRanges();
+    Interface.getInfo();
+    document.getElementById('logoDiv').style.backgroundColor = Interface.getLogoCol();
+    document.getElementById('specifyDiv').style.backgroundColor = Interface.getSecCol();
+        // Get the input field
+    var input = document.getElementById("selB");
+  }
+
+  document.addEventListener('keydown', function(event) {
+  if (event.key == 'Enter') {
+    openAOL();
+  }
+});
+
+  function alert(e)
+  {
+    Interface.showToast(e);
+  }
+
+  function pageUpdate()
+  {
+    var list;
+    for(var i = 1; i < 6; i++)
+    {
+      list = document.getElementById('spec' + i + "List");
+      list.style.display = 'visible';
+      while(list.firstChild)
+      {
+        list.removeChild(list.firstChild);
+      }
+      document.getElementById('nSpec' + i).innerHTML = '';
+  }
+    list = document.getElementById('pumpRange');
+    var num = list.options[list.selectedIndex].value;
+    Interface.setID(num);
+    Interface.getInfo();
+  }
+
+  function fillRangeBox(ran, ids)
+  {
+    var splt1 = ran.split("|");
+    var splt2 = ids.split("|");
+    i = 0;
+    while(i < splt1.length)
+    {
+      var sel = document.getElementById("pumpRange");
+      var option = document.createElement("option");
+      option.text = splt1[i];
+      option.value = splt2[i];
+      sel.add(option);
+      i++;
+    }
+
+  }
+
+  function createElems(varNo, str, strN)
+  {
+    var parName = "spec" + varNo + "List";
+    var headName = "nSpec" + varNo;
+    var divName = "spec" + varNo;
+    if(str != "/.")
+    {
+      var splt = str.split("|");
+      var i = 0;
+      var max = splt.length;
+      while(i < max)
+      {
+        var node = document.createElement("li");                 // Create a <li> node
+        var textnode = document.createTextNode(splt[i]);         // Create a text node
+        node.appendChild(textnode);                              // Append the text to <li>
+        document.getElementById(parName).appendChild(node);     // Append <li> to <ul> with id="myList"
+        i++;
+      }
+      document.getElementById(headName).innerHTML = strN;
+    }
+    else {
+        document.getElementById(divName).style.display = "hidden";
+    }
+  }
+
+  function changeDetails(id, title, sub, cap, ran, img, s1, s2, s3, s4, s5, s1n, s2n, s3n, s4n, s5n, pd)
+  {
+      var ur = "./images/" + img;
+      document.getElementById('imgDiv').src  =  ur;
+
+      var pmpSel = document.getElementById('pumpRange');
+      var max = pmpSel.length;
+      var index;
+      var j;
+      for (j = 0; j < max; j++)
+      {
+        if (id == pmpSel.options[j].value) {
+          index = j;
+        }
+      }
+      pmpSel.selectedIndex = index;
+
+      createElems("1",s1,s1n);
+      createElems("2",s2,s2n);
+      createElems("3",s3,s3n);
+      createElems("4",s4,s4n);
+      createElems("5",s5,s5n);
+
+      comboboxs(pd);
+
+
+      document.getElementById('head1').innerHTML = title;
+      if(sub == "/.")
+      {
+        document.getElementById('head2').innerHTML = " ";
+      }
+      else
+      {
+        document.getElementById('head2').innerHTML = sub;
+      }
+      if(cap == "/.")
+      {
+        document.getElementById('caption').innerHTML = "";
+      }
+      else
+      {
+          document.getElementById('caption').innerHTML = cap;
+      }
+      document.getElementById('id').innerHTML = id;
+  }
+
+  function comboboxs(pd)
+  {
+    if (pd == 1)
+    {
+      document.getElementById('selB').innerHTML = "<option>m³/h</option> <option>l/min</option>    <option>l/sec</option>    <option>US GPM</option>    <option>lmp GPM</option>    <option>l/h</option>    <option>cfm</option>";
+      document.getElementById('selA').innerHTML = "<option>m</option>          <option>kPa</option>          <option>bar</option>          <option>ft</option>          <option>psi</option>          <option>inHg</option>          <option>Torr</option>";
+      document.getElementById('labelB').innerHTML = "Flow Rate";
+      document.getElementById('labelA').innerHTML = "Total Head";
+      document.getElementById('pd').innerHTML = pd;
+
+      var selA = document.getElementById('selA');
+      var index = indexMatchingText(selA, Interface.getFlowUnits);
+      selA.selectedIndex = index;
+      var selB = document.getElementById('selB').options;
+      index = indexMatchingText(selA, Interface.getHeadUnits);
+      selB.selectedIndex = index;
+
+    }
+    else {
+        document.getElementById('selA').innerHTML = "<option>m³/h</option> <option>l/min</option>    <option>l/sec</option>    <option>US GPM</option>    <option>lmp GPM</option>    <option>l/h</option>    <option>cfm</option>";
+        document.getElementById('selB').innerHTML = "<option>m</option>          <option>kPa</option>          <option>bar</option>          <option>ft</option>          <option>psi</option>          <option>inHg</option>          <option>Torr</option>";
+        document.getElementById('labelA').innerHTML = "Flow Rate";
+        document.getElementById('labelB').innerHTML = "Total Head";
+        document.getElementById('pd').innerHTML = pd;
+
+
+        var selA = document.getElementById('selA');
+        var index = indexMatchingText(selA, Interface.getFlowUnits());
+        selA.selectedIndex = index;
+        var selB = document.getElementById('selB');
+        index = indexMatchingText(selA, Interface.getHeadUnits());
+        selB.selectedIndex = index;
+    }
+  }
+
+  function indexMatchingText(ele, text) {
+    for (var i=0; i<ele.length;i++) {
+        if (ele[i].innerHTML === text){
+            return i;
+        }
+    }
+    return undefined;
+}
+
+  function headTool()
+  {
+    if(document.getElementById('pd').innerHTML == 1)
+    {
+      var flow = document.getElementById('inputB').value;
+    }
+    else {
+      var flow = document.getElementById('inputA').value;
+    }
+    var id = document.getElementById('id').innerHTML;
+    Interface.setID(id);
+    alert(flow);
+    Interface.setCurrentFlow(flow);
+    var url = "headTool.html";
+    window.location = url;
+  }
+
+  function openAOL()
+  {
+    var fR = document.getElementById('inputA').value;
+    var fRU = document.getElementById('selA').options[ document.getElementById('selA').selectedIndex].text;
+
+    var tH = document.getElementById('inputB').value;;
+    var tHU = document.getElementById('selB').options[ document.getElementById('selB').selectedIndex].text;
+
+    var rn = document.getElementById('pumpRange').options[ document.getElementById('pumpRange').selectedIndex].text;
+
+    var varB = Interface.getvar();
+    var out;
+
+    if(varB == "true")
+    {
+      var splt = rn.split(" ");
+      out = splt[0];
+    }
+    else {
+      out = rn.replace(" ","_");
+    }
+    var comp = Interface.getCompany();
+    var fil = Interface.getFilter();
+
+    Interface.setCurrentFlow(fR);
+    Interface.setCurrentHead(tH);
+
+    var aolURL = Interface.getAOLUrl();
+    var url = aolURL+comp+"&pQin=" + fR + "&cUQin=" + fRU + "&pHTot=" + tH + "&cUHin=" + tHU + "&" + fil + "=" + out + "&LoginType=MobileApp";
+    //var url = "https://docs.google.com/gview?embedded=true&url=http://www.aquateconline.com/aolweb/(S(10osbwztok05asybgrlc0g45))/pdf/DutyCurve_20190204144302PM.pdf"       //PDF TEST
+    window.location = url;
+  }
+
+
+  </script>
+
+</head>
+<body onload="runOnLoad()">
+<div class="bodyMain">
+<div id="logoDiv" class="logo"><img src="./images/logo.png" height="49" border="0" /></div>
+	<form>
+		<div class="head">
+		<h2 id="head1"></h2>
+		<h3 id="head2"></h3>
+		<p id="caption"></p>
+    <label id="id" style="visibility:hidden;" ></label> <!--  -->
+    <label id="pd" style="visibility:hidden;" ></label> <!--  -->
+		</div>
+		<div>
+			<table>
+				<tr>
+					<td>
+						<div class="img"><img id="imgDiv"/></div>
+					</td>
+					<td>
+            <table width:"100%">
+              <tr>
+                <td>
+									<label class="lbls" id="labelA">Flow Rate</label>
+                </td>
+                <td>
+									<input type="number" class="txtBox" id="inputA"></input>
+                </td>
+                <td>
+                  <select class="unitsBox" id="selA">
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+									<label class="lbls" id="labelB">Total Head</label>
+                </td>
+                <td>
+									<input type="number" class="txtBox" id="inputB"></input>
+                </td>
+                <td>
+                  <select class="unitsBox" id="selB">
+                  </select>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="lbls">Range</label>
+                </td>
+                <td colspan="2">
+									<select id="pumpRange" class="matBoxP" onchange="pageUpdate()" width="150%">
+									</select>
+								</td>
+							</tr>
+						</table>
+        <tr>
+          <td>
+            <div class="btnDiv">
+            <input type="button" value="Head Tool" class="button" id="headBtn" onclick="headTool()"></input>
+          </div>
+          </td>
+          <td>
+            <div class="btnDiv">
+            <input type="button" value="Select Pump" class="button" id="selBtn" onclick="openAOL()"></input>
+          </div>
+    </td>
+  </tr>
+			</table>
+		</div>
+		<div class="specify" id="specifyDiv"><H2>Specifications</H2></div>
+		<div>
+			<!--<table>
+				<tr>
+					<td>-->
+			     <div class="data" id="spec1">
+						<h3><span id="nSpec1"></span></h3>
+							<ul id="spec1List">
+							</ul>
+            </div>
+			<!--		</td>
+					<td>-->
+            <div class="data" id="spec2">
+						<h3><span id="nSpec2"></span></h3>
+							<ul id="spec2List">
+							</ul>
+            </div>
+				<!--	</td>
+				</tr>
+				<tr>
+					<td> -->
+            <div class="data" id="spec3">
+						<h3><span id="nSpec3"></span></h3>
+							<ul id="spec3List">
+							</ul>
+            </div>
+				<!--	</td>
+				</tr>
+			</div>
+    </table> -->
+            <div class="data" id="spec4">
+             <h3><span id="nSpec4"></span></h3>
+               <ul id="spec4List">
+               </ul>
+             </div> <!---->
+
+           <div class="data" id="spec5">
+            <h3><span  id="nSpec5"></span></h3>
+              <ul id="spec5List">
+              </ul>
+            </div> <!---->
+		</div>
+	</form>
+</div>
+</body>
+</html>

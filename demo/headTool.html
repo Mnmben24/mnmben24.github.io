@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+<script type="text/javascript">
+
+function onLoad()
+{
+	document.getElementById('logoDiv').style.backgroundColor = Interface.getLogoCol();
+	var flow = Interface.getCurrentFlow();
+	document.getElementById('flowRate').value = flow;
+	var flowU = document.getElementById('flowSel');
+	var index = indexMatchingText(flowU, Interface.getFlowUnits());
+	flowU.selectedIndex = index;
+
+}
+
+//Used to find index for Select Lists
+function indexMatchingText(ele, text) {
+	for (var i=0; i<ele.length;i++) {
+			if (ele[i].innerHTML === text){
+					return i;
+			}
+	}
+	return undefined;
+}
+
+
+function alert(e)
+{
+	Interface.showToast(e);
+}
+
+function backClick()
+{
+	var flow = document.getElementById('flowRate').value;
+	var head = document.getElementById('tHead').value;
+	Interface.setCurrentFlow(flow);
+	Interface.setCurrentHead(head);
+	var url = "ProductPage.html";
+	window.location = url;
+}
+
+function calCulate() {
+
+	var fl = document.getElementById('flowRate').value;
+	var sH = document.getElementById('sHeight').value;
+	var dH = document.getElementById('dHeight').value;
+	var dp = document.getElementById('dPres').value;
+	var pd = document.getElementById('pDiam').value;
+	var ln = document.getElementById('len').value;
+
+	var sel = document.getElementById('flowSel');
+	var cFl = fl * (sel.options[1].value / sel.options[sel.selectedIndex].value );
+
+	sel = document.getElementById('shSel');
+	cSH = sH * (sel.options[0].value / sel.options[sel.selectedIndex].value);
+
+	sel = document.getElementById('dhSel');
+	cDH = dH * (sel.options[0].value / sel.options[sel.selectedIndex].value);
+
+	sel = document.getElementById('dpSel');
+	cDP = dp * (sel.options[0].value / sel.options[sel.selectedIndex].value);
+	var pdm = pd / 1000;
+	var Vel = (4/1000)*cFl/(3.141592 * Math.pow(pdm,2));
+	var statH = (cDH - cSH);
+
+	var nHazen = document.getElementById('pMat').options[document.getElementById('pMat').selectedIndex].value;
+	var fricH = 0;
+	fricH = getFricHead(cFl, nHazen, pd, Vel)*ln+cDP;
+	var totH = statH+fricH;
+
+	document.getElementById('vel').value = Vel.toPrecision(4);
+	document.getElementById('sHead').value = statH.toPrecision(4);
+	document.getElementById('fHead').value = fricH.toPrecision(4);
+	document.getElementById('tHead').value = totH.toPrecision(4);
+
+}
+
+function getTotH(statH, fricH)
+{
+	return (statH + fricH);
+}
+
+function getFricHead(flow, nHazen, nD, nV)
+{
+	var visc = 1;
+	var nFL = 0;
+	var nRey = (nV * (nD/1000) * 1000000 / visc);
+
+	if(nD <= 0)
+	{
+		alert("Please Enter a Positive, Non-Zero Diameter.")
+		return 0;
+	}
+	else if(+nRey <= 2000)
+	{
+		var nF = 64/+nRey;
+		nFL = (nF * Math.pow(nV,2))/ ((nD/1000) * 2 * 9.81);
+	}
+	else {
+		if (nHazen > 1)
+		{
+				nFL = (0.002083 * Math.pow((100/nHazen),1.85) * Math.pow((flow/0.0631),1.85))/(Math.pow((nD/25.4),4.8655));
+		}
+		else
+		{
+			alert("Failure");
+		}
+	}
+
+
+	return nFL;
+}
+
+</script>
+
+
+</head>
+<body onload="onLoad()">
+
+<div class="bodyMain">
+<div id="logoDiv" class="logo"><img src="./images/logo.png" height="49" border="0" /></div>
+	<form>
+		<div class="head">
+		<h2 id="head1">System Head Tool</h2>
+		</div>
+		<div>
+			<table>
+				<tr>
+					<td>
+						<label class="label">Flow Rate</label>
+					</td>
+          <td>
+            <input type="number" class="txtBox" id="flowRate"></input>
+          </td>
+          <td>
+            <select class="unitsBox" id="flowSel">
+							<option value="3.60">m³/h</option>
+							<option value="1">l/min</option>
+							<option value="0.016667">l/sec</option>
+							<option value="0.26417">US GPM</option>
+							<option value="0.21997">lmp GPM</option>
+							<option value="60">l/h</option>
+							<option value="0.035315">cfm</option>
+            </select>
+          </td>
+        </tr>
+				<!---->
+				<tr>
+					<td>
+						<label class="label">Suction Height</label>
+					</td>
+          <td>
+            <input type="number" class="txtBox" id="sHeight"></input>
+          </td>
+          <td>
+            <select class="unitsBox" id="shSel">
+							<option value="1">m</option>
+							<option value="9.98041">kPa</option>
+							<option value="0.098041">bar</option>
+							<option value="3.28">ft</option>
+							<option value="1.42197">psi</option>
+							<option value="2.89516">inHg</option>
+							<option value="75.53709">Torr</option>
+            </select>
+          </td>
+        </tr>
+				<!---->
+				<tr>
+					<td>
+						<label class="label">Discharge Height</label>
+					</td>
+          <td>
+            <input type="number" class="txtBox"  id="dHeight"></input>
+          </td>
+        	<td>
+            <select class="unitsBox" id="dhSel">
+							<option value="1">m</option>
+							<option value="9.98041">kPa</option>
+							<option value="0.098041">bar</option>
+							<option value="3.28">ft</option>
+							<option value="1.42197">psi</option>
+							<option value="2.89516">inHg</option>
+							<option value="75.53709">Torr</option>
+            </select>
+          </td>
+        </tr>
+				<!---->
+				<tr>
+					<td>
+						<label class="label">Downstream Pressure</label>
+					</td>
+          <td>
+            <input type="number" class="txtBox" id="dPres"></input>
+          </td>
+          <td>
+            <select class="unitsBox" id="dpSel">
+							<option value="1">m</option>
+							<option value="9.98041">kPa</option>
+							<option value="0.098041">bar</option>
+							<option value="3.28">ft</option>
+							<option value="1.42197">psi</option>
+							<option value="2.89516">inHg</option>
+							<option value="75.53709">Torr</option>
+            </select>
+          </td>
+        </tr>
+				<!---->
+				<tr>
+					<td>
+						<label class="label">Pipe Material</label>
+					</td>
+          <td colspan="2">
+            <select class="matBox" id="pMat">
+							<option value="0None">None</option>
+							<option selected="selected" value="130">ASBESTOS</option>
+							<option value="130">HDPE [PE63]</option>
+							<option value="130">HDPE [PE80]</option>
+							<option value="130">HDPE [PE100]</option>
+							<option value="150">LDPE</option>
+							<option value="120">ST/STEEL</option>
+							<option value="120">STEEL &quot;Bare&quot;</option>
+							<option value="150">UPVC</option>
+							<option value="100">WELDED STEEL</option>
+							<option value="90">CONCRETE</option>
+							<option value="140">DUCTILE IRON</option>
+							<option value="150">GRP</option>
+							<option value="150">MPVC</option>
+							<option value="100">CAST IRON &quot;Bare&quot;</option>
+							<option value="90">MORTAR LINED</option>
+							<option value="120">BITUMEN LINED</option>
+							<option value="80">CORRODED STEEL</option>
+							<option value="100">MEDIUM STEEL</option>
+            </select>
+          </td>
+        </tr>
+				<!---->
+				<tr>
+					<td>
+						<label class="label">Pipe Diameter</label>
+					</td>
+          <td>
+            <input type="number" class="txtBox" id="pDiam"></input>
+          </td>
+          <td>
+            <label class ="lbl">mm</label>
+          </td>
+        </tr>
+				<!----><tr>
+					<td>
+						<label class="label">Length</label>
+					</td>
+          <td>
+            <input type="number" class="txtBox"  id="len"></input>
+          </td>
+          <td>
+            <label class ="lbl">m</label>
+          </td>
+        </tr>
+				<!---->
+			</table>
+		</div>
+		<br/>
+		<div align="center">
+			<input type ="button" value="Calculate" class="button" id="calcBtn" onclick="calCulate()"></input>
+		</div>
+		<br/>
+		<div>
+			<table width="100%">
+				<tr>
+					<td>
+						<label class="label">Velocity</label>
+					</td>
+					<td>
+						<input id="vel" readonly class="txtBox" value="0"></input>
+					</td>
+					<td>
+						<label class ="lbl">m/s</label>
+					</td>
+				</tr>
+				<!---->
+				<tr>
+					<td>
+						<label class="label">Static Head</label>
+					</td>
+					<td>
+						<input id="sHead" readonly class="txtBox" value="0"></input>
+					</td>
+					<td>
+						<label class ="lbl">m</label>
+					</td>
+				</tr>
+				<!---->
+				<tr>
+					<td>
+						<label class="label">Friction Head</label>
+					</td>
+					<td>
+						<input id="fHead" readonly class="txtBox" value="0"></input>
+					</td>
+					<td>
+						<label class ="lbl">m</label>
+					</td>
+				</tr>
+				<!---->
+				<tr>
+					<td>
+						<label class="label">Total Head</label>
+					</td>
+					<td>
+						<input id="tHead" readonly class="txtBox" value="0"></input>
+					</td>
+					<td>
+						<label class ="lbl">m</label>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<br/>
+			<div align="center">
+				<input type="button" value="Save and Return" class="button" id="saveBtn" onclick="backClick()"></input>
+			</div>
+			<label id="id" style="visibility:hidden;"></label>	<!-- 	 -->
+	</form>
+</div>
+</body>
+</html>
