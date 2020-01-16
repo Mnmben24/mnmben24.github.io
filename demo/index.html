@@ -36,16 +36,7 @@
            var request = new XMLHttpRequest();
            request.open('GET', './api/db.json');
            var tempArr;
-           request.onload = function() {
-               // success
-               if (request.status === 200) {
-                   // resolve the promise with the parsed response text (assumes JSON)
-                   tempArr = JSON.parse(request.response);
-               } else {
-                   // error retrieving file
-                   Error(request.statusText);
-               }
-           };
+           tempArr = JSON.parse(request.response);
 
            request.onerror = function() {
                // network errors
