@@ -30,7 +30,7 @@
            window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange ||
            window.msIDBKeyRange
 
-           document.getElementById("grid").innerHTML = window.IndexedDB + " " + window.IDBTransaction + " " + window.IDBKeyRange
+          // document.getElementById("grid").innerHTML = window.IndexedDB + " " + window.IDBTransaction + " " + window.IDBKeyRange
 
            if (!window.indexedDB) {
               window.alert("Your browser doesn't support a stable version of IndexedDB.")
@@ -45,7 +45,7 @@
            var request = window.indexedDB.open("PumpDatabase", 1);
 
 
-           document.getElementById("grid").innerHTML = document.getElementById("grid").innerHTML + employeeData
+          // document.getElementById("grid").innerHTML = document.getElementById("grid").innerHTML + employeeData
 
            request.onerror = function(event) {
               console.log("error: ");
@@ -86,20 +86,20 @@
 
            function readAll() {
               var objectStore = db.transaction("pumps").objectStore("pumps");
-              document.getElementById("grid").innerHTML = document.getElementById("grid").innerHTML + " A "
+            //  document.getElementById("grid").innerHTML = document.getElementById("grid").innerHTML + " A "
               objectStore.openCursor().onsuccess = function(event) {
                  var cursor = event.target.result;
 
                  if (cursor) {
-                 document.getElementById("grid").innerHTML = document.getElementById().innerHTML + " B "
+              //   document.getElementById("grid").innerHTML = document.getElementById().innerHTML + " B "
                     alert("id m" + cursor.key + " , " + cursor.value.name + "," + cursor.value.img);
                        addTile("m" + cursor.key,cursor.value.name,cursur.value.img)
                     cursor.continue();
                  } else {
                     alert("No more entries!");
-                    document.getElementById("grid").innerHTML = document.getElementById("grid").innerHTML + " C "
+                //    document.getElementById("grid").innerHTML = document.getElementById("grid").innerHTML + " C "
                  }
-                 document.getElementById("grid").innerHTML = document.getElementById("grid").innerHTML + " D "
+                 //document.getElementById("grid").innerHTML = document.getElementById("grid").innerHTML + " D "
               };
            }
 
