@@ -30,22 +30,17 @@
            window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange ||
            window.msIDBKeyRange
 
-          // document.getElementById("grid").innerHTML = window.IndexedDB + " " + window.IDBTransaction + " " + window.IDBKeyRange
-
-           if (window.indexedDB) {
+           if (!window.indexedDB) {
               window.alert("Your browser doesn't support a stable version of IndexedDB.")
            }
 
-           const employeeData = [
+           const pumpIndexList = [
               { id: "1", name: "FPS SS Series", img: "fps_ss_series.png" },
               { id: "2", name: "FPS FS Series", img: "fps_fs_series.png" },
               { id: "3", name: "Subdive Solar", img: "subdrive_solar.png" },
               { id: "4", name: "SVM Borehole Pump", img: "svm_borehole_pump.png" }];
            var db;
            var request = window.indexedDB.open("PumpDatabase", 1);
-
-
-          // document.getElementById("grid").innerHTML = document.getElementById("grid").innerHTML + employeeData
 
            request.onerror = function(event) {
               console.log("error: ");
@@ -141,7 +136,7 @@
   function onChoice(id)
   {
       document.getElementById("grid").innerHTML = id
-      var url = "ProductPage.html";
+      var url = "ProductPage.html?product=" + id.substring(1);
       window.location = url;
   }
 

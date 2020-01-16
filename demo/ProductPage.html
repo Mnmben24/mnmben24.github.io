@@ -6,16 +6,17 @@
   <script>
   function runOnLoad()
   {
-  /*  var urlParam = new URLSearchParams(window.location.search);*/
-    var flow  = Interface.getCurrentFlow();
-    var head = Interface.getCurrentHead();
-    document.getElementById('inputA').value = flow;
-    document.getElementById('inputB').value = head;
+    var urlParam = new URLSearchParams(window.location.search);
+    alert(urlParam.get('product'))
+    //var flow  = Interface.getCurrentFlow();
+    //var head = Interface.getCurrentHead();
+    document.getElementById('inputA').value = 0;
+    document.getElementById('inputB').value = 0;
 
-    Interface.getRanges();
-    Interface.getInfo();
-    document.getElementById('logoDiv').style.backgroundColor = Interface.getLogoCol();
-    document.getElementById('specifyDiv').style.backgroundColor = Interface.getSecCol();
+    //Interface.getRanges();
+    //Interface.getInfo();
+    //document.getElementById('logoDiv').style.backgroundColor = Interface.getLogoCol();
+    //document.getElementById('specifyDiv').style.backgroundColor = Interface.getSecCol();
         // Get the input field
     var input = document.getElementById("selB");
   }
