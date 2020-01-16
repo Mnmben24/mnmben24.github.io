@@ -82,7 +82,7 @@ var Arrivals = (function() {
     return {
         loadData: function() {
             // retrieve all routes
-            document.querySelector(".arrivals-list").classList.add('loading')
+            //document.querySelector(".arrivals-list").classList.add('loading')
             arrivalController.getAll().then(function(response) {
                 // bind the arrivals to the UI
                 Page.vm.arrivals(response);

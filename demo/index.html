@@ -30,7 +30,7 @@
            window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange ||
            window.msIDBKeyRange
 
-           document.getElementById("grid").innerHTML = document.getElementById("grid").innerHTML + window.IndexedDB + " " + window.IDBTransaction + " " + window.IDBKeyRange
+           document.getElementById("grid").innerHTML = window.IndexedDB + " " + window.IDBTransaction + " " + window.IDBKeyRange
 
            if (!window.indexedDB) {
               window.alert("Your browser doesn't support a stable version of IndexedDB.")
