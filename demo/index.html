@@ -16,7 +16,7 @@
       </script>
 </head>
 
-<body onload="start()">
+<body onload="start()" style.backgroundColor="#12476A">
   <script>
 
 
@@ -39,6 +39,10 @@
               { id: "2", name: "FPS FS Series", img: "fps_fs_series.png" },
               { id: "3", name: "Subdive Solar", img: "subdrive_solar.png" },
               { id: "4", name: "SVM Borehole Pump", img: "svm_borehole_pump.png" }];
+
+              var tempStr = stringifyJson(pumpIndexList)
+              console.console.log(tempStr);
+              var tempArr = parseJson(tempStr)
            var db;
            var request = window.indexedDB.open("PumpDatabase", 1);
 
