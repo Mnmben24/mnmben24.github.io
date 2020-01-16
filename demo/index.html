@@ -40,7 +40,7 @@
               { id: "3", name: "Subdive Solar", img: "subdrive_solar.png" },
               { id: "4", name: "SVM Borehole Pump", img: "svm_borehole_pump.png" }];
 
-              var tempStr = stringifyJson(pumpIndexList)
+              var tempStr = stringify(pumpIndexList)
               console.console.log(tempStr);
               var tempArr = parseJson(tempStr)
            var db;
@@ -93,6 +93,9 @@
                     cursor.continue();
                  }
               };
+                objectStore.openCursor().onerror = function(event) {
+                    alert("Error connecting to database")
+                };
            }
 
            function add() {
