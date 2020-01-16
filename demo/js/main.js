@@ -11,7 +11,7 @@ window.addEventListener('online', function(e) {
     // re-sync data with server
     console.log("You are online");
     Page.hideOfflineWarning();
-    Arrivals.loadData();
+    //Arrivals.loadData();
 }, false);
 
 window.addEventListener('offline', function(e) {
