@@ -87,7 +87,7 @@
                  if (cursor) {
                        addTile("m" + cursor.key,cursor.value.name,cursor.value.img)
                     cursor.continue();
-                 } 
+                 }
               };
            }
 
@@ -114,6 +114,13 @@
                  alert("Kenny's entry has been removed from your database.");
               };
            }
+
+  function start()
+  {
+    setTimeout(function () {
+      readAll();
+    }, 1000);
+  }
 
 
   function onChoice(id)
