@@ -12,13 +12,15 @@ self.addEventListener('install', function(e) {
                 './js/build/script.min.js',
                 './js/build/vendor.min.js',
                 './css/fonts/roboto.woff',
-                './offline.html'
+                './offline.html',
+                './index.html'
             ]).then(function() {
                 self.skipWaiting();
             });
         })
     );
 });
+
 
 // when the browser fetches a url
 self.addEventListener('fetch', function(event) {
