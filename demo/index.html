@@ -30,18 +30,12 @@
            window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange ||
            window.msIDBKeyRange
 
+           var connected = false;
+
            if (!window.indexedDB) {
               window.alert("Your browser doesn't support a stable version of IndexedDB.")
            }
-           var request = new XMLHttpRequest();
-           request.open('GET', './api/db.json');
-           var tempArr;
-           tempArr = JSON.parse(request.response);
 
-           request.onerror = function() {
-               // network errors
-               reject(Error("Network Error"));
-           };
            const pumpIndexList =[
                {
                    "ID": "1",
@@ -605,9 +599,6 @@
                }
            ];
 
-              var tempStr = JSON.stringify(pumpIndexList);
-              console.log(tempStr);
-
            var db;
            var request = window.indexedDB.open("PumpDatabase", 1);
 
@@ -627,6 +618,7 @@
               for (var i in pumpIndexList) {
                  objectStore.add(pumpIndexList[i]);
               }
+              connected =true;
            }
 
            function read() {
@@ -665,7 +657,10 @@
                 };
               }
               else{
-                window.location.reload();
+                while (!connected)
+                {
+                }
+                readAll()
               }
            }
 
