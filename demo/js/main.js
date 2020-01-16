@@ -7,26 +7,8 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-window.addEventListener('online', function(e) {
-    // re-sync data with server
-    console.log("You are online");
-    Page.hideOfflineWarning();
-    //Arrivals.loadData();
-}, false);
-
 window.addEventListener('offline', function(e) {
     // queue up events for server
     console.log("You are offline");
     Page.showOfflineWarning();
 }, false);
-
-// check if the user is connected
-if (navigator.onLine) {
-    //Arrivals.loadData();
-} else {
-    // show offline message
-    Page.showOfflineWarning();
-}
-
-// set knockout view model bindings
-ko.applyBindings(Page.vm);
