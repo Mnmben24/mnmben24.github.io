@@ -16,7 +16,7 @@
       </script>
 </head>
 
-<body onload="readAll">
+<body onload="readAll()">
   <script>
 
 
@@ -93,7 +93,7 @@
                  if (cursor) {
               //   document.getElementById("grid").innerHTML = document.getElementById().innerHTML + " B "
                     alert("id m" + cursor.key + " , " + cursor.value.name + "," + cursor.value.img);
-                       addTile("m" + cursor.key,cursor.value.name,cursur.value.img)
+                       addTile("m" + cursor.key,cursor.value.name,cursor.value.img)
                     cursor.continue();
                  } else {
                     alert("No more entries!");
