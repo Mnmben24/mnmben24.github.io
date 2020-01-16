@@ -43,7 +43,7 @@
 
               var tempStr = JSON.stringify(pumpIndexList)
               console.log(tempStr);
-              var tempArr = parseJson(tempStr)
+              var tempArr = JSON.parseJson(tempStr)
            var db;
            var request = window.indexedDB.open("PumpDatabase", 1);
 
