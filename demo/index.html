@@ -11,9 +11,7 @@
     <link rel="manifest" href="./manifest.json">
     <meta name="theme-color" content="#29BDBB">
     <link rel="icon" sizes="192x192" href="./launcher-icon-144.png">
-    <script type = "text/javascript">
-
-      </script>
+    <link rel=""
 </head>
 
 <body onload="start()" style.backgroundColor="#12476A">
@@ -34,18 +32,15 @@
               window.alert("Your browser doesn't support a stable version of IndexedDB.")
            }
 
-           const pumpIndexList = [
+           /*const pumpIndexList = [
               { id: "1", name: "FPS SS Series", img: "fps_ss_series.png" },
               { id: "2", name: "FPS FS Series", img: "fps_fs_series.png" },
               { id: "3", name: "Subdive Solar", img: "subdrive_solar.png" },
               { id: "4", name: "SVM Borehole Pump", img: "svm_borehole_pump.png" }
-            ];
+            ];*/
 
-              var tempStr = JSON.stringify(pumpIndexList);
-              console.log(tempStr);
-              var tempArr = JSON.parse(tempStr);
            var db;
-           var request = window.indexedDB.open("PumpDatabase", 1);
+           var request = window.indexedDB.open("PumpDatabase", 2);
 
            request.onerror = function(event) {
               console.log("error: ");
@@ -171,6 +166,7 @@
 </div>
    <script src="./js/build/vendor.min.js"></script>
     <script src="./js/build/script.min.js"></script>
+     <script src="./js/data.js"></script>
 </body>
 
 </html>
