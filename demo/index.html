@@ -16,7 +16,7 @@
       </script>
 </head>
 
-<body onload="readAll();">
+<body onload="readAll">
   <script>
 
 
@@ -77,8 +77,7 @@
               request.onsuccess = function(event) {
                  // Do something with the request.result!
                  if(request.result) {
-                    alert("Name: " + request.result.name + ",
-                       Age: " + request.result.age + ", Email: " + request.result.email);
+                    alert("Name: " + request.result.name + ", Age: " + request.result.age + ", Email: " + request.result.email);
                  } else {
                     alert("Kenny couldn't be found in your database!");
                  }
