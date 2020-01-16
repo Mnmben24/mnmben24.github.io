@@ -41,9 +41,9 @@
               { id: "4", name: "SVM Borehole Pump", img: "svm_borehole_pump.png" }
             ];
 
-              var tempStr = JSON.stringify(pumpIndexList)
+              var tempStr = JSON.stringify(pumpIndexList);
               console.log(tempStr);
-              var tempArr = JSON.parseJson(tempStr)
+              var tempArr = JSON.parse(tempStr);
            var db;
            var request = window.indexedDB.open("PumpDatabase", 1);
 
