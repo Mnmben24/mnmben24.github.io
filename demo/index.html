@@ -56,7 +56,7 @@
               var objectStore = db.createObjectStore("pumps", {keyPath: "id"});
 
               for (var i in employeeData) {
-                 objectStore.add(employeeData[i]);
+                 objectStore.add(pumpIndexList[i]);
               }
            }
 
