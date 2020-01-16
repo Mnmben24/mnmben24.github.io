@@ -33,7 +33,24 @@
            if (!window.indexedDB) {
               window.alert("Your browser doesn't support a stable version of IndexedDB.")
            }
+           var request = new XMLHttpRequest();
+           request.open('GET', './api/db.json');
+           var tempArr;
+           request.onload = function() {
+               // success
+               if (request.status === 200) {
+                   // resolve the promise with the parsed response text (assumes JSON)
+                   tempArr = JSON.parse(request.response);
+               } else {
+                   // error retrieving file
+                   Error(request.statusText);
+               }
+           };
 
+           request.onerror = function() {
+               // network errors
+               reject(Error("Network Error"));
+           };
            const pumpIndexList = [
               { id: "1", name: "FPS SS Series", img: "fps_ss_series.png" },
               { id: "2", name: "FPS FS Series", img: "fps_fs_series.png" },
@@ -43,7 +60,7 @@
 
               var tempStr = JSON.stringify(pumpIndexList);
               console.log(tempStr);
-              var tempArr = JSON.parse(tempStr);
+
            var db;
            var request = window.indexedDB.open("PumpDatabase", 1);
 
@@ -127,7 +144,7 @@
   {
     setTimeout(function () {
       readAll();
-    }, 100);
+    }, 200);
   }
 
 
