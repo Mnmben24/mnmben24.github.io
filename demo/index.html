@@ -102,6 +102,8 @@
            }
 
            function readAll() {
+             if (db != null)
+             {
               var objectStore = db.transaction("pumps").objectStore("pumps");
               objectStore.openCursor().onsuccess = function(event) {
                  var cursor = event.target.result;
@@ -114,6 +116,10 @@
                 objectStore.openCursor().onerror = function(event) {
                     alert("Error connecting to database")
                 };
+              }
+              else{
+                window.location.reload();
+              }
            }
 
            function add() {
