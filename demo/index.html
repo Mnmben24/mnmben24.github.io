@@ -23,6 +23,8 @@
          window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange ||
          window.msIDBKeyRange
 
+         document.getElementById('grid').innerHTML = document.getElementById('grid').innerHTML + window.IndexedDB + " " + window.IDBTransaction + " " + window.IDBKeyRange
+
          if (!window.indexedDB) {
             window.alert("Your browser doesn't support a stable version of IndexedDB.")
          }
@@ -34,6 +36,9 @@
             { id: "4", name: "SVM Borehole Pump", img: "svm_borehole_pump.png" }];
          var db;
          var request = window.indexedDB.open("PumpDatabase", 1);
+
+         
+         document.getElementById('grid').innerHTML = document.getElementById('grid').innerHTML + employeeData
 
          request.onerror = function(event) {
             console.log("error: ");
