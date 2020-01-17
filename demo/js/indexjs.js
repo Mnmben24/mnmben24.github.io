@@ -91,16 +91,6 @@
               };
            }*/
 
-function start()
-{
-    try {
-        readAll();
-    }
-    catch(err) {
-      window.location.reload();
-    }
-}
-
 
   function onChoice(id)
   {

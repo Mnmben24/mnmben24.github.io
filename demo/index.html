@@ -12,6 +12,17 @@
     <meta name="theme-color" content="#29BDBB">
     <link rel="icon" sizes="192x192" href="./logo-144.png">
       <script src="./js/indexjs.js"></script>
+      <script type="text/javascript">
+      function start()
+      {
+          try {
+              readAll();
+          }
+          catch(err) {
+            window.location.reload();
+          }
+      }
+      </script>
 </head>
 
 <body onload="start()" backgroundColor="#12476A">
