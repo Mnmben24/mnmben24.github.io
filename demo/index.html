@@ -612,7 +612,7 @@
            };
 
           // request.onupgradeneeded = function(event) {
-              db = event.target.result;
+              db = request.target.result;
               var objectStore = db.createObjectStore("pumps", {keyPath: "id"});
 
               for (var i in pumpIndexList) {
