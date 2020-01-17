@@ -44,7 +44,7 @@
                 var cursor = event.target.result;
 
                 if (cursor) {
-                  retrun cursor;
+                  return cursor;
                 }
              };
                objectStore.openCursor().onerror = function(event) {
