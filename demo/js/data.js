@@ -13,11 +13,11 @@ const pumpIndexList = [
         "var2n": "Applications",
         "var3": "Stainless steel impellers and diffusers to resist corrosion|Suited to operate in horizontal position|Built-in check valve to protect the pump against water hammer|Energy efficient hydraulic design for cost-effective operation|Maximum alloable solid quantity = 50g/m³|Solid dimension: maximum 2mm|Cast motor bracket",
         "var3n": "Features",
-        "var4": "",
-        "var4n": "",
-        "var5": "",
-        "var5n": "",
-        "variation": ""
+        "var4": "/.",
+        "var4n": "/.",
+        "var5": "/.",
+        "var5n": "/.",
+        "variation": "/."
     },
     {
         "ID": "2",
@@ -33,11 +33,11 @@ const pumpIndexList = [
         "var2n": "Applications",
         "var3": "100% factory tested|Stainless steel AISI 316 bowls - investment cast|8”, 10” and 12” sizes|Stainless steel impellers and diffusers|llers locked onto shaft with keys|Rubber bearings|Integrated non-return valve on all models|Stainless steel 329 duplex shaft for increased durability|All pumps suit Franklin Electric motors|Flanged and BSPP discharges|Maximum running time at zero delivery is 2 minutes.",
         "var3n": "Features",
-        "var4": "",
-        "var4n": "",
-        "var5": "",
-        "var5n": "",
-        "variation": ""
+        "var4": "/.",
+        "var4n": "/.",
+        "var5": "/.",
+        "var5n": "/.",
+        "variation": "/."
     },
     {
         "ID": "3",
@@ -53,11 +53,11 @@ const pumpIndexList = [
         "var2n": "Applications",
         "var3": "High flow system|Proven motor and pump technology and reliability|Built-in diagnostics and protection.",
         "var3n": "Features",
-        "var4": "",
-        "var4n": "",
-        "var5": "",
-        "var5n": "",
-        "variation": ""
+        "var4": "/.",
+        "var4n": "/.",
+        "var5": "/.",
+        "var5n": "/.",
+        "variation": "/."
     },
     {
         "ID": "4",
@@ -73,11 +73,11 @@ const pumpIndexList = [
         "var2n": "Applications",
         "var3": "Stainless steel motor adaptor and discharge head|Polycarbonate impellers, stainless steel bowls and Noryl diffusers|Built-in check valve to protect the pump against water hammer|Impeller design incorporates built-in up-thrust protection.",
         "var3n": "Features",
-        "var4": "",
-        "var4n": "",
-        "var5": "",
-        "var5n": "",
-        "variation": ""
+        "var4": "/.",
+        "var4n": "/.",
+        "var5": "/.",
+        "var5n": "/.",
+        "variation": "/."
     },
     {
         "ID": "5",

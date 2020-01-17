@@ -4,21 +4,22 @@
 <head>
 <link rel="stylesheet" type="text/css" href="css/styles.css">
   <script>
+  var productNo;
   function runOnLoad()
   {
     var urlParam = new URLSearchParams(window.location.search);
-    alert(urlParam.get('product'))
-    //var flow  = Interface.getCurrentFlow();
-    //var head = Interface.getCurrentHead();
+    productNo = urlParam.get('product');
+    alert(productNo);
+
     document.getElementById('inputA').value = 0;
     document.getElementById('inputB').value = 0;
-
     //Interface.getRanges();
     //Interface.getInfo();
     //document.getElementById('logoDiv').style.backgroundColor = Interface.getLogoCol();
     //document.getElementById('specifyDiv').style.backgroundColor = Interface.getSecCol();
         // Get the input field
     var input = document.getElementById("selB");
+    comboboxs(1);
   }
 
   document.addEventListener('keydown', function(event) {
@@ -43,25 +44,18 @@
   }
     list = document.getElementById('pumpRange');
     var num = list.options[list.selectedIndex].value;
-    Interface.setID(num);
-    Interface.getInfo();
+    changeDetails(productNo);
   }
 
-  function fillRangeBox(ran, ids)
+  function fillRangeBox()
   {
-    var splt1 = ran.split("|");
-    var splt2 = ids.split("|");
-    i = 0;
-    while(i < splt1.length)
-    {
+    var curs;
+    curs = read(1);
       var sel = document.getElementById("pumpRange");
       var option = document.createElement("option");
-      option.text = splt1[i];
-      option.value = splt2[i];
+      option.text = curs.value.title;
+      option.value = curs.key;
       sel.add(option);
-      i++;
-    }
-
   }
 
   function createElems(varNo, str, strN)
@@ -89,9 +83,11 @@
     }
   }
 
-  function changeDetails(id, title, sub, cap, ran, img, s1, s2, s3, s4, s5, s1n, s2n, s3n, s4n, s5n, pd)
+  function changeDetails(id)
   {
-      var ur = "./images/" + img;
+      var cursr;
+      cursr = read(productNo);
+      var ur = "./images/" + cursr.value.img;
       document.getElementById('imgDiv').src  =  ur;
 
       var pmpSel = document.getElementById('pumpRange');
@@ -106,33 +102,33 @@
       }
       pmpSel.selectedIndex = index;
 
-      createElems("1",s1,s1n);
-      createElems("2",s2,s2n);
-      createElems("3",s3,s3n);
-      createElems("4",s4,s4n);
-      createElems("5",s5,s5n);
+      createElems("1",cursor.value.var1,cursor.value.var1n);
+      createElems("1",cursor.value.var1,cursor.value.var1n);
+      createElems("1",cursor.value.var1,cursor.value.var1n);
+      createElems("1",cursor.value.var1,cursor.value.var1n);
+      createElems("1",cursor.value.var1,cursor.value.var1n);
 
       comboboxs(pd);
 
 
-      document.getElementById('head1').innerHTML = title;
-      if(sub == "/.")
+      document.getElementById('head1').innerHTML = cursr.value.title;
+      if(cursr.value.sub == "/.")
       {
         document.getElementById('head2').innerHTML = " ";
       }
       else
       {
-        document.getElementById('head2').innerHTML = sub;
+        document.getElementById('head2').innerHTML = cursr.value.sub;
       }
-      if(cap == "/.")
+      if(cursr.value.cap == "/.")
       {
         document.getElementById('caption').innerHTML = "";
       }
       else
       {
-          document.getElementById('caption').innerHTML = cap;
+          document.getElementById('caption').innerHTML = cursr.value.cap;
       }
-      document.getElementById('id').innerHTML = id;
+      document.getElementById('id').innerHTML = cursr.value.id;
   }
 
   function comboboxs(pd)
