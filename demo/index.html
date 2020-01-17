@@ -619,10 +619,7 @@
                  objectStore.add(pumpIndexList[i]);
               }
               connected =true;
-              objectStore.onsuccess = function(event)
-              {
-              readAll();
-              };
+              window.location.reload()
            }
 
            function read() {
