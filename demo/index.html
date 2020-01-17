@@ -600,7 +600,7 @@
            ];
 
            var db;
-           var request = window.indexedDB.open("PumpDatabase", 1);
+           var request = window.indexedDB.open("PumpDatabase", 2);
 
            request.onerror = function(event) {
               console.log("error: ");
@@ -609,6 +609,9 @@
            request.onsuccess = function(event) {
               db = request.result;
               console.log("success: "+ db);
+           };
+
+           request.onupgradeneeded = function(event) {
               db = event.target.result;
               var objectStore = db.createObjectStore("pumps", {keyPath: "id"});
 
@@ -616,7 +619,7 @@
                  objectStore.add(pumpIndexList[i]);
               }
               connected =true;
-           };
+           }
 
            function read() {
               var transaction = db.transaction(["pumps"]);
