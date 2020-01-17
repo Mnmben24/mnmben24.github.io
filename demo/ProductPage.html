@@ -19,7 +19,7 @@
     //document.getElementById('specifyDiv').style.backgroundColor = Interface.getSecCol();
         // Get the input field
     var input = document.getElementById("selB");
-    fillRangeBox();
+    fillRangeBoxes();
     chngDetails(productNo);
   }
 
@@ -48,14 +48,17 @@
     chngDetails(productNo);
   }
 
-  function fillRangeBox()
+  function fillRangeBoxes()
   {
-    var curs;
-    curs = read(1);
+    readAllProducts();
+  }
+
+  function fillRangeBox(titl,val)
+  {
       var sel = document.getElementById("pumpRange");
       var option = document.createElement("option");
-      option.text = curs.value.title;
-      option.value = curs.key;
+      option.text = titl;
+      option.value = val;
       sel.add(option);
   }
 

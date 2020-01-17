@@ -62,6 +62,18 @@
                     cursor.continue();
                  }
               };
+              function readAllProducts() {
+                 var objectStore = db.transaction("pumps").objectStore("pumps");
+                 objectStore.openCursor().onsuccess = function(event) {
+                    var cursor = event.target.result;
+
+                    if (cursor) {
+                      var text = cursor.value.title
+                      if (variation != "/.") text += " " + cursor.value.variation;
+                        fillRangeBox(text, cursor.key)
+                       cursor.continue();
+                    }
+                 };
            }
 /*
            function add() {
