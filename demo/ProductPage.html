@@ -19,7 +19,7 @@
     //document.getElementById('specifyDiv').style.backgroundColor = Interface.getSecCol();
         // Get the input field
     var input = document.getElementById("selB");
-    comboboxs(1);
+    changeDetails(productNo);
   }
 
   document.addEventListener('keydown', function(event) {
@@ -43,7 +43,7 @@
       document.getElementById('nSpec' + i).innerHTML = '';
   }
     list = document.getElementById('pumpRange');
-    var num = list.options[list.selectedIndex].value;
+    productNo = list.options[list.selectedIndex].value;
     changeDetails(productNo);
   }
 
@@ -103,10 +103,10 @@
       pmpSel.selectedIndex = index;
 
       createElems("1",cursor.value.var1,cursor.value.var1n);
-      createElems("1",cursor.value.var1,cursor.value.var1n);
-      createElems("1",cursor.value.var1,cursor.value.var1n);
-      createElems("1",cursor.value.var1,cursor.value.var1n);
-      createElems("1",cursor.value.var1,cursor.value.var1n);
+      createElems("2",cursor.value.var2,cursor.value.var2n);
+      createElems("3",cursor.value.var3,cursor.value.var3n);
+      createElems("4",cursor.value.var4,cursor.value.var4n);
+      createElems("5",cursor.value.var5,cursor.value.var5n);
 
       comboboxs(pd);
 
@@ -141,13 +141,6 @@
       document.getElementById('labelA').innerHTML = "Total Head";
       document.getElementById('pd').innerHTML = pd;
 
-      var selA = document.getElementById('selA');
-      var index = indexMatchingText(selA, Interface.getFlowUnits);
-      selA.selectedIndex = index;
-      var selB = document.getElementById('selB').options;
-      index = indexMatchingText(selA, Interface.getHeadUnits);
-      selB.selectedIndex = index;
-
     }
     else {
         document.getElementById('selA').innerHTML = "<option>m³/h</option> <option>l/min</option>    <option>l/sec</option>    <option>US GPM</option>    <option>lmp GPM</option>    <option>l/h</option>    <option>cfm</option>";
@@ -155,14 +148,6 @@
         document.getElementById('labelA').innerHTML = "Flow Rate";
         document.getElementById('labelB').innerHTML = "Total Head";
         document.getElementById('pd').innerHTML = pd;
-
-
-        var selA = document.getElementById('selA');
-        var index = indexMatchingText(selA, Interface.getFlowUnits());
-        selA.selectedIndex = index;
-        var selB = document.getElementById('selB');
-        index = indexMatchingText(selA, Interface.getHeadUnits());
-        selB.selectedIndex = index;
     }
   }
 
