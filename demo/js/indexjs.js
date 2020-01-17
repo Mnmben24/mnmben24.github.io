@@ -27,8 +27,7 @@
               console.log("success: "+ db);
            };
 
-           request.
-           onupgradeneeded = function(event) {
+           request.onupgradeneeded = function(event) {
               db = event.target.result;
               var objectStore = db.createObjectStore("pumps", {keyPath: "ID"});
 
