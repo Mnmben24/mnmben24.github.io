@@ -38,13 +38,13 @@
               window.location.reload();
            }
 
-           function read(indx) {
+           function readInfo(indx) {
              var objectStore = db.transaction("pumps").objectStore("pumps");
              objectStore.openCursor(indx).onsuccess = function(event) {
                 var cursor = event.target.result;
 
                 if (cursor) {
-                  return cursor;
+                  changeDetails(cursor);
                 }
              };
                objectStore.openCursor().onerror = function(event) {

@@ -20,7 +20,7 @@
     //document.getElementById('specifyDiv').style.backgroundColor = Interface.getSecCol();
         // Get the input field
     var input = document.getElementById("selB");
-    changeDetails(productNo);
+    chngDetails(productNo);
   }
 
   document.addEventListener('keydown', function(event) {
@@ -45,7 +45,7 @@
   }
     list = document.getElementById('pumpRange');
     productNo = list.options[list.selectedIndex].value;
-    changeDetails(productNo);
+    chngDetails(productNo);
   }
 
   function fillRangeBox()
@@ -84,11 +84,14 @@
     }
   }
 
-  function changeDetails(id)
+  fucntion chngDetails(id)
   {
-      var cursr;
-      cursr = read(productNo);
-      var ur = "./images/" + cursr.value.img;
+    readInfo(productNo);
+  }
+
+  function changeDetails(cursor)
+  {
+      var ur = "./images/" + cursor.value.img;
       document.getElementById('imgDiv').src  =  ur;
 
       var pmpSel = document.getElementById('pumpRange');
@@ -112,14 +115,14 @@
       comboboxs(pd);
 
 
-      document.getElementById('head1').innerHTML = cursr.value.title;
+      document.getElementById('head1').innerHTML = cursor.value.title;
       if(cursr.value.sub == "/.")
       {
         document.getElementById('head2').innerHTML = " ";
       }
       else
       {
-        document.getElementById('head2').innerHTML = cursr.value.sub;
+        document.getElementById('head2').innerHTML = cursor.value.sub;
       }
       if(cursr.value.cap == "/.")
       {
@@ -127,9 +130,9 @@
       }
       else
       {
-          document.getElementById('caption').innerHTML = cursr.value.cap;
+          document.getElementById('caption').innerHTML = cursor.value.cap;
       }
-      document.getElementById('id').innerHTML = cursr.value.id;
+      document.getElementById('id').innerHTML = cursor.value.id;
   }
 
   function comboboxs(pd)
