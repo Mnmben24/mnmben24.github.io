@@ -619,6 +619,7 @@
                  objectStore.add(pumpIndexList[i]);
               }
               connected =true;
+              readAll();
            }
 
            function read() {
@@ -681,9 +682,7 @@
 
   function start()
   {
-    setTimeout(function () {
       readAll();
-    }, 200);
   }
 
 
