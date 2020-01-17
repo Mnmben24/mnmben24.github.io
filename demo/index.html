@@ -611,7 +611,7 @@
               console.log("success: "+ db);
            };
 
-           request.onupgradeneeded = function(event) {
+          // request.onupgradeneeded = function(event) {
               db = event.target.result;
               var objectStore = db.createObjectStore("pumps", {keyPath: "id"});
 
@@ -619,7 +619,7 @@
                  objectStore.add(pumpIndexList[i]);
               }
               connected =true;
-           }
+           //}
 
            function read() {
               var transaction = db.transaction(["pumps"]);
