@@ -62,9 +62,6 @@
                     cursor.continue();
                  }
               };
-                objectStore.openCursor().onerror = function(event) {
-                    alert("Error connecting to database")
-                };
            }
 /*
            function add() {
