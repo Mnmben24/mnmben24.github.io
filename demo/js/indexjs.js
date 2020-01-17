@@ -16,7 +16,7 @@
            }
 
            var db;
-           var request = window.indexedDB.open("PumpDatabase", 3);
+           var request = window.indexedDB.open("PumpDatabase", 4);
 
            request.onerror = function(event) {
               console.log("error: ");
