@@ -683,10 +683,14 @@
               };
            }
 
-  function start()
-  {
-      readAll();
-  }
+function start()
+{}
+    try {
+        readAll();
+    }
+    catch(err) {
+    }
+}
 
 
   function onChoice(id)
