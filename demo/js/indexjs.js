@@ -16,7 +16,7 @@
            }
 
            var db;
-           var request = window.indexedDB.open("PumpDatabase", 2);
+           var request = window.indexedDB.open("PumpDatabase", 3);
 
            request.onerror = function(event) {
               console.log("error: ");
@@ -27,7 +27,8 @@
               console.log("success: "+ db);
            };
 
-           request.onupgradeneeded = function(event) {
+           request.
+           onupgradeneeded = function(event) {
               db = event.target.result;
               var objectStore = db.createObjectStore("pumps", {keyPath: "ID"});
 
