@@ -704,8 +704,13 @@ function start()
       tile.id = id;
       tile.className = "tile";
       tile.onclick = function(){onChoice(tile.id);};
-      tile.style.backgroundImage = "url('./images/"+img+"')";
+      //tile.style.backgroundImage = "url('./images/"+img+"')";
       tile.style.backgroundColor = "#ffffff"
+      var pic = document.createElement('img')
+      pic.style.width = "matchParent";
+      pic.style.height = "matchParent";
+      pic.source = "url('./images/"+img+"')";
+      pic.alt = name;
       var txt = document.createElement('div');
       txt.className = "textWrapper";
       var h2 = document.createElement('h2');
@@ -715,13 +720,14 @@ function start()
       txt.appendChild(h2);
       txt.appendChild(div2);
       tile.appendChild(txt);
+      tile.appendChild(pic)
       h2.align = "center"
       document.getElementById("grid").appendChild(tile);
   }
 
 
   </script>
-  <div id="backgroundDiv" style="width:100%; height: 100%" backgroundColor="#12476A">
+  <div id="backgroundDiv" style="width:100%; height: 100%">
   <div id= "logoDiv" style="width:105.2%; margin-left:-10px; margin-top:-15px; padding-top: 15px;" align="center" onclick="readAll()"><img src="./images/logo.png" height="49" border="0" /></div>
   <label id="id" style="visibility: none;"></label>
 <!-- Header -->
