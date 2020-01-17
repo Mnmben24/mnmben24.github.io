@@ -619,7 +619,10 @@
                  objectStore.add(pumpIndexList[i]);
               }
               connected =true;
+              objectStore.onsuccess = function(event)
+              {
               readAll();
+              };
            }
 
            function read() {
@@ -647,7 +650,7 @@
                  var cursor = event.target.result;
 
                  if (cursor) {
-                       addTile("m" + cursor.key,cursor.value.name,cursor.value.img)
+                       addTile("m" + cursor.key,cursor.value.title,cursor.value.img)
                     cursor.continue();
                  }
               };
