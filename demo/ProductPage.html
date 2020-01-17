@@ -10,7 +10,6 @@
   {
     var urlParam = new URLSearchParams(window.location.search);
     productNo = urlParam.get('product');
-    alert(productNo);
 
     document.getElementById('inputA').value = 0;
     document.getElementById('inputB').value = 0;
@@ -20,6 +19,7 @@
     //document.getElementById('specifyDiv').style.backgroundColor = Interface.getSecCol();
         // Get the input field
     var input = document.getElementById("selB");
+    fillRangeBox();
     chngDetails(productNo);
   }
 
