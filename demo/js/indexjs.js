@@ -62,6 +62,7 @@
                     cursor.continue();
                  }
               };
+            }
               function readAllProducts() {
                  var objectStore = db.transaction("pumps").objectStore("pumps");
                  objectStore.openCursor().onsuccess = function(event) {
