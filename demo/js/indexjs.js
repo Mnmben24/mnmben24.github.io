@@ -71,7 +71,7 @@
 
                     if (cursor) {
                       var text = cursor.value.title
-                      if (variation != "/.") text += " " + cursor.value.variation;
+                      if (cursor.value.variation != "/.") text += " " + cursor.value.variation;
                         fillRangeBox(text, cursor.key)
                        cursor.continue();
                     }
