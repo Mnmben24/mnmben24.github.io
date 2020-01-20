@@ -20,10 +20,12 @@
            e.target.transaction.abort();
            dbExists = false;
          }
+         request.oncomplete = function (e) {
           if (dbExists == "true")
           {
             readAll();
           }
+        }
       };
       </script>
 </head>
