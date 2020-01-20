@@ -44,7 +44,7 @@
            }
 
            function readInfo(indx) {
-             var tx = db.transaction("pumps","readwrie")
+             var tx = db.transaction("pumps","readwrite")
              var objectStore = tx.objectStore("pumps");
              objectStore.openCursor(indx).onsuccess = function(event) {
                 var cursor = event.target.result;
