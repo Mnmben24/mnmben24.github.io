@@ -27,8 +27,14 @@
            request.onsuccess = function(event) {
               db = request.result;
               console.log("success: "+ db);
-              console.log(window.location.href);
+              if(window.location.href.endsWith("index.html"))
+              {
               readAll();
+              }
+              else
+              {
+                runOnLoad();
+              }
            };
 
            request.onupgradeneeded = function(event) {
