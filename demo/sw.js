@@ -1,5 +1,5 @@
 // use a cacheName for cache versioning
-var cacheName = 'v1:static';
+var cacheName = 'productCache';
 
 // during the install phase you usually want to cache static assets
 self.addEventListener('install', function(e) {
@@ -7,12 +7,12 @@ self.addEventListener('install', function(e) {
     e.waitUntil(
         caches.open(cacheName).then(function(cache) {
             return cache.addAll([
-                './css/style.css',
+              /*  './css/style.css',
                 './js/build/script.min.js',
                 './js/build/vendor.min.js',
                 './css/fonts/roboto.woff',
                 './offline.html',
-                './images/'
+                './images/'*/
             ]).then(function() {
                 self.skipWaiting();
             });
@@ -24,7 +24,7 @@ self.addEventListener('install', function(e) {
 // when the browser fetches a url
 self.addEventListener('fetch', function(event) {
     // either respond with the cached object or go ahead and fetch the actual url
-  /*  event.respondWith(
+    event.respondWith(
         caches.match(event.request).then(function(response) {
             if (response) {
                 // retrieve from cache
@@ -33,5 +33,5 @@ self.addEventListener('fetch', function(event) {
             // fetch as normal
             return fetch(event.request);
         })
-    );*/
+    );
 });
