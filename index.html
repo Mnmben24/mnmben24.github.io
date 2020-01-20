@@ -1,17 +1,10 @@
 <!DOCTYPE html>
 <html class="js no-touchevents" lang="en">
 <head>
-    <!--meta http-equiv="refresh" content="0;URL='demo/index.html'"-->
     <script type="text/javascript">
         var urlParam = new URLSearchParams(window.location.search);
         var forwardNo = urlParam.get('page');
-        if(forwardNo != null)
-        {
-            var url = "demo/ProductPage.html?product=" + forwardNo;
-        }
-        else {
-          var url = "demo/index.html"
-        }
+        var url = "demo/index.html?page=" + forwardNo;
         window.location = url;
     </script>
 </head>
