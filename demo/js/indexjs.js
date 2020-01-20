@@ -17,7 +17,8 @@
            }
 
            var db;
-           var request = window.indexedDB.open("PumpDatabase");
+           var request = window.indexedDB.open("PumpDatabase",1);
+
 
            request.onerror = function(event) {
               console.log("error: ");
@@ -36,7 +37,7 @@
                  objectStore.add(pumpIndexList[i]);
               }
               connected =true;
-              window.location.reload();
+              readAll();
            }
 
            function readInfo(indx) {
