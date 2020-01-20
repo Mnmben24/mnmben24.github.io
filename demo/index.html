@@ -15,7 +15,7 @@
       <script type="text/javascript">
       window.onload = function start()
         { var dbExists = true;
-         var request = window.indexeddb.open("PumpDatabase");
+         var request = window.indexedDB.open("PumpDatabase");
          request.onupgradeneeded = function (e){
            e.target.transaction.abort();
            dbExists = false;
