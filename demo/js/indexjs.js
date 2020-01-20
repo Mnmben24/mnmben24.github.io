@@ -32,13 +32,15 @@
            request.onupgradeneeded = function(event) {
               db = event.target.result;
               var objectStore = db.createObjectStore("pumps", {keyPath: "ID"});
+              var transaction = event,target.transaction
 
               for (var i in pumpIndexList) {
                  objectStore.add(pumpIndexList[i]);
               }
               connected =true;
-              event.target.transaction.abort();
+              transaction.oncomplete = function (e) {
               readAll();
+            }
            }
 
            function readInfo(indx) {
