@@ -18,7 +18,7 @@
       {
           var urlParam = new URLSearchParams(window.location.search);
           var forwardNo = urlParam.get('page');
-          if(forwardNo != null)
+          if(forwardNo != null or forwardNo != "null")
           {
             var url = "ProductPage.html?product=" + forwardNo;
             window.location = url;
