@@ -27,6 +27,7 @@
            request.onsuccess = function(event) {
               db = request.result;
               console.log("success: "+ db);
+              readAll();
            };
 
            request.onupgradeneeded = function(event) {
@@ -53,9 +54,6 @@
                   changeDetails(cursor);
                 }
              };
-             tx.oncomplete = function() {
-               readAll();
-             }
                objectStore.openCursor().onerror = function(event) {
                    alert("Error connecting to database")
                };
