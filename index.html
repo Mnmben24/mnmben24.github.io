@@ -2,13 +2,10 @@
 <html class="js no-touchevents" lang="en">
 <head onload="reLoad();">
     <script type="text/javascript">
-    function reLoad()
-    {
         var urlParam = new URLSearchParams(window.location.search);
         var forwardNo = urlParam.get('page');
         var url = "demo/index.html?page=" + forwardNo;
         window.location = url;
-    }
     </script>
 </head>
 </html>
