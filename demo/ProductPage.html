@@ -13,6 +13,7 @@
 
     console.log(history.length);
     window.history.pushState("http://mnmben24.github.io", "Index Page", "/demo/index.html");
+    window.history.pushState("http://mnmben24.github.io", "Index Page", window.location.href);
     console.log(history.length);
 
     document.getElementById('inputA').value = 0;
