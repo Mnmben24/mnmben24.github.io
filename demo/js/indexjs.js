@@ -27,6 +27,7 @@
            request.onsuccess = function(event) {
               db = request.result;
               console.log("success: "+ db);
+              alert(window.location.href);
               if(window.location.href.endsWith("index.html"))
               {
               readAll();
@@ -46,9 +47,6 @@
                  objectStore.add(pumpIndexList[i]);
               }
               connected =true;
-              transaction.oncomplete = function (e) {
-              readAll();
-            }
            }
 
            function readInfo(indx) {
