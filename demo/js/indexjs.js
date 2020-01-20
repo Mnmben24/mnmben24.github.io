@@ -27,7 +27,6 @@
            request.onsuccess = function(event) {
               db = request.result;
               console.log("success: "+ db);
-              alert(window.location.href);
               if(window.location.href.includes("ProductPage.html"))
               {
                 runOnLoad();
