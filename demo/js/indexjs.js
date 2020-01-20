@@ -10,6 +10,12 @@
            window.msIDBKeyRange
 
            var connected = false;
+           var dbExists = true;
+           var request = window.indexeddb.open("db");
+           request.onupgradeneeded = function (e){
+             e.target.transaction.abort();
+             dbExists = false;
+           }
 
            if (!window.indexedDB) {
               window.alert("Your browser doesn't support a stable version of IndexedDB.")
@@ -39,7 +45,8 @@
            }
 
            function readInfo(indx) {
-             var objectStore = db.transaction("pumps").objectStore("pumps");
+             var tx = db.transaction("pumps","readwrie")
+             var objectStore = tx.objectStore("pumps");
              objectStore.openCursor(indx).onsuccess = function(event) {
                 var cursor = event.target.result;
 
@@ -47,6 +54,9 @@
                   changeDetails(cursor);
                 }
              };
+             tx.oncomplete = function() {
+               readAll();
+             }
                objectStore.openCursor().onerror = function(event) {
                    alert("Error connecting to database")
                };
