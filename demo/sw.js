@@ -8,11 +8,11 @@ self.addEventListener('install', function(e) {
         caches.open(cacheName).then(function(cache) {
             return cache.addAll([
                 './css/style.css',
-              /*  './js/build/script.min.js',
+                './js/build/script.min.js',
                 './js/build/vendor.min.js',
                 './css/fonts/roboto.woff',
                 './offline.html',
-                './images/'*/
+              /*  './images/'*/
             ]).then(function() {
                 self.skipWaiting();
             });
