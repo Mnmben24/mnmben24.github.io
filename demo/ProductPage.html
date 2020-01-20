@@ -11,6 +11,7 @@
     var urlParam = new URLSearchParams(window.location.search);
     productNo = urlParam.get('product');
 
+    history.back = function() {window.location.href="index.html"}
     document.getElementById('inputA').value = 0;
     document.getElementById('inputB').value = 0;
     //Interface.getRanges();
