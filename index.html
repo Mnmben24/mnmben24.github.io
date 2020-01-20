@@ -5,9 +5,14 @@
     <script type="text/javascript">
         var urlParam = new URLSearchParams(window.location.search);
         var forwardNo = urlParam.get('page');
-
-        alert(forwardNo);
-
+        if(forwardNo != null)
+        {
+            var url = "ProductPage.html?product=" + forwardNo;
+        }
+        else {
+          var url = "demo/index.html"
+        }
+        window.location = url;
     </script>
 </head>
 </html>
