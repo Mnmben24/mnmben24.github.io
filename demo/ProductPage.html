@@ -12,7 +12,9 @@
     productNo = urlParam.get('product');
 
     console.log(history.length);
-    
+    window.history.pushState("http://mnmben24.github.io", "Index Page", "/demo/index.html");
+    console.log(history.length);
+
     document.getElementById('inputA').value = 0;
     document.getElementById('inputB').value = 0;
     //Interface.getRanges();
