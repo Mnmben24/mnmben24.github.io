@@ -37,6 +37,7 @@
                  objectStore.add(pumpIndexList[i]);
               }
               connected =true;
+              event.target.transaction.abort();
               readAll();
            }
 
