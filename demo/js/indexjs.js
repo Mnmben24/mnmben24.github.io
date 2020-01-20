@@ -10,12 +10,7 @@
            window.msIDBKeyRange
 
            var connected = false;
-           var dbExists = true;
-           var request = window.indexeddb.open("PumpDatabase");
-           request.onupgradeneeded = function (e){
-             e.target.transaction.abort();
-             dbExists = false;
-           }
+
 
            if (!window.indexedDB) {
               window.alert("Your browser doesn't support a stable version of IndexedDB.")

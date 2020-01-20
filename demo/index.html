@@ -14,7 +14,12 @@
       <script src="./js/indexjs.js"></script>
       <script type="text/javascript">
       window.onload = function start()
-      {
+        { var dbExists = true;
+         var request = window.indexeddb.open("PumpDatabase");
+         request.onupgradeneeded = function (e){
+           e.target.transaction.abort();
+           dbExists = false;
+         }
           if (dbExists == "true")
           {
             readAll();
