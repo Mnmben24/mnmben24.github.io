@@ -28,13 +28,13 @@
               db = request.result;
               console.log("success: "+ db);
               alert(window.location.href);
-              if(window.location.href.endsWith("index.html"))
+              if(window.location.href.includes("ProductPage.html"))
               {
-              readAll();
+                runOnLoad();
               }
               else
               {
-                runOnLoad();
+                readAll();
               }
            };
 
