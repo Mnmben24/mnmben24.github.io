@@ -14,8 +14,6 @@
      <script src="./js/data.js"></script>
       <script src="./js/indexjs.js"></script>
       <script type="text/javascript">
-      window.onload = function start()
-      {
           var urlParam = new URLSearchParams(window.location.search);
           var forwardNo = urlParam.get('page');
           if(forwardNo != null && forwardNo != "null")
@@ -23,7 +21,6 @@
             var url = "ProductPage.html?product=" + forwardNo;
             window.location = url;
           }
-      };
       </script>
 </head>
 
