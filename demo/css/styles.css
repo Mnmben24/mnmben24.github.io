@@ -44,7 +44,7 @@
   align-self: center;
   overflow-x: hidden;
   width: inherit;
-  height: inherit%;
+  height: inherit;
   margin: -8px -8px -8px -8px;
 
 }
@@ -117,21 +117,23 @@ img	{
 }
 
 .lbls , .matBoxP , .txtBox , .unitsBox {
-	align-content: center;
+  text-align: center;
   font-size: 35px;
   margin: 5px 5px 5px 5px;
   height: 50px;
   width: 100%;
-  background-color: #111111;
   color: white;
+  white-space: nowrap;
 }
 
 .matBoxP {
   max-width: 40vw;
+  background-color: #111111;
 }
 
 .txtBox {
     max-width: 20vw;
+    background-color: #111111;
 }
 
 .specify	{
