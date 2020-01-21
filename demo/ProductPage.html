@@ -21,6 +21,7 @@
     var input = document.getElementById("selB");
     fillRangeBoxes();
     chngDetails(productNo);
+    document.getElementById('id').innerHTML = productNo;
   }
 
   document.addEventListener('keydown', function(event) {
@@ -89,25 +90,24 @@
 
   function chngDetails(id)
   {
-    readInfo(productNo);
+    readInfo(id);
+    var pmpSel = document.getElementById('pumpRange');
+    var max = pmpSel.length;
+    var index;
+    var j;
+    for (j = 0; j < max; j++)
+    {
+      if (id == pmpSel.options[j].value) {
+        index = j;
+      }
+    }
+    pmpSel.selectedIndex = index;
   }
 
   function changeDetails(cursor)
   {
       var ur = "./images/" + cursor.value.img;
       document.getElementById('imgDiv').src  =  ur;
-
-      var pmpSel = document.getElementById('pumpRange');
-      var max = pmpSel.length;
-      var index;
-      var j;
-      for (j = 0; j < max; j++)
-      {
-        if (id == pmpSel.options[j].value) {
-          index = j;
-        }
-      }
-      pmpSel.selectedIndex = index;
 
       createElems("1",cursor.value.var1,cursor.value.var1n);
       createElems("2",cursor.value.var2,cursor.value.var2n);
@@ -177,9 +177,7 @@
       var flow = document.getElementById('inputA').value;
     }
     var id = document.getElementById('id').innerHTML;
-    Interface.setID(id);
     alert(flow);
-    Interface.setCurrentFlow(flow);
     var url = "headTool.html";
     window.location = url;
   }
