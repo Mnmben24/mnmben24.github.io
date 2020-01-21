@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 <script type="text/javascript">
 
-function onLoad()
+window.onload = function onLoad()
 {  var urlParam = new URLSearchParams(window.location.search);
 	var id = urlParam.get('id');
 	var flow = urlParam.get('flow');
@@ -16,8 +16,7 @@ function onLoad()
 	var flowU = document.getElementById('flowSel');
 	var index = indexMatchingText(flowU, units);
 	flowU.selectedIndex = index;
-
-}
+};
 
 //Used to find index for Select Lists
 function indexMatchingText(ele, text) {
