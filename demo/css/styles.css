@@ -43,8 +43,8 @@
   background-color: black;
   align-self: center;
   overflow-x: hidden;
-  width: 100vw;
-  height: 100%;
+  width: inherit;
+  height: inherit%;
   margin: -8px -8px -8px -8px;
 
 }
