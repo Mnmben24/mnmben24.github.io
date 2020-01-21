@@ -44,8 +44,8 @@
   align-self: center;
   overflow-x: hidden;
   width: 100vw;
-  height: 100vh;
-  margin: -10px -10px -10px 0px;
+  height: 100%;
+  margin: -8px -8px -8px -8px;
 
 }
 
