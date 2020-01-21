@@ -2,7 +2,7 @@
   display: inline-block;
   border-radius: 4px;
   background-color: #111111;
-  border-color: #eeeeee;
+  border-color: white;
   border: black;
   color: #DDD;
   text-align: center;
@@ -90,6 +90,7 @@
   height: 50px;
   color: white;
   background-color: black;
+  padding: 2px 2px 2px 2px;
 }
 
 .unitsBox {
@@ -119,11 +120,12 @@ img	{
 	height: 40px;
 }
 
-.dataTable {
+.lbls .matBoxP .txtBox .unitsBox {
 	text-align: center;
   font-size: 35px;
   margin: 10px 10px 10px 10px;
 }
+
 .matBoxP {
 
   width: 100%;
@@ -162,23 +164,23 @@ img	{
   color: white;
 }
 
-.head.h2 {
+.head .h2 {
   font-size: 45px;
 }
 
-.head.h3 {
+.head .h3 {
   font-size: 35px;
 }
 
-.head.p {
+.head .p {
   font-size: 20px;
 }
 
-.data.h3 {
+.data .h3 {
     font-size: 40px;
 }
 
-.data.ul {
+.data .ul {
   font-size: 25px;
 }
 
