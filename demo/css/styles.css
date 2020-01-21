@@ -38,18 +38,14 @@
 }
 
 .bodyMain	{
-  width:105%;
   align-content: center;
 	font-family:	"Calibri";
-  height: 105%;
   background-color: black;
   align-self: center;
   overflow-x: hidden;
-  margin: -1vw;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  width: 100vw;
+  height: 100vh;
+  margin: -10px -10px -10px 0px;
 
 }
 
