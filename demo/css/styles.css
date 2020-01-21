@@ -86,8 +86,9 @@
 
 .lbls {
 	font-size: 35px;
-	text-align: center;
+  text-align: center;
   width: 100%;
+  min-width: 15vw;
   height: 50px;
 
   color: white;
@@ -100,6 +101,7 @@
   background-color: #111111;
   color: white;
   width: 100%;
+  max-width: 20vw;
   height: 50px;
 }
 
@@ -127,8 +129,9 @@ img	{
 .matBoxP {
 
 	text-align: center;
-	font-size: 35px;
+  font-size: 35px;
   width: 100%;
+  max-width: 20vw;
   height: 50px;
   background-color: #111111;
   color: white;
