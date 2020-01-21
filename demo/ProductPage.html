@@ -5,23 +5,33 @@
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 <script src="js/indexjs.js"></script>
   <script>
-  var productNo;
   function runOnLoad()
   {
     var urlParam = new URLSearchParams(window.location.search);
-    productNo = urlParam.get('product');
+    var id = urlParam.get('id');
+    var flow = urlParam.get("flow");
+    var head = urlParam.get("head");
+    var fUnits = urlParam.get("fUnits");
+    var hUnits = urlParam.get("hUnits");
+    if (flow == undefined) { flow = 0;};
+    if (head == undefined) { head = 0;};
+    document.getElementById('inputA').value = flow;
+    document.getElementById('inputB').value = head;
 
-    document.getElementById('inputA').value = 0;
-    document.getElementById('inputB').value = 0;
-    //Interface.getRanges();
-    //Interface.getInfo();
-    //document.getElementById('logoDiv').style.backgroundColor = Interface.getLogoCol();
-    //document.getElementById('specifyDiv').style.backgroundColor = Interface.getSecCol();
-        // Get the input field
-    var input = document.getElementById("selB");
     fillRangeBoxes();
     chngDetails(productNo);
     document.getElementById('id').innerHTML = productNo;
+    if (pd == 1)
+    {
+    var sA = document.getElementById("selA");
+    var sB = document.getElementById("selB");
+    }
+    else {
+      var sB = document.getElementById("selA");
+      var sA = document.getElementById("selB");
+    }
+    if (fUnits != undefined) { sA.selectedIndex = indexMatchingText(sA,fUnits)};
+    if (head != undefined) { sB.selectedIndex = indexMatchingText(sB,fUnits);};
   }
 
   document.addEventListener('keydown', function(event) {

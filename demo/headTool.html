@@ -21,7 +21,7 @@ window.onload = function onLoad()
 //Used to find index for Select Lists
 function indexMatchingText(ele, text) {
 	for (var i=0; i<ele.length;i++) {
-			if (ele[i].innerHTML === text){
+			if (ele[i].text === text){
 					return i;
 			}
 	}
@@ -37,10 +37,11 @@ function alert(e)
 function backClick()
 {
 	var flow = document.getElementById('flowRate').value;
+	var fUnits = document.getElementById('flowSel').text;
 	var head = document.getElementById('tHead').value;
-	Interface.setCurrentFlow(flow);
-	Interface.setCurrentHead(head);
-	var url = "ProductPage.html";
+	var hUnits = document.getElementById('headUnits').text;
+	var id = document.getElementById('id').value;
+	var url = "ProductPage.html?id=" + id + "&flow=" + flow + "&fUnits=" + fUnits + "&head=" + head + "&hUnits=" + hUnits;
 	window.location = url;
 }
 
