@@ -1,7 +1,7 @@
 .button	{
   display: inline-block;
   border-radius: 4px;
-  background-color: #000000;
+  background-color: #111111;
   border: black;
   color: #DDD;
   text-align: center;
@@ -19,7 +19,6 @@
 }
 
 .img	{
-	height: 50vh;
 	width: 50vw;
 	overflow:	hidden;
   margin-left: 5px;
@@ -33,7 +32,8 @@
   background-color: black;
   align-self: center;
   overflow-x: hidden;
-  margin-left: -2vw;
+  margin-left: -1vw;
+  padding-left: 1vw;
 }
 
 .head	{
