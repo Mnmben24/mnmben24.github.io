@@ -19,10 +19,10 @@
 }
 
 .img	{
-	height: 50%;
-	width: 50%;
+	height: 50vh;
+	width: 50vw;
 	overflow:	hidden;
-  margin-left: 0px;
+  margin-left: 5px;
 }
 
 .bodyMain	{
@@ -33,16 +33,13 @@
   background-color: black;
   align-self: center;
   overflow-x: hidden;
-  margin-left: -5vh;
+  margin-left: -5vw;
 }
 
 .head	{
 	margin-top:	10px;
 	margin-bottom:	0px;
 	width:100%;
-	margin-left:	0px;
-  margin-right: 10px;
-  font-size: 1.4em;
 }
 
 .btnDiv {
