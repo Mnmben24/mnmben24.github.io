@@ -61,18 +61,6 @@
   justify-content: center;
 }
 
-.logo {
-  background-color: #000000;
-	width:100%;
-	margin-left:	-10px;
-  margin-top: -15px;
-  margin-right: 0px;
-  padding-left: 10px;
-  align: center;
-  padding-top: 15px;
-
-}
-
 .lbl {
 	font-size: 16px;
 	text-align: center;
@@ -126,13 +114,18 @@ img	{
   white-space: nowrap;
 }
 
-.matBoxP {
+.matBox {
   max-width: 40vw;
   background-color: #111111;
 }
 
+.matBoxP {
+  max-width: 48vw;
+  background-color: #111111;
+}
+
 .txtBox {
-    max-width: 48vw;
+    max-width: 40vw;
     background-color: #111111;
 }
 
@@ -175,13 +168,9 @@ ul {
 }
 
 .logo {
-  width:100%;
-  align-items: center;
-  width:100%;
-  margin-left:-10px;
-  margin-top:-15px;
   padding-top: 15px;
-  align-content: center;
+  padding-bottom: 15px;
+  margin-left: 26vw;
   background-color: black;
 }
 
