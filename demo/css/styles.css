@@ -1,9 +1,9 @@
 .button	{
   display: inline-block;
   border-radius: 4px;
-  background-colour: white
+  background-colour: darkgrey;
   border: black;
-  color: black;
+  color: white;
   text-align: center;
   font-size: 14px;
   padding: 10px;
@@ -70,6 +70,7 @@
 	text-align: center;
   width: 100%;
   color: white;
+  background-color: black;
 }
 
 .unitsBox {
