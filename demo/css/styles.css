@@ -25,10 +25,11 @@
 }
 
 .bodyMain	{
-width:100%;
+  width:100%;
   align-content: center;
-//	border:	5px solid black;
 	font-family:	"Calibri";
+  height: 100%;
+  background-color: "#000000"
 }
 
 .head	{
