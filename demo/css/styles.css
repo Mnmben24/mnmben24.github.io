@@ -16,6 +16,15 @@
   font-size: 35px;
 }
 
+.first-half {
+    float: left;
+    width: 50%;
+}
+.second-half {
+    float: right;
+    width: 50%;
+}
+
 .data {
   width: 95%;
   margin-left: 5px;
