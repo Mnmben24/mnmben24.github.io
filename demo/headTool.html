@@ -119,10 +119,9 @@ function getFricHead(flow, nHazen, nD, nV)
 
 
 </head>
-<body onload="onLoad()">
-
+<body width="100vw" height="100vh">
 <div class="bodyMain">
-<div id="logoDiv" class="logo"><img src="./images/logo.png" height="49" border="0" /></div>
+<div id= "logoDiv" class="logo"><img src="./Logo/logoMain.png" height="200" border="0" alt="Company Logo" /></div>
 	<form>
 		<div class="head">
 		<h2 id="head1">System Head Tool</h2>
@@ -131,7 +130,7 @@ function getFricHead(flow, nHazen, nD, nV)
 			<table>
 				<tr>
 					<td>
-						<label class="label">Flow Rate</label>
+						<label class="lbls">Flow Rate</label>
 					</td>
           <td>
             <input type="number" class="txtBox" id="flowRate"></input>
@@ -151,7 +150,7 @@ function getFricHead(flow, nHazen, nD, nV)
 				<!---->
 				<tr>
 					<td>
-						<label class="label">Suction Height</label>
+						<label class="lbls">Suction Height</label>
 					</td>
           <td>
             <input type="number" class="txtBox" id="sHeight"></input>
@@ -171,7 +170,7 @@ function getFricHead(flow, nHazen, nD, nV)
 				<!---->
 				<tr>
 					<td>
-						<label class="label">Discharge Height</label>
+						<label class="lbls">Discharge Height</label>
 					</td>
           <td>
             <input type="number" class="txtBox"  id="dHeight"></input>
@@ -191,7 +190,7 @@ function getFricHead(flow, nHazen, nD, nV)
 				<!---->
 				<tr>
 					<td>
-						<label class="label">Downstream Pressure</label>
+						<label class="lbls">Downstream Pressure</label>
 					</td>
           <td>
             <input type="number" class="txtBox" id="dPres"></input>
@@ -211,7 +210,7 @@ function getFricHead(flow, nHazen, nD, nV)
 				<!---->
 				<tr>
 					<td>
-						<label class="label">Pipe Material</label>
+						<label class="lbls">Pipe Material</label>
 					</td>
           <td colspan="2">
             <select class="matBox" id="pMat">
@@ -240,7 +239,7 @@ function getFricHead(flow, nHazen, nD, nV)
 				<!---->
 				<tr>
 					<td>
-						<label class="label">Pipe Diameter</label>
+						<label class="lbls">Pipe Diameter</label>
 					</td>
           <td>
             <input type="number" class="txtBox" id="pDiam"></input>
@@ -251,7 +250,7 @@ function getFricHead(flow, nHazen, nD, nV)
         </tr>
 				<!----><tr>
 					<td>
-						<label class="label">Length</label>
+						<label class="lbls">Length</label>
 					</td>
           <td>
             <input type="number" class="txtBox"  id="len"></input>
@@ -272,7 +271,7 @@ function getFricHead(flow, nHazen, nD, nV)
 			<table width="100%">
 				<tr>
 					<td>
-						<label class="label">Velocity</label>
+						<label class="lbls">Velocity</label>
 					</td>
 					<td>
 						<input id="vel" readonly class="txtBox" value="0"></input>
@@ -284,7 +283,7 @@ function getFricHead(flow, nHazen, nD, nV)
 				<!---->
 				<tr>
 					<td>
-						<label class="label">Static Head</label>
+						<label class="lbls">Static Head</label>
 					</td>
 					<td>
 						<input id="sHead" readonly class="txtBox" value="0"></input>
@@ -296,7 +295,7 @@ function getFricHead(flow, nHazen, nD, nV)
 				<!---->
 				<tr>
 					<td>
-						<label class="label">Friction Head</label>
+						<label class="lbls">Friction Head</label>
 					</td>
 					<td>
 						<input id="fHead" readonly class="txtBox" value="0"></input>
@@ -308,7 +307,7 @@ function getFricHead(flow, nHazen, nD, nV)
 				<!---->
 				<tr>
 					<td>
-						<label class="label">Total Head</label>
+						<label class="lbls">Total Head</label>
 					</td>
 					<td>
 						<input id="tHead" readonly class="txtBox" value="0"></input>
