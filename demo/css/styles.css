@@ -167,6 +167,7 @@ img	{
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
+	background-color:rgb(0,0,0,0.1);
 	overflow: hidden;
 	position: relative;
 	border:	2px solid black;
@@ -194,7 +195,7 @@ img	{
 	text-align: center;
 	width: 100%;
 	position: absolute;
-	top: 85%;
+	top: 65%;
 	font-size: .98em;
 }
 
