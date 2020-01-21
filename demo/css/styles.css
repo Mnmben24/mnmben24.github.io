@@ -120,7 +120,7 @@ img	{
 	height: 40px;
 }
 
-.lbls .matBoxP .txtBox .unitsBox {
+.lbls , .matBoxP , .txtBox , .unitsBox {
 	text-align: center;
   font-size: 35px;
   margin: 10px 10px 10px 10px;
