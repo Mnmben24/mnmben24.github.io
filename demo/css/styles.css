@@ -117,14 +117,11 @@ img	{
 }
 
 .matBox {
-	width:165px;
-	height:35px;
 	text-align: center;
 	font-size: 35px;
 }
 .matBoxP {
   width: 100%
-	font-size: 35px;
   height: 50px;
   background-color: #111111;
   color: white;
