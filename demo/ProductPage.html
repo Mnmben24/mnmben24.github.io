@@ -174,12 +174,14 @@
     if(document.getElementById('pd').innerHTML == 1)
     {
       var flow = document.getElementById('inputB').value;
+      var units = document.getElementById('selB').options.text;
     }
     else {
       var flow = document.getElementById('inputA').value;
+      var units = document.getElementById('selA').options.text;
     }
     var id = document.getElementById('id').innerHTML;
-    var url = "headTool.html?id=" + id +"&flow=" + flow;
+    var url = "headTool.html?id=" + id +"&flow=" + flow + "&fUnits=" + units;
     window.location = url;
   }
 
@@ -222,7 +224,7 @@
 </head>
 <body height="100vh" width:"100vw">
 <div class="bodyMain">
-<div id= "logoDiv" class="logo" onclick="window.location.href='index.html'"><img src="./Logo/logoMain.png" height="200" border="0" alt="Company Logo" /></div>
+<div id= "logoDiv" class="logo" onclick="window.location.href='index.html'"><img src="./Logo/logoMain.png" height="150" border="0" alt="Company Logo" /></div>
 	<form>
 		<div class="head">
 		<h2 id="head1"></h2>

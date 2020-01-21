@@ -81,7 +81,7 @@
   background-color: #111111;
   color: white;
   width: 100%;
-  max-width: 20vw;
+  max-width: 25vw;
   height: 50px;
 }
 
@@ -125,7 +125,7 @@ img	{
 }
 
 .txtBox {
-    max-width: 40vw;
+    max-width: 18vw;
     background-color: #111111;
 }
 
