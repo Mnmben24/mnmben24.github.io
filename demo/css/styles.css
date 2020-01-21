@@ -41,6 +41,7 @@
 	width:100%;
 	margin-left:	0px;
   margin-right: 10px;
+  font-size: 1.4em;
 }
 
 .btnDiv {
@@ -124,7 +125,7 @@ img	{
 		width:80px;
   	height: 35px;
   	text-align: center;
-  	font-size: 14px;
+  	font-size: 20px;
     background-color: #111111;
     color: white;
 }
@@ -146,6 +147,26 @@ img	{
 	margin-bottom:	0px;
 	width:	100%;
   color: white;
+}
+
+.head.h2 {
+  font-size: 35px;
+}
+
+.head.h3 {
+  font-size: 28px;
+}
+
+.head.p {
+  font-size: 25px;
+}
+
+.data.h3 {
+    font-size: 35px;
+}
+
+.data.ul {
+  font-size: 30px;
 }
 
 .logo {
