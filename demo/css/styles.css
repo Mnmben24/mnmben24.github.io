@@ -121,26 +121,21 @@ img	{
 }
 
 .lbls , .matBoxP , .txtBox , .unitsBox {
-	text-align: center;
+	align-content: center;
   font-size: 35px;
-  margin: 10px 10px 10px 10px;
-}
-
-.matBoxP {
-
-  width: 100%;
-  max-width: 40vw;
+  margin: 5px 5px 5px 5px;
   height: 50px;
+  width: 100%;
   background-color: #111111;
   color: white;
 }
 
+.matBoxP {
+  max-width: 40vw;
+}
+
 .txtBox {
-    width: 100%;
     max-width: 20vw;
-    background-color: #111111;
-    color: white;
-    height: 50px;
 }
 
 .specify	{
@@ -164,23 +159,20 @@ img	{
   color: white;
 }
 
-.head .h2 {
+.h2 {
   font-size: 45px;
 }
 
-.head .h3 {
+.h3 {
   font-size: 35px;
 }
 
-.head .p {
+.p {
   font-size: 20px;
 }
 
-.data .h3 {
-    font-size: 40px;
-}
 
-.data .ul {
+.ul {
   font-size: 25px;
 }
 
