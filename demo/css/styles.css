@@ -29,7 +29,7 @@
   width:105%;
   align-content: center;
 	font-family:	"Calibri";
-  height: 102%;
+  height: 105%;
   background-color: black;
   align-self: center;
   overflow-x: hidden;
@@ -69,7 +69,7 @@
 }
 
 .lbls {
-	font-size: 25px;
+	font-size: 35px;
 	text-align: center;
   width: 15vw;
   color: white;
@@ -78,11 +78,10 @@
 
 .unitsBox {
 	text-align: center;
-	font-size: 25px;
+	font-size: 35px;
   background-color: #111111;
   color: white;
   width: 15vw;
-  height: 30%;
 }
 
 .headImg
@@ -108,12 +107,11 @@ img	{
 	width:165px;
 	height:35px;
 	text-align: center;
-	font-size: 25px;
+	font-size: 35px;
 }
 .matBoxP {
-  width: 35vw;
-  height: 30%;
-	font-size: 25px;
+  width: 31vw;
+	font-size: 30px;
   background-color: #111111;
   color: white;
 }
@@ -136,6 +134,7 @@ img	{
   margin-left: -5px;
   background-color: #222222;
   font-size: 45px;
+  height: 60px;
 }
 
 
@@ -148,11 +147,11 @@ img	{
 }
 
 .head.h2 {
-  font-size: 35px;
+  font-size: 40px;
 }
 
 .head.h3 {
-  font-size: 28px;
+  font-size: 32px;
 }
 
 .head.p {
@@ -164,7 +163,7 @@ img	{
 }
 
 .data.ul {
-  font-size: 30px;
+  font-size: 27px;
 }
 
 .logo {
