@@ -82,8 +82,9 @@
 .lbls {
 	font-size: 35px;
 	text-align: center;
-  width: 15vw;
+  width: 100%;
   height: 50px;
+  
   color: white;
   background-color: black;
 }
@@ -93,7 +94,7 @@
 	font-size: 35px;
   background-color: #111111;
   color: white;
-  width: 15vw;
+  width: 100%;
   height: 50px;
 }
 
@@ -129,7 +130,7 @@ img	{
 }
 
 .txtBox {
-    width: 15vw;
+    width: 100%;
   	text-align: center;
   	font-size: 35px;
     background-color: #111111;
