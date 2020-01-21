@@ -33,6 +33,7 @@
 .img	{
 	overflow:	hidden;
   margin-left: 5px;
+  max-width: 50vh;
 }
 
 .bodyMain	{
