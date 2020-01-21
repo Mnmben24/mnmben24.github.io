@@ -116,7 +116,7 @@ img	{
 	height: 40px;
 }
 
-.lbls , .matBoxP , .txtBox , .unitsBox {
+.lbls , .matBoxP , .matBox, .txtBox , .unitsBox {
   text-align: center;
   font-size: 35px;
   margin: 5px 5px 5px 5px;
@@ -132,7 +132,7 @@ img	{
 }
 
 .txtBox {
-    max-width: 20vw;
+    max-width: 48vw;
     background-color: #111111;
 }
 
@@ -177,6 +177,12 @@ ul {
 .logo {
   width:100%;
   align-items: center;
+  width:100%;
+  margin-left:-10px;
+  margin-top:-15px;
+  padding-top: 15px;
+  align-content: center;
+  background-color: black;
 }
 
 
