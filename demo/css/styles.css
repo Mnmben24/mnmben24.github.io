@@ -19,8 +19,8 @@
 }
 
 .img	{
-	height: 120px;
-	width: 140px;
+	height: 50%;
+	width: 50%;
 	overflow:	hidden;
   margin-left: 0px;
 }
@@ -32,6 +32,7 @@
   height: 100%;
   background-color: black;
   align-self: center;
+  overflow-x: hidden;
 }
 
 .head	{
