@@ -42,3 +42,12 @@ const pumpIndexList = [
 ];
 
 const versionNumber = 1;
+
+const cacheElements = [
+    './css/style.css',
+    './css/fonts/roboto.woff',
+    './offline.html',
+    './images/peripheral_vane_qb1.png',
+    './images/single_stage_cpm.png'
+    //'./Logo'
+];
