@@ -31,7 +31,7 @@
       var sA = document.getElementById("selB");
     }
     if (fUnits != undefined) { sA.selectedIndex = indexMatchingText(sA,fUnits)};
-    if (head != undefined) { sB.selectedIndex = indexMatchingText(sB,fUnits);};
+    if (hUnits != undefined) { sB.selectedIndex = indexMatchingText(sB,fUnits);};
   }
 
   document.addEventListener('keydown', function(event) {
@@ -197,6 +197,7 @@
 
   function openAOL()
   {
+    id = document.getElementById('id').innerHTML;
     var fR = document.getElementById('inputA').value;
     var fRU = document.getElementById('selA').options[ document.getElementById('selA').selectedIndex].text;
 
@@ -205,7 +206,7 @@
 
     var rn = document.getElementById('pumpRange').options[ document.getElementById('pumpRange').selectedIndex].text;
 
-    var varB = Interface.getvar();
+    var varB = getVar(id);
     var out;
 
     if(varB == "true")
@@ -216,13 +217,14 @@
     else {
       out = rn.replace(" ","_");
     }
-    var comp = Interface.getCompany();
-    var fil = Interface.getFilter();
+    //var comp = Interface.getCompany();
+    //var fil = Interface.getFilter();
+    var fil = pFilter4;
+    var aolURL = "http://www.aquateconline.com/aolweb/Login.aspx?Login="
+    //Interface.setCurrentFlow(fR);
+    //Interface.setCurrentHead(tH);
 
-    Interface.setCurrentFlow(fR);
-    Interface.setCurrentHead(tH);
-
-    var aolURL = Interface.getAOLUrl();
+    //var aolURL = Interface.getAOLUrl();
     var url = aolURL+comp+"&pQin=" + fR + "&cUQin=" + fRU + "&pHTot=" + tH + "&cUHin=" + tHU + "&" + fil + "=" + out + "&LoginType=MobileApp";
     //var url = "https://docs.google.com/gview?embedded=true&url=http://www.aquateconline.com/aolweb/(S(10osbwztok05asybgrlc0g45))/pdf/DutyCurve_20190204144302PM.pdf"       //PDF TEST
     window.location = url;
