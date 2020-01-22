@@ -27,6 +27,8 @@ self.addEventListener('install', function(e) {
 self.addEventListener('fetch', function(event) {
     // either respond with the cached object or go ahead and fetch the actual url
     event.respondWith(
+      if (offline == true)
+      {
         caches.match(event.request).then(function(response) {
             if (response) {
                 // retrieve from cache
@@ -35,5 +37,8 @@ self.addEventListener('fetch', function(event) {
             // fetch as normal
             return fetch(event.request);
         })
+      }
+      // fetch as normal
+      return fetch(event.request);
     );
 });
