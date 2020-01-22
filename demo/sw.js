@@ -6,7 +6,7 @@ const cacheElements = [
     './css/fonts/roboto.woff',
     './offline.html',
     './images/peripheral_vane_qb1.png',
-    './images/single_stage_cpm.png'
+    './images/single_stage_cpm.png',
     './images/fps_ss_series.png'
     //'./Logo'
 ];
