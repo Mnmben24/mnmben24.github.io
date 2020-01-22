@@ -1,5 +1,13 @@
 // use a cacheName for cache versioning
 var cacheName = 'productCache';
+const cacheElements = [
+    './css/style.css',
+    './css/fonts/roboto.woff',
+    './offline.html',
+    './images/peripheral_vane_qb1.png',
+    './images/single_stage_cpm.png'
+    //'./Logo'
+];
 // during the install phase you usually want to cache static assets
 self.addEventListener('install', function(e) {
     // once the SW is installed, go ahead and fetch the resources to make this work offline
