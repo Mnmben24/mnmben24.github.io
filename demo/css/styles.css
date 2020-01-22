@@ -142,7 +142,7 @@ img	{
 }
 
 
-.head	{
+.header	{
 	display:	inline-block;
 	margin-top:	0px;
 	margin-bottom:	0px;
@@ -150,22 +150,27 @@ img	{
   color: white;
 }
 
-h2 {
-  font-size: 45px;
+.header .h2 {
+  font-size: 50px;
 }
 
-h3 {
+.header .h3 {
   font-size: 35px;
 }
 
-p {
+.header .p {
   font-size: 20px;
 }
 
+.data .h3 {
+  font-size: 35px;
+}
 
-ul {
+.data .ul {
   font-size: 25px;
 }
+
+.
 
 .logo {
   padding-top: 15px;
@@ -212,7 +217,10 @@ ul {
 	width: 95%;
 	position: absolute;
 	top: 60%;
-	font-size: .98em;
+}
+
+.imageGrid .tile .textWrapper .h2 {
+  font-size: 20px;
 }
 
 .imageGrid .tile:hover {
