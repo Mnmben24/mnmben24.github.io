@@ -9,8 +9,8 @@ self.addEventListener('install', function(e) {
             return cache.addAll([
                 './css/style.css',
                 './css/fonts/roboto.woff',
-                './offline.html'//,
-                './images',
+                './offline.html',
+                './images'//,
                 //'./Logo'
             ]).then(function() {
                 self.skipWaiting();
