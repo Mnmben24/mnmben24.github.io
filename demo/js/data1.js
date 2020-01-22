@@ -1,4 +1,4 @@
-[
+const pumpIndexList = [
     {
         "ID": "1",
         "PD": "0",
@@ -39,4 +39,4 @@
         "var5n": "",
         "variation": "CPM"
     }
-]
+];
