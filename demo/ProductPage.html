@@ -87,8 +87,8 @@
       {
         var node = document.createElement("li");                 // Create a <li> node
         var txt = splt[i];
-        splt.replace("m^3","m³")
-        var textnode = document.createTextNode(splt[i]);         // Create a text node
+        txt.replace("m^3","m³")
+        var textnode = document.createTextNode(txt);         // Create a text node
         node.appendChild(textnode);                              // Append the text to <li>
         document.getElementById(parName).appendChild(node);     // Append <li> to <ul> with id="myList"
         i++;
