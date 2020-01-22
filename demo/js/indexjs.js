@@ -148,7 +148,6 @@
       tile.id = id;
       tile.className = "tile";
       tile.onclick = function(){onChoice(tile.id);};
-      tile.style.backgroundColor = "#ffffff"
       var pic = document.createElement('img')
       pic.style.width = "matchParent";
       pic.style.height = "matchParent";
