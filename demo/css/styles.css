@@ -150,15 +150,15 @@ img	{
   color: white;
 }
 
-.header .h2 {
+.header h2 {
   font-size: 50px;
 }
 
-.header .h3 {
+.header h3 {
   font-size: 35px;
 }
 
-.header .p {
+.header p {
   font-size: 20px;
 }
 
@@ -180,6 +180,7 @@ img	{
 }
 
 
+
 .imageGrid .tile {
 	width:13.5%;
   min-height: 11em;
@@ -191,7 +192,7 @@ img	{
 	background-color:rgb(0,0,0,0);
 	overflow: hidden;
 	position: relative;
-	border:	2px solid black;
+	border:	2px solid white;
 	border-radius: 15px;
 	color:#333;
 	font-family:"Verdana",sans-serif;
@@ -217,6 +218,7 @@ img	{
 	width: 95%;
 	position: absolute;
 	top: 60%;
+  color: #AAA;
 }
 
 .imageGrid .tile .textWrapper .h2 {
