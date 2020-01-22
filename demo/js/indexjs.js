@@ -40,8 +40,12 @@
 
            request.onupgradeneeded = function(event) {
               db = event.target.result;
-              var temp = db.transaction("pumps","readwrite").objectStore("pumps");
-              if (temp != null) { db.deleteObjectStore("pumps"); };
+              try
+              {
+                db.deleteObjectStore("pumps");
+              }
+              catch(error)
+              {}
               var objectStore = db.createObjectStore("pumps", {keyPath: "ID"});
               var transaction = event.target.transaction
 
