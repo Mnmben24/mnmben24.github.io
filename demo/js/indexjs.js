@@ -10,6 +10,7 @@
            window.msIDBKeyRange
 
            var connected = false;
+           var count = 0;
 
 
            if (!window.indexedDB) {
@@ -86,7 +87,6 @@
 
            function readAll() {
              var countReq;
-             var count = 0;
               var objectStore = db.transaction("pumps").objectStore("pumps");
               countReq = objectStore.count();
               countReq.onsuccess = function () {count = countReq.result};
