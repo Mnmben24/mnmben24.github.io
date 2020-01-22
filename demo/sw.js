@@ -1,5 +1,6 @@
 // use a cacheName for cache versioning
 var cacheName = 'productCache_v1_1';
+var prevCacheName ='productCache';
 
 const cacheElements = [
     './css/style.css',
@@ -14,10 +15,7 @@ const cacheElements = [
 self.addEventListener('install', function(e) {
     // once the SW is installed, go ahead and fetch the resources to make this work offline
     e.waitUntil(
-        caches.keys().then(function(names) {
-            for (let name of names)
-                caches.delete(name);
-        });
+      if (prevCacheName.length > 0){ caches.delete(prevCacheName);};
         caches.open(cacheName).then(function(cache) {
             return cache.addAll(cacheElements).then(function() {
                 self.skipWaiting();
