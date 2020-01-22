@@ -6,6 +6,7 @@ const cacheElements = [
     './offline.html',
     './images/peripheral_vane_qb1.png',
     './images/single_stage_cpm.png'
+    './images/fps_ss_series.png'
     //'./Logo'
 ];
 // during the install phase you usually want to cache static assets
