@@ -6,7 +6,7 @@ const pumpIndexList = [
         "img": "peripheral_vane_qb1.png",
         "range": "Peripheral Vane",
         "subtitle": "QB",
-        "title": "Peripheral Vein Pump",
+        "title": "Peripheral Vane Pump",
         "var1": "Flow Rate: max 50 L/min (3m^3/h) | Head: max 60m",
         "var1n": "Range of Performance",
         "var2": "Suction height: max 7m | Liquid temperature: 40°C | Ambient Temperature: 40°C",
