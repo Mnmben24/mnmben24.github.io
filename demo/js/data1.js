@@ -40,3 +40,5 @@ const pumpIndexList = [
         "variation": "CPM"
     }
 ];
+
+const versionNumber = 2;

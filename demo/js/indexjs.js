@@ -18,7 +18,7 @@
            }
 
            var db;
-           var request = window.indexedDB.open("PumpDatabase",1);
+           var request = window.indexedDB.open("PumpDatabase",versionNumber);
 
 
            request.onerror = function(event) {
