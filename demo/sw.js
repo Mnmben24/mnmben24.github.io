@@ -10,7 +10,8 @@ self.addEventListener('install', function(e) {
                 './css/style.css',
                 './css/fonts/roboto.woff',
                 './offline.html',
-                './images'//,
+                './images/peripheral_vane_qb1.png',
+                './images/single_stage_cpm.png'
                 //'./Logo'
             ]).then(function() {
                 self.skipWaiting();
