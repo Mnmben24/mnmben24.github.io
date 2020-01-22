@@ -78,7 +78,7 @@
     var parName = "spec" + varNo + "List";
     var headName = "nSpec" + varNo;
     var divName = "spec" + varNo;
-    if(str != "/."  && str != null)
+    if(!(str === "/."  || str === ""))
     {
       var splt = str.split("|");
       var i = 0;
