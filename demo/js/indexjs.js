@@ -117,7 +117,7 @@
 
   function onChoice(id)
   {
-      var url = "ProductPage.html?product=" + id.substring(1);
+      var url = "ProductPage.html?id=" + id.substring(1);
       window.location = url;
   }
 
