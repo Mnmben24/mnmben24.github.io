@@ -1,5 +1,6 @@
 // use a cacheName for cache versioning
-var cacheName = 'productCache';
+var cacheName = 'productCache_v1_1';
+
 const cacheElements = [
     './css/style.css',
     './css/fonts/roboto.woff',
@@ -13,6 +14,10 @@ const cacheElements = [
 self.addEventListener('install', function(e) {
     // once the SW is installed, go ahead and fetch the resources to make this work offline
     e.waitUntil(
+      caches.keys().then(function(names) {
+        for (let name of names)
+        caches.delete(name);
+      }
         caches.open(cacheName).then(function(cache) {
             return cache.addAll(cacheElements).then(function() {
                 self.skipWaiting();
