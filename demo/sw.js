@@ -6,7 +6,7 @@ const cacheElements = [
     './css/fonts/roboto.woff',
     './offline.html',
     './images/peripheral_vane_qb1.png',
-    './images/single_stage_cpm.png',
+    './images/single_stage_cpm.png'
     './images/fps_ss_series.png'
     //'./Logo'
 ];
@@ -14,17 +14,15 @@ const cacheElements = [
 self.addEventListener('install', function(e) {
     // once the SW is installed, go ahead and fetch the resources to make this work offline
     e.waitUntil(
-      caches.keys().then(function(names) {
-        for (let name of names)
-        {
-        caches.delete(name);
-      }
-      });
+        caches.keys().then(function(names) {
+            for (let name of names)
+                caches.delete(name);
+        });
         caches.open(cacheName).then(function(cache) {
             return cache.addAll(cacheElements).then(function() {
                 self.skipWaiting();
             });
-        });
+        })
     );
 });
 
