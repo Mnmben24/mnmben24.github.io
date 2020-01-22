@@ -85,7 +85,11 @@
 
 
            function readAll() {
+             var countReq;
+             var count = 0;
               var objectStore = db.transaction("pumps").objectStore("pumps");
+              countReq = objectStore.count();
+              countReq.onsuccess = function () {count = countReq.result};
               objectStore.openCursor().onsuccess = function(event) {
                  var cursor = event.target.result;
 
@@ -148,6 +152,10 @@
       tile.id = id;
       tile.className = "tile";
       tile.onclick = function(){onChoice(tile.id);};
+      if (count <= 4) {
+          tile.style.width = "95%";
+          tile.style.padding = "0px 0px 0px 2vw";
+      }
       var pic = document.createElement('img')
       pic.style.width = "matchParent";
       pic.style.height = "matchParent";
