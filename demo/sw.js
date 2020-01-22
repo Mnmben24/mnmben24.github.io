@@ -16,13 +16,15 @@ self.addEventListener('install', function(e) {
     e.waitUntil(
       caches.keys().then(function(names) {
         for (let name of names)
+        {
         caches.delete(name);
       }
+      });
         caches.open(cacheName).then(function(cache) {
             return cache.addAll(cacheElements).then(function() {
                 self.skipWaiting();
             });
-        })
+        });
     );
 });
 
