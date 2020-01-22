@@ -14,8 +14,8 @@ const cacheElements = [
 // during the install phase you usually want to cache static assets
 self.addEventListener('install', function(e) {
     // once the SW is installed, go ahead and fetch the resources to make this work offline
+    if (prevCacheName.length > 0){ caches.delete(prevCacheName);};
     e.waitUntil(
-      if (prevCacheName.length > 0){ caches.delete(prevCacheName);};
         caches.open(cacheName).then(function(cache) {
             return cache.addAll(cacheElements).then(function() {
                 self.skipWaiting();
