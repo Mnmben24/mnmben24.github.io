@@ -1,5 +1,5 @@
 // use a cacheName for cache versioning
-var cacheName = 'productCache';
+var cacheName = 'productCache-v1';
 
 // during the install phase you usually want to cache static assets
 self.addEventListener('install', function(e) {
@@ -7,13 +7,13 @@ self.addEventListener('install', function(e) {
     e.waitUntil(
         caches.open(cacheName).then(function(cache) {
             return cache.addAll([
-                './css/style.css',
+              /*  './css/style.css',
                 './js/build/script.min.js',
                 './js/build/vendor.min.js',
                 './css/fonts/roboto.woff',
                 './offline.html',
                 './images',
-                './Logo'
+                './Logo'*/
             ]).then(function() {
                 self.skipWaiting();
             });
