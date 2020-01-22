@@ -3,7 +3,7 @@ const pumpIndexList = [
         "ID": "1",
         "PD": "0",
         "caption": "",
-        "img": "peripheral_vane_QB1.png",
+        "img": "peripheral_vane_qb1.png",
         "range": "Peripheral Vane",
         "subtitle": "QB",
         "title": "Peripheral Vein Pump",
