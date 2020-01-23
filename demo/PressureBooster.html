@@ -32,9 +32,21 @@ function backClick()
 	var url = "ProductPage.html?id=" + id + "&flow=" + flow + "&fUnits=" + fUnits + "&head=" + head + "&hUnits=" + hUnits;
 	window.location = url;
 }
+function calculateFlow(bed,bath)
+{
 
+  var baths = [1,1.5,2,3,4,5,6];
+  var beds = [2,3,4,5,6];
+  var table = [ {1.4 , 1.8 , 2.3 }
+                {1.8 , 2.3 , 2.7 }
+                {2.3 , 2.7 , 3.2 }];
+  var bedIndex = beds.findIndex(function(bd) {return bd == bed;});
+  var bathIndex = baths.findIndex(function(bd) {return bd == bath;});
+
+}
 function calCulate() {
 
+  calculateFlow(1,2);
 	var fl = document.getElementById('flowRate').value;
 	var sH = document.getElementById('sHeight').value;
 	var dH = document.getElementById('dHeight').value;
