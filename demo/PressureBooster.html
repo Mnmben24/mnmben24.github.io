@@ -47,7 +47,7 @@ function calculateFrictionLoss(floor,bath, tflow)
     var nHazen = 100;
     var pDiam = 25/1000; //25mm to M
     //var fHead = (10.67 * Math.pow(tflow,1.852))/(Math.pow(nHazen,1.852) * Math.pow(pDiam, 4.8704));
-    var fHead = (0.002083 * Math.pow((100/nHazen),1.85) * Math.pow((tflow/0.0631),1.85))/(Math.pow((pDiam/25.4),4.8655));// - Other Eqaution?
+    var fHead = (0.002083 * Math.pow((100/nHazen),1.85) * Math.pow(((tflow/3.6)/0.0631),1.85))/(Math.pow((pDiam/25.4),4.8655));// - Other Eqaution?
     fricHead = fHead * pLength;
     return fricHead;
 
