@@ -17,7 +17,7 @@ const pumpIndexList = [
         "var4n": "Construction Characteristics",
         "var5": "",
         "var5n": "",
-        "variation": "CPM"
+        "variation": ""
     },
     {
         "ID": "2",
@@ -37,8 +37,7 @@ const pumpIndexList = [
         "var4n": "Construction Characteristics",
         "var5": "",
         "var5n": "",
-        "variation": "QB"
+        "variation": ""
     }
-];
-
-const versionNumber = 2;
+];3
+const versionNumber = 3;
