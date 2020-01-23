@@ -43,7 +43,7 @@
   background-color: black;
   align-self: center;
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: auto;
   width: inherit;
   height: inherit;
 
@@ -144,14 +144,11 @@ img	{
 
 .specify	{
 	color:	#FFF;
-	width:110%;
+	width:108%;
 	text-align:	center;
-	margin-top:	0;
-	margin-right:	0;
-  margin-left: -5px;
+  margin-left: -4vw;
   background-color: #222222;
   font-size: 45px;
-  height: 90px;
 }
 
 
@@ -164,23 +161,24 @@ img	{
 }
 
 .header h2 {
-  font-size: 50px;
+  font-size: 60px;
 }
 
 .header h3 {
-  font-size: 35px;
+  font-size: 45px;
+  color: #888;
 }
 
 .header p {
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .data h3 {
-  font-size: 35px;
+  font-size: 45px;
 }
 
 .data ul {
-  font-size: 25px;
+  font-size: 32px;
 }
 
 .
