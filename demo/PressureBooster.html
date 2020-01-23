@@ -12,29 +12,17 @@ window.onload = function onLoad()
 	var id = urlParam.get('id');
 };
 
-//Used to find index for Select Lists
-function indexMatchingText(ele, text) {
-	for (var i=0; i<ele.length;i++) {
-			if (ele[i].text === text){
-					return i;
-			}
-	}
-	return undefined;
-}
-
 function backClick()
 {
-	var flow = document.getElementById('flowRate').value;
-	var fUnits = document.getElementById('flowSel').text;
-	var head = document.getElementById('tHead').value;
-	var hUnits = document.getElementById('headUnits').text;
+	var CFlow = document.getElementById('flow').value;
+	var Dhead = document.getElementById('dynamicHead').value;;
 	var id = document.getElementById('id').value;
-	var url = "ProductPage.html?id=" + id + "&flow=" + flow + "&fUnits=" + fUnits + "&head=" + head + "&hUnits=" + hUnits;
+	var url = "ProductPage.html?id=" + id + "&flow=" + flow + "&fUnits=m³/h&head=" + Dhead + "&hUnits=m";
 	window.location = url;
 }
+
 function calculateFlow(bed,bath)
 {
-
   var baths = [1,1.5,2,3,4,5,6];
   var beds = [2,3,4,5,6];
   var flowTable = [
@@ -46,80 +34,51 @@ function calculateFlow(bed,bath)
   var bedIndex = beds.findIndex(function(bd) {return bd == bed;});
   var bathIndex = baths.findIndex(function(bd) {return bd == bath;});
   var flow = flowTable[bedIndex][bathIndex];
-
-}
-function calCulate() {
-
-  calculateFlow(3,2);
-	var fl = document.getElementById('flowRate').value;
-	var sH = document.getElementById('sHeight').value;
-	var dH = document.getElementById('dHeight').value;
-	var dp = document.getElementById('dPres').value;
-	var pd = document.getElementById('pDiam').value;
-	var ln = document.getElementById('len').value;
-
-	var sel = document.getElementById('flowSel');
-	var cFl = fl * (sel.options[1].value / sel.options[sel.selectedIndex].value );
-
-	sel = document.getElementById('shSel');
-	cSH = sH * (sel.options[0].value / sel.options[sel.selectedIndex].value);
-
-	sel = document.getElementById('dhSel');
-	cDH = dH * (sel.options[0].value / sel.options[sel.selectedIndex].value);
-
-	sel = document.getElementById('dpSel');
-	cDP = dp * (sel.options[0].value / sel.options[sel.selectedIndex].value);
-	var pdm = pd / 1000;
-	var Vel = (4/1000)*cFl/(3.141592 * Math.pow(pdm,2));
-	var statH = (cDH - cSH);
-
-	var nHazen = document.getElementById('pMat').options[document.getElementById('pMat').selectedIndex].value;
-	var fricH = 0;
-	fricH = getFricHead(cFl, nHazen, pd, Vel)*ln+cDP;
-	var totH = statH+fricH;
-
-	document.getElementById('vel').value = Vel.toPrecision(4);
-	document.getElementById('sHead').value = statH.toPrecision(4);
-	document.getElementById('fHead').value = fricH.toPrecision(4);
-	document.getElementById('tHead').value = totH.toPrecision(4);
-
+  return flow;
 }
 
-function getTotH(statH, fricH)
+function calculateFrictionLoss(floor,bath, flow)
 {
-	return (statH + fricH);
+    var baths = [1,1.5,2,3,4,5,6];
+    var pLengthTable =  [8 , 10 , 12 , 15 , 18 , 21 , 24];
+    var bathIndex = baths.findIndex(function(bd) {return bd == bath;});
+    var pLength = pLengthTable[bathIndex] + (5*floor);
+
+    var nHazen = 100;
+    var pDiam = 25/1000; //25mm to M
+    var fHead = (10.67 * Math.pow(flow,1.852))/(Math.pow(nHazen,1.852) * math.pow(pDiam, 4.8704));
+    fricHead = fHead * pLength;
+    //var fricHead = (0.002083 * Math.pow((100/nHazen),1.85) * Math.pow((flow/0.0631),1.85))/(Math.pow((nD/25.4),4.8655)); - Other Eqaution?
+    return fricHead;
+
 }
 
-function getFricHead(flow, nHazen, nD, nV)
-{
-	var visc = 1;
-	var nFL = 0;
-	var nRey = (nV * (nD/1000) * 1000000 / visc);
+function calculations() {
 
-	if(nD <= 0)
-	{
-		alert("Please Enter a Positive, Non-Zero Diameter.")
-		return 0;
-	}
-	else if(+nRey <= 2000)
-	{
-		var nF = 64/+nRey;
-		nFL = (nF * Math.pow(nV,2))/ ((nD/1000) * 2 * 9.81);
-	}
-	else {
-		if (nHazen > 1)
-		{
-				nFL = (0.002083 * Math.pow((100/nHazen),1.85) * Math.pow((flow/0.0631),1.85))/(Math.pow((nD/25.4),4.8655));
-		}
-		else
-		{
-			alert("Failure");
-		}
-	}
+	var nBed = document.getElementById('nBedrooms').value;
+	var nBath = document.getElementById('nBathrooms').value;
+	var nFloor = document.getElementById('nFloors').value;
+	var iPressure = document.getElementById('inPressure').value;
+	var dPressure = document.getElementById('outPressure').value;
 
+  var cFlow = calculateFlow(nBed,nBath);
+  document.getElementById('flow').value = flow;
 
-	return nFL;
+	var sel = document.getElementById('ipSel');
+	var cIP = iPressure * (sel.options[0].value / sel.options[sel.selectedIndex].value);
+
+	sel = document.getElementById('opSel');
+	var cDP = dPressure * (sel.options[0].value / sel.options[sel.selectedIndex].value);
+
+	fricH = calculateFrictionLoss(nFloor, nBath, cFlow);
+
+  var dynHead = (cDP - cIP) + fricH + (nFloor * 3.5);
+
+	document.getElementById('frictionHead').value = fricH.toPrecision(4);
+	document.getElementById('dynamicHead').value = dynHead.toPrecision(4);
+
 }
+
 
 </script>
 
@@ -139,7 +98,7 @@ function getFricHead(flow, nHazen, nD, nV)
 					</td>
           <td> <div class="spacingDiv1"> </td>
           <td>
-            <input type="number" class="txtBox" id="flowRate"></input>
+            <input type="number" class="txtBox" id="nBedrooms"></input>
           </td>
         </tr>
 				<!---->
@@ -149,7 +108,7 @@ function getFricHead(flow, nHazen, nD, nV)
 					</td>
           <td> <div class="spacingDiv1"> </td>
           <td>
-            <input type="number" class="txtBox" id="sHeight"></input>
+            <input type="number" class="txtBox" id="nBathrooms"></input>
           </td>
         </tr>
 				<!---->
@@ -159,7 +118,7 @@ function getFricHead(flow, nHazen, nD, nV)
 					</td>
           <td> <div class="spacingDiv1"> </td>
           <td>
-            <input type="number" class="txtBox"  id="dHeight"></input>
+            <input type="number" class="txtBox"  id="nFloors"></input>
           </td>
         </tr>
 				<!---->
@@ -169,10 +128,10 @@ function getFricHead(flow, nHazen, nD, nV)
 					</td>
           <td> <div class="spacingDiv1"> </td>
           <td>
-            <input type="number" class="txtBox" id="dPres"></input>
+            <input type="number" class="txtBox" id="inPressure"></input>
           </td>
           <td>
-            <select class="unitsBox" id="dpSel">
+            <select class="unitsBox" id="ipSel">
 							<option value="1">m</option>
 							<option value="9.9804">kPa</option>
 							<option value="0.09804">bar</option>
@@ -188,10 +147,10 @@ function getFricHead(flow, nHazen, nD, nV)
   					</td>
             <td> <div class="spacingDiv1"> </td>
             <td>
-              <input type="number" class="txtBox" id="dPres"></input>
+              <input type="number" class="txtBox" id="outPressure"></input>
             </td>
             <td>
-              <select class="unitsBox" id="dpSel">
+              <select class="unitsBox" id="opSel">
   							<option value="1">m</option>
   							<option value="9.98041">kPa</option>
   							<option value="0.098041">bar</option>
@@ -207,7 +166,7 @@ function getFricHead(flow, nHazen, nD, nV)
 		</div>
 		<br/>
 		<div align="center">
-			<input type ="button" value="Calculate" class="button" id="calcBtn" onclick="calCulate()"></input>
+			<input type ="button" value="Calculate" class="button" id="calcBtn" onclick="calculations()"></input>
 		</div>
 		<br/>
 		<div>
@@ -218,7 +177,7 @@ function getFricHead(flow, nHazen, nD, nV)
 					</td>
           <td> <div class="spacingDiv1"> </td>
 					<td>
-						<input id="vel" readonly class="txtBox" value="0"></input>
+						<input id="flow" readonly class="txtBox" value="0"></input>
 					</td>
 					<td>
             <div class="spacingDiv2">
@@ -233,7 +192,7 @@ function getFricHead(flow, nHazen, nD, nV)
 					</td>
           <td> <div class="spacingDiv1"> </td>
 					<td>
-						<input id="sHead" readonly class="txtBox" value="0"></input>
+						<input id="frictionHead" readonly class="txtBox" value="0"></input>
 					</td>
 					<td>
             <div class="spacingDiv2">
@@ -248,7 +207,7 @@ function getFricHead(flow, nHazen, nD, nV)
 					</td>
           <td> <div class="spacingDiv1"> </td>
 					<td>
-						<input id="fHead" readonly class="txtBox" value="0"></input>
+						<input id="dynamicHead" readonly class="txtBox" value="0"></input>
 					</td>
 					<td>
             <div class="spacingDiv2">
