@@ -48,6 +48,9 @@
   margin: -8px -8px -8px -8px;
 
 }
+form {
+  padding-left: 3vw;
+}
 
 .head	{
 	margin-top:	10px;
@@ -105,6 +108,14 @@ img	{
 	height: 40px;
 }
 
+.spacingDiv1 {
+  width: 20vw;
+}
+
+.spacingDiv2 {
+  width: 20vw;
+}
+
 .lbls , .matBoxP , .matBox, .txtBox , .unitsBox {
   text-align: center;
   font-size: 35px;
@@ -113,6 +124,7 @@ img	{
   width: 100%;
   color: white;
   white-space: nowrap;
+  min-width: 15vw;
 }
 
 .matBox {
