@@ -63,7 +63,7 @@ function calculations() {
 	var iPressure = document.getElementById('inPressure').value;
 	var dPressure = document.getElementById('outPressure').value;
 
-  var cFlow = calculateFlow(nBed,nBath)/3.6;
+  var cFlow = calculateFlow(nBed,nBath);
   document.getElementById('flow').value = cFlow;
 
 	var sel = document.getElementById('ipSel');
