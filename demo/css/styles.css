@@ -196,6 +196,10 @@ img	{
   padding-right: 3px;
 }
 
+.imageGrid .tile .img {
+  padding-bottom: 2vh;
+}
+
 .imageGrid .tile {
 	width:13.5%;
   min-height: 11em;
@@ -240,7 +244,7 @@ html,body
 	text-align: center;
 	width: 95%;
 	position: absolute;
-	top: 85%;
+	top: 84%;
   color: #CCC;
 }
 
