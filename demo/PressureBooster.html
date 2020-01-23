@@ -43,7 +43,7 @@ function calculateFrictionLoss(floor,bath, tflow)
     var pLengthTable =  [8 , 10 , 12 , 15 , 18 , 21 , 24];
     var bathIndex = baths.findIndex(function(bd) {return bd == bath;});
     var pLength = pLengthTable[bathIndex] + (5*(floor-1));
-    var nFlow = tFlow/3600;
+    var nFlow = tflow/3600;
 
     var nHazen = 100;
     var pDiam = 25/1000; //25mm to M
