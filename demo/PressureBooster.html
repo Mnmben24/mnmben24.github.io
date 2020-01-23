@@ -37,8 +37,8 @@ function calculateFlow(bed,bath)
 
   var baths = [1,1.5,2,3,4,5,6];
   var beds = [2,3,4,5,6];
-  var table = [ {"b1":"1.4" , "b15":"1.8" , "b2":"2.3" }
-                 {"b1":"1.8" , "b15":"2.3" , "b2":"2.7" }
+  var table = [ {"b1":"1.4" , "b15":"1.8" , "b2":"2.3" },
+                 {"b1":"1.8" , "b15":"2.3" , "b2":"2.7" },
                  {"b1":"2.3" , "b15":"2.7" , "b2":"3.2" }];
   var bedIndex = beds.findIndex(function(bd) {return bd == bed;});
   var bathIndex = baths.findIndex(function(bd) {return bd == bath;});
