@@ -115,8 +115,12 @@ img	{
 .spacingDiv2 {
   width: 15vw;
 }
-.spacingDiv2 {
+.spacingDiv3 {
   width: 20px;
+}
+
+.unitsBox {
+  width: 15vw;
 }
 
 .lbls , .matBoxP , .matBox, .txtBox , .unitsBox {
