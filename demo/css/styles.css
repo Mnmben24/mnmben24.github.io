@@ -115,6 +115,9 @@ img	{
 .spacingDiv2 {
   width: 15vw;
 }
+.spacingDiv2 {
+  width: 20px;
+}
 
 .lbls , .matBoxP , .matBox, .txtBox , .unitsBox {
   text-align: center;
@@ -128,8 +131,9 @@ img	{
 }
 
 .matBox {
-  max-width: 40vw;
+  max-width: 34vw;
   background-color: #111111;
+  margin-left: 0px;
 }
 
 .matBoxP {
