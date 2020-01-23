@@ -145,7 +145,7 @@ img	{
 
 .specify	{
 	color:	#FFF;
-	width:102%;
+	width:110%;
 	text-align:	center;
 	margin-top:	0;
 	margin-right:	0;
@@ -220,6 +220,7 @@ html,body
     padding: 0px 13px 0px 0px;
     overflow-x: hidden;
     overflow-y: hidden;
+    margin: 0px;
 }
 
 .imageGrid .tile:before {
