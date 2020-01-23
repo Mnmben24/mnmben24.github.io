@@ -185,7 +185,7 @@ img	{
 
 .
 
-.backgroundDiv .logo {
+.bodyMain .logo {
   padding-top: 15px;
   padding-bottom: 15px;
   margin-left: 26vw;
@@ -210,6 +210,10 @@ img	{
 	color:#333;
 	font-family:"Verdana",sans-serif;
 	margin: 1px;
+}
+
+imageGrid {
+  padding: 0 3vw 0 3vw
 }
 
 .imageGrid .tile:before {
