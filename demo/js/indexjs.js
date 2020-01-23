@@ -133,8 +133,9 @@
       tile.className = "tile";
       tile.onclick = function(){onChoice(tile.id);};
       if (count <= 4) {
-          tile.style.width = "95%";
-          tile.style.padding = "0px 0px 0px 2vw";
+          tile.style.width = "90%";
+          tile.style.padding = "2%";
+          tile.style.margin = "10px";
       }
       var pic = document.createElement('img')
       pic.style.width = "matchParent";

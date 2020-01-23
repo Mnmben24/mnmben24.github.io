@@ -261,7 +261,7 @@ html,body
 
 .imageGrid .tile:active	{
 	transform: translateY(8px);
-	img: rgba(3,3,3,0.1);
+	img: rgba(a,a,a,1);
   color: black;
 }
 
