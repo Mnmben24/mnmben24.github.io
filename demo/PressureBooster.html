@@ -43,12 +43,14 @@ function calculateFrictionLoss(floor,bath, tflow)
     var pLengthTable =  [8 , 10 , 12 , 15 , 18 , 21 , 24];
     var bathIndex = baths.findIndex(function(bd) {return bd == bath;});
     var pLength = pLengthTable[bathIndex] + (5*(floor-1));
+    var nFlow = tFlow*3.6;
 
     var nHazen = 100;
     var pDiam = 25/1000; //25mm to M
     //var fHead = (10.67 * Math.pow(tflow,1.852))/(Math.pow(nHazen,1.852) * Math.pow(pDiam, 4.8704));
-    var fHead = (0.002083 * Math.pow((100/nHazen),1.85) * Math.pow(((tflow/3.6)/0.0631),1.85))/(Math.pow((pDiam/25.4),4.8655));// - Other Eqaution?
-    fricHead = fHead * pLength;
+    //var fHead = (0.002083 * Math.pow((100/nHazen),1.85) * Math.pow(((tflow/3.6)/0.0631),1.85))/(Math.pow((pDiam/25.4),4.8655));// - Other Eqaution?
+				nFL = (0.002083 * Math.pow((100/nHazen),1.85) * Math.pow((nFlow/0.0631),1.85))/(Math.pow((pDiam/25.4),4.8655));
+    fricHead = nFL * pLength;
     return fricHead;
 
 }
