@@ -206,9 +206,8 @@ img	{
 	background-repeat: no-repeat;
 	background-color:rgb(0,0,0,0);
 	position: relative;
-	border:	2px solid #888F;
-	border-radius: 15px;
-	color:#333;
+	border:	0px solid #888F;
+	border-radius: 35px;
 	font-family:"Verdana",sans-serif;
 	margin: 1px;
 }
