@@ -10,7 +10,7 @@
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
-  width: 100%;
+  width: 980%;
   height: 60px;
   font-size: 35px;
 }
@@ -85,7 +85,7 @@ form {
   background-color: #111111;
   color: white;
   width: 100%;
-  max-width: 25vw;
+  max-width: 15vw;
   height: 50px;
 }
 
@@ -119,9 +119,6 @@ img	{
   width: 20px;
 }
 
-.unitsBox {
-  width: 15vw;
-}
 
 .lbls , .matBoxP , .matBox, .txtBox , .unitsBox {
   text-align: center;

@@ -120,7 +120,7 @@ function getFricHead(flow, nHazen, nD, nV)
 <div class="bodyMain">
 <div id= "logoDiv" class="logo" onclick="window.location.href='index.html'"><img src="./Logo/logoMain.png" border="0" alt="Company Logo" style="padding: 3vh 0 0 25vw; width: 50vw;"></div>
 	<form>
-		<div class="head">
+		<div class="header">
 		<h2 id="head1">System Head Tool</h2>
 		</div>
 		<div>
@@ -128,6 +128,9 @@ function getFricHead(flow, nHazen, nD, nV)
 				<tr>
 					<td>
 						<label class="lbls">Flow Rate</label>
+					</td>
+					<td>
+						<div class="spacingDiv1"/>
 					</td>
           <td>
             <input type="number" class="txtBox" id="flowRate"></input>
@@ -149,6 +152,9 @@ function getFricHead(flow, nHazen, nD, nV)
 					<td>
 						<label class="lbls">Suction Height</label>
 					</td>
+					<td>
+						<div class="spacingDiv1"/>
+					</td>
           <td>
             <input type="number" class="txtBox" id="sHeight"></input>
           </td>
@@ -168,6 +174,9 @@ function getFricHead(flow, nHazen, nD, nV)
 				<tr>
 					<td>
 						<label class="lbls">Discharge Height</label>
+					</td>
+					<td>
+						<div class="spacingDiv1"/>
 					</td>
           <td>
             <input type="number" class="txtBox"  id="dHeight"></input>
@@ -189,6 +198,9 @@ function getFricHead(flow, nHazen, nD, nV)
 					<td>
 						<label class="lbls">Downstream Pressure</label>
 					</td>
+					<td>
+						<div class="spacingDiv1"/>
+					</td>
           <td>
             <input type="number" class="txtBox" id="dPres"></input>
           </td>
@@ -208,6 +220,9 @@ function getFricHead(flow, nHazen, nD, nV)
 				<tr>
 					<td>
 						<label class="lbls">Pipe Material</label>
+					</td>
+					<td>
+						<div class="spacingDiv1"/>
 					</td>
           <td colspan="2">
             <select class="matBoxP" id="pMat">
@@ -238,23 +253,33 @@ function getFricHead(flow, nHazen, nD, nV)
 					<td>
 						<label class="lbls">Pipe Diameter</label>
 					</td>
+					<td>
+						<div class="spacingDiv1"/>
+					</td>
           <td>
             <input type="number" class="txtBox" id="pDiam"></input>
           </td>
           <td>
+						<div class="spacingDiv2">
             <label class ="lbl">mm</label>
+					</div>
           </td>
         </tr>
 				<!----><tr>
 					<td>
 						<label class="lbls">Length</label>
 					</td>
+					<td>
+						<div class="spacingDiv1"/>
+					</td>
           <td>
             <input type="number" class="txtBox"  id="len"></input>
           </td>
           <td>
+						<div class="spacingDiv2"/>
             <label  id="headUnits" class ="lbl">m</label>
-          </td>
+          </div>
+				</td>
         </tr>
 				<!---->
 			</table>
@@ -271,10 +296,15 @@ function getFricHead(flow, nHazen, nD, nV)
 						<label class="lbls">Velocity</label>
 					</td>
 					<td>
+						<div class="spacingDiv1"/>
+					</td>
+					<td>
 						<input id="vel" readonly class="txtBox" value="0"></input>
 					</td>
 					<td>
+						<div class="spacingDiv2">
 						<label class ="lbl">m/s</label>
+					</div>
 					</td>
 				</tr>
 				<!---->
@@ -283,10 +313,15 @@ function getFricHead(flow, nHazen, nD, nV)
 						<label class="lbls">Static Head</label>
 					</td>
 					<td>
+						<div class="spacingDiv1"/>
+					</td>
+					<td>
 						<input id="sHead" readonly class="txtBox" value="0"></input>
 					</td>
 					<td>
+						<div class="spacingDiv2">
 						<label class ="lbl">m</label>
+						</div>
 					</td>
 				</tr>
 				<!---->
@@ -295,10 +330,15 @@ function getFricHead(flow, nHazen, nD, nV)
 						<label class="lbls">Friction Head</label>
 					</td>
 					<td>
+						<div class="spacingDiv1"/>
+					</td>
+					<td>
 						<input id="fHead" readonly class="txtBox" value="0"></input>
 					</td>
 					<td>
+						<div class="spacingDiv2">
 						<label class ="lbl">m</label>
+					</div>
 					</td>
 				</tr>
 				<!---->
@@ -307,10 +347,15 @@ function getFricHead(flow, nHazen, nD, nV)
 						<label class="lbls">Total Head</label>
 					</td>
 					<td>
+						<div class="spacingDiv1"/>
+					</td>
+					<td>
 						<input id="tHead" readonly class="txtBox" value="0"></input>
 					</td>
 					<td>
+						<div class="spacingDiv2">
 						<label class ="lbl">m</label>
+					</div>
 					</td>
 				</tr>
 			</table>
