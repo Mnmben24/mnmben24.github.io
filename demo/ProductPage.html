@@ -199,6 +199,12 @@
     window.location = url;
   }
 
+  function pressureBooster()
+  {
+    var url = "PressureBooster.html?id=" + id;
+    window.location = url;
+  }
+
   function openAOL()
   {
     id = document.getElementById('id').innerHTML;
@@ -221,16 +227,10 @@
     else {
       out = rn.replace(" ","_");
     }
-    //var comp = Interface.getCompany();
-    //var fil = Interface.getFilter();
-    var fil = pFilter4;
+    
+    var fil = "pFilter4";
     var aolURL = "http://www.aquateconline.com/aolweb/Login.aspx?Login="
-    //Interface.setCurrentFlow(fR);
-    //Interface.setCurrentHead(tH);
-
-    //var aolURL = Interface.getAOLUrl();
     var url = aolURL+comp+"&pQin=" + fR + "&cUQin=" + fRU + "&pHTot=" + tH + "&cUHin=" + tHU + "&" + fil + "=" + out + "&LoginType=MobileApp";
-    //var url = "https://docs.google.com/gview?embedded=true&url=http://www.aquateconline.com/aolweb/(S(10osbwztok05asybgrlc0g45))/pdf/DutyCurve_20190204144302PM.pdf"       //PDF TEST
     window.location = url;
   }
 
@@ -301,11 +301,14 @@
               </div>
                 <div class="second-half">
                   <div class="btnDiv">
-                  <input type="button" value="Select Pump" class="button" id="selBtn" onclick="openAOL()"></input>
+                  <input type="button" value="Pressure Tool" class="button" id="selBtn" onclick="pressureBooster()"></input>
                 </div>
               </div>
           </td>
         </tr>
+        <tr>
+          <td colspan="3">
+            <input type="button" value="Select Pump" class="button" id="selBtn" onclick="openAOL()"></input>
 						</table>
 			</table>
 		</div>

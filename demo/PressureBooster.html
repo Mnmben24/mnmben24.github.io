@@ -10,13 +10,6 @@
 window.onload = function onLoad()
 {  var urlParam = new URLSearchParams(window.location.search);
 	var id = urlParam.get('id');
-	var flow = urlParam.get('flow');
-	var units = urlParam.get('fUnits');
-	document.getElementById('flowRate').value = flow;
-	document.getElementById('id').value = id;
-	var flowU = document.getElementById('flowSel');
-	var index = indexMatchingText(flowU, units);
-	flowU.selectedIndex = index;
 };
 
 //Used to find index for Select Lists
@@ -27,12 +20,6 @@ function indexMatchingText(ele, text) {
 			}
 	}
 	return undefined;
-}
-
-
-function alert(e)
-{
-	Interface.showToast(e);
 }
 
 function backClick()
@@ -157,17 +144,6 @@ function getFricHead(flow, nHazen, nD, nV)
           <td>
             <input type="number" class="txtBox" id="sHeight"></input>
           </td>
-          <td>
-          <!--  <select class="unitsBox" id="shSel">
-							<option value="1">m</option>
-							<option value="9.98041">kPa</option>
-							<option value="0.098041">bar</option>
-							<option value="3.28">ft</option>
-							<option value="1.42197">psi</option>
-							<option value="2.89516">inHg</option>
-							<option value="75.53709">Torr</option>
-            </select>-->
-          </td>
         </tr>
 				<!---->
 				<tr>
@@ -176,17 +152,6 @@ function getFricHead(flow, nHazen, nD, nV)
 					</td>
           <td>
             <input type="number" class="txtBox"  id="dHeight"></input>
-          </td>
-        	<td>
-          <!--  <select class="unitsBox" id="dhSel">
-							<option value="1">m</option>
-							<option value="9.98041">kPa</option>
-							<option value="0.098041">bar</option>
-							<option value="3.28">ft</option>
-							<option value="1.42197">psi</option>
-							<option value="2.89516">inHg</option>
-							<option value="75.53709">Torr</option>
-            </select>-->
           </td>
         </tr>
 				<!---->

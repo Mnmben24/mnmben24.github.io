@@ -120,32 +120,6 @@
                  };
            }
 
-/*
-           function add() {
-              var request = db.transaction(["employee"], "readwrite")
-              .objectStore("employee")
-              .add({ id: "00-03", name: "Kenny", age: 19, email: "kenny@planet.org" });
-
-              request.onsuccess = function(event) {
-                 alert("Kenny has been added to your database.");
-              };
-
-              request.onerror = function(event) {
-                 alert("Unable to add data\r\nKenny is aready exist in your database! ");
-              }
-           }
-
-           function remove() {
-              var request = db.transaction(["employee"], "readwrite")
-              .objectStore("employee")
-              .delete("00-03");
-
-              request.onsuccess = function(event) {
-                 alert("Kenny's entry has been removed from your database.");
-              };
-           }*/
-
-
   function onChoice(id)
   {
       var url = "ProductPage.html?id=" + id.substring(1);
