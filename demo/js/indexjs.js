@@ -135,7 +135,7 @@
       if (count <= 4) {
           tile.style.width = "90%";
           tile.style.padding = "2%";
-          tile.style.margin = "10px 10px 0px 10px";
+          tile.style.margin = "10px 10px 5px 10px";
       }
       var pic = document.createElement('img')
       pic.style.width = "matchParent";
