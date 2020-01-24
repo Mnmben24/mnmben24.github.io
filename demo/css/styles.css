@@ -62,6 +62,9 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid white;
+  border-radius: 15px;
+}
 }
 
 .lbl {
@@ -75,7 +78,7 @@ form {
 .lbls {
   width: 100%;
   min-width: 20vw;
-  height: 50px;
+  height: 83px;
   color: white;
   background-color: black;
   padding: 2px 2px 2px 2px;
@@ -86,7 +89,7 @@ form {
   color: white;
   width: 100%;
   max-width: 15vw;
-  height: 50px;
+  height: 83px;
 }
 
 .headImg
@@ -124,7 +127,6 @@ img	{
   text-align: center;
   font-size: 35px;
   margin: 5px 5px 5px 5px;
-  height: 75px;
   width: 100%;
   color: white;
   white-space: nowrap;
@@ -135,16 +137,19 @@ img	{
   max-width: 34vw;
   background-color: #111111;
   margin-left: 0px;
+  height: 83px;
 }
 
 .matBoxP {
   max-width: 48vw;
   background-color: #111111;
+  height: 83px;
 }
 
 .txtBox {
     max-width: 18vw;
     background-color: #111111;
+    height: 75px;
 }
 
 .specify	{
