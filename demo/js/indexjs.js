@@ -11,6 +11,17 @@
 
            var connected = false;
            var count = 0;
+           var IDMain = 0;
+
+           function getIDTest()
+           {
+             return IDMain;
+           }
+
+           function setIDTest(nID)
+           {
+             IDMain = nID;
+           }
 
 
            if (!window.indexedDB) {
@@ -122,7 +133,8 @@
 
   function onChoice(id)
   {
-      var url = "ProductPage.html?id=" + id.substring(1);
+      setIDTest(id.substring(1));
+      var url = "ProductPage.html";
       window.location = url;
   }
 
