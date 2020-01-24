@@ -211,6 +211,11 @@
 
   function openAOL()
   {
+    if (offline)
+    {
+      alert("Cannot Connect to AOL Web. Check your Internet Settings");
+    }
+    else {
     id = document.getElementById('id').innerHTML;
     var fR = document.getElementById('inputA').value;
     var fRU = document.getElementById('selA').options[ document.getElementById('selA').selectedIndex].text;
@@ -236,6 +241,7 @@
     var aolURL = "http://www.aquateconline.com/aolweb/Login.aspx?Login="
     var url = aolURL+comp+"&pQin=" + fR + "&cUQin=" + fRU + "&pHTot=" + tH + "&cUHin=" + tHU + "&" + fil + "=" + out + "&LoginType=MobileApp";
     window.location = url;
+    }
   }
 
 
