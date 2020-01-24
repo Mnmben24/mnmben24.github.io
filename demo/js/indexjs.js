@@ -105,7 +105,7 @@
               {
                 runOnLoad();
               }
-              else if(window.location.href.includes("index.html"))
+              else if(window.location.href.includes("index.html") || window.location.href.includes("web_app_manifest"))
               {
                 readAll();
               }
