@@ -197,15 +197,15 @@
       var flow = document.getElementById('inputA').value;
       var units = document.getElementById('selA').options.text;
     }
-    var id = document.getElementById('id').innerHTML;
-    var url = "headTool.html?id=" + id +"&flow=" + flow + "&fUnits=" + units;
+    setFlow(flow);
+    setFUnits(units);
+    var url = "headTool.html";
     window.location = url;
   }
 
   function pressureBooster()
   {
-    var id = document.getElementById('id').innerHTML;
-    var url = "PressureBooster.html?id=" + id;
+    var url = "PressureBooster.html";
     window.location = url;
   }
 
