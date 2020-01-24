@@ -1,5 +1,5 @@
 // use a cacheName for cache versioning
-var cacheName = 'productCache_v1_12';
+var cacheName = 'productCache_v1_13';
 
 const cacheElements = [
     './css/styles.css',
