@@ -11,7 +11,6 @@
 
            var connected = false;
            var count = 0;
-           var IDMain = 0;
 
            function getIDTest()
            {
