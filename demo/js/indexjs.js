@@ -137,18 +137,6 @@
                 if (cursor) {
                   changeDetails(cursor);
                 }
-                var pmpSel = document.getElementById('pumpRange');
-                var max = pmpSel.length;
-                var index;
-                var j;
-                var id = getID();
-                for (j = 0; j < max; j++)
-                {
-                  if (id == pmpSel.options[j].value) {
-                    index = j;
-                  }
-                }
-                pmpSel.selectedIndex = index;
              };
                objectStore.openCursor().onerror = function(event) {
                    alert("Error connecting to database")

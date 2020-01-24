@@ -158,6 +158,18 @@
       {
           document.getElementById('caption').innerHTML = cursor.value.caption;
       }
+      var pmpSel = document.getElementById('pumpRange');
+      var max = pmpSel.length;
+      var index;
+      var j;
+      var id = cursor.value.ID;
+      for (j = 0; j < max; j++)
+      {
+        if (id == pmpSel.options[j].value) {
+          index = j;
+        }
+      }
+      pmpSel.selectedIndex = index;
   }
 
   function comboboxs(pd)
