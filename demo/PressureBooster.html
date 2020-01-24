@@ -16,6 +16,8 @@ window.onload = function onLoad()
 {
 	var id = getID();
   document.getElementById('id').value=id;
+	document.getElementById('ipSel').selectedIndex = 2;
+	document.getElementById('dpSel').selectedIndex = 1;
 };
 
 function backClick()
@@ -141,7 +143,7 @@ function calculations() {
 					</td>
           <td> <div class="spacingDiv1"> </td>
           <td>
-            <input type="number" class="txtBox" id="inPressure" selectedIndex="2"></input>
+            <input type="number" class="txtBox" id="inPressure"></input>
           </td>
           <td>
             <select class="unitsBox" id="ipSel">
@@ -163,7 +165,7 @@ function calculations() {
               <input type="number" class="txtBox" id="outPressure"></input>
             </td>
             <td>
-              <select class="unitsBox" id="opSel" selectedIndex="1">
+              <select class="unitsBox" id="opSel">
   							<option value="1">m</option>
   							<option value="9.98041">kPa</option>
   							<option value="0.098041">bar</option>
