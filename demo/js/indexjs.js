@@ -181,7 +181,8 @@
 
            function readAllProducts() {
                  var objectStore = db.transaction("pumps").objectStore("pumps");
-                 objectStore.openCursor().onsuccess = function(event) {
+                 var tx = objectStore.openCursor()
+                 tx.onsuccess = function(event) {
                     var cursor = event.target.result;
 
                     if (cursor) {
@@ -191,6 +192,21 @@
                        cursor.continue();
                     }
                  };
+                 tx.oncomplete = function(event)
+                 {
+                   var pmpSel = document.getElementById('pumpRange');
+                   var max = pmpSel.length;
+                   var index;
+                   var j;
+                   var id = getID();
+                   for (j = 0; j < max; j++)
+                   {
+                     if (id == pmpSel.options[j].value) {
+                       index = j;
+                     }
+                   }
+                   pmpSel.selectedIndex = index;
+                 }
            }
 
   function onChoice(id)
