@@ -12,14 +12,54 @@
            var connected = false;
            var count = 0;
 
-           function getIDTest()
+           function getID()
            {
              return getCookie("id");
            }
 
-           function setIDTest(nID)
+           function setID(nID)
            {
              setCookie("id",nID);
+           }
+
+           function getFlow()
+           {
+             return getCookie("flow");
+           }
+
+           function setFlow(nFL)
+           {
+             setCookie("flow",nFL);
+           }
+
+           function getHead()
+           {
+             return getCookie("head");
+           }
+
+           function setHead(nHD)
+           {
+             setCookie("head",nHD);
+           }
+
+           function getHUnits()
+           {
+             return getCookie("hUnits");
+           }
+
+           function setHUnits(nHU)
+           {
+             setCookie("hUnits",nHU);
+           }
+
+           function getFUnits()
+           {
+             return getCookie("fUnits");
+           }
+
+           function setFUnits(nFU)
+           {
+             setCookie("fUnits",nFU);
            }
 
           function getCookie(cname) {

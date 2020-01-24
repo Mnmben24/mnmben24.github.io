@@ -14,9 +14,9 @@
 
 window.onload = function onLoad()
 {  var urlParam = new URLSearchParams(window.location.search);
-	var id = urlParam.get('id');
-	var flow = urlParam.get('flow');
-	var units = urlParam.get('fUnits');
+	var id = getID();
+	var flow = getFlow();
+	var units = getFUnits();
 	document.getElementById('flowRate').value = flow;
 	document.getElementById('id').value = id;
 	var flowU = document.getElementById('flowSel');
@@ -40,8 +40,11 @@ function backClick()
 	var fUnits = document.getElementById('flowSel').text;
 	var head = document.getElementById('tHead').value;
 	var hUnits = document.getElementById('headUnits').text;
-	var id = document.getElementById('id').value;
-	var url = "ProductPage.html?id=" + id + "&flow=" + flow + "&fUnits=" + fUnits + "&head=" + head + "&hUnits=" + hUnits;
+	setFlow(flow);
+	setHead(head);
+	setFUnits(fUnits);
+	setHUnits(hUnits);
+	var url = "ProductPage.html";
 	window.location = url;
 }
 

@@ -13,12 +13,11 @@
   function runOnLoad()
   {
     var urlParam = new URLSearchParams(window.location.search);
-    //var id = urlParam.get('id');
-    //var flow = urlParam.get("flow");
-    //var head = urlParam.get("head");
-    //var fUnits = urlParam.get("fUnits");
-    //var hUnits = urlParam.get("hUnits");
-    var id = getIDTest();
+    var id = getID();
+    var flow = getFlow();
+    var head = getHead();
+    var fUnits = getFUnits();
+    var hUnits = getHUnits();
     if (flow == undefined) { flow = 0;};
     if (head == undefined) { head = 0;};
     document.getElementById('inputA').value = flow;

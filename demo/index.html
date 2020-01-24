@@ -16,6 +16,10 @@
       <script type="text/javascript">
           var urlParam = new URLSearchParams(window.location.search);
           var forwardNo = urlParam.get('page');
+          setCookie("flow","0");
+          setCookie("head","0");
+          setCookie("fUnits","m³/h");
+          setCookie("hUnits","m");
           if(forwardNo != null && forwardNo != "null")
           {
             setIDTest(forwardNo);
