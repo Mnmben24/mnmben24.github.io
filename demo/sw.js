@@ -1,9 +1,9 @@
 // use a cacheName for cache versioning
-var cacheName = 'productCache_v1_4';
-var prevCacheName ='productCache_v1_3';
+var cacheName = 'productCache_v1_5';
+var prevCacheName ='productCache_v1_4';
 
 const cacheElements = [
-    //'./css/styles.css',
+    './css/styles.css',
     './css/fonts/roboto.woff',
     './offline.html',
     './images/peripheral_vane_qb1.png',
