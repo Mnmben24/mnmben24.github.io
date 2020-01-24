@@ -1,5 +1,5 @@
 // use a cacheName for cache versioning
-var cacheName = 'productCache_v1_13';
+var cacheName = 'productCache_v1_14';
 
 const cacheElements = [
     './css/styles.css',
@@ -7,10 +7,13 @@ const cacheElements = [
     './offline.html',
     './images/peripheral_vane_qb1.png',
     './images/single_stage_cpm.png',
+    './images/fps_ss_series.png',
+    './images/fps_fs_series.png',
     './index.html',
     './ProductPage.html',
     './headTool.html',
     './PressureBooster.html',
+    './js/data.js',
     './js/data1.js',
     './js/main_v1.js',
     './js/indexjs.js'

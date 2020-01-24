@@ -560,4 +560,4 @@ const pumpIndexList = [
         "variation": ""
     }
 ]
-const versionNumber = 6;
+const versionNumber = 8;
