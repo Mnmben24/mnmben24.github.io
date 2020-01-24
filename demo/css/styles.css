@@ -131,6 +131,7 @@ img	{
   color: white;
   white-space: nowrap;
   min-width: 15vw;
+  border-radius: 15px;
 }
 
 .matBox {

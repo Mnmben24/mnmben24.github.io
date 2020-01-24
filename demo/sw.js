@@ -1,6 +1,6 @@
 // use a cacheName for cache versioning
-var cacheName = 'productCache_v1_5';
-var prevCacheName ='productCache_v1_4';
+var cacheName = 'productCache_v1_6';
+var prevCacheName ='productCache_v1_5';
 
 const cacheElements = [
     './css/styles.css',
@@ -28,7 +28,7 @@ self.addEventListener('install', function(e) {
 
 
 // when the browser fetches a url
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch',  function(event) {
     // either respond with the cached object or go ahead and fetch the actual url
     event.respondWith(
         caches.match(event.request).then(function(response) {
