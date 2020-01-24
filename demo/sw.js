@@ -33,11 +33,28 @@ self.addEventListener('install', function(e) {
 
 // when the browser fetches a url
 self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    fetch(event.request).catch(function() {
-      return caches.match(event.request);
-    })
-  );
+    // either respond with the cached object or go ahead and fetch the actual url
+    if(event.request.url.includes(".png"))
+    {
+      event.respondWith(
+          caches.match(event.request).then(function(response) {
+              if (response) {
+                  // retrieve from cache
+                  return response;
+              }
+              // fetch as normal
+              return fetch(event.request);
+          })
+      );
+    }
+    else
+    {
+      event.respondWith(
+        fetch(event.request).catch(function() {
+          return caches.match(event.request);
+        })
+      );
+  }
 });
 
 self.addEventListener('activate', function(event) {
