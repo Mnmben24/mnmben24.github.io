@@ -13,13 +13,13 @@ if ('serviceWorker' in navigator) {
 
 window.addEventListener('offline', function(e) {
     // queue up events for server
-    reg.update();
     console.log("You are offline");
     offline = true;
 }, false);
 
 window.addEventListener('online', function(e) {
     // queue up events for server
+    registr.update();
     console.log("You are online");
     offline = false;
 }, false);
