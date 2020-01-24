@@ -15,11 +15,13 @@ window.addEventListener('offline', function(e) {
     // queue up events for server
     console.log("You are offline");
     offline = true;
+    document.getElementsByTagName('body').style = "overscroll-behavior-y: contain;"
 }, false);
 
 window.addEventListener('online', function(e) {
     // queue up events for server
     registr.update();
     console.log("You are online");
+    document.getElementsByTagName('body').style = "overscroll-behavior-y: auto;"
     offline = false;
 }, false);
