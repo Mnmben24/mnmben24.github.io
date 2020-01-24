@@ -195,7 +195,7 @@
 
   function onChoice(id)
   {
-      setIDTest(id.substring(1));
+      setID(id.substring(1));
       var url = "ProductPage.html";
       window.location = url;
   }
