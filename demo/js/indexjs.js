@@ -105,7 +105,7 @@
               {
                 runOnLoad();
               }
-              else
+              else if(window.location.href.includes("index.html"))
               {
                 readAll();
               }
@@ -185,7 +185,7 @@
                     var cursor = event.target.result;
 
                     if (cursor) {
-                      var text = cursor.value.title
+                      var text = cursor.value.range
                       if (cursor.value.variation != "/.") text += " " + cursor.value.variation;
                         fillRangeBox(text, cursor.key)
                        cursor.continue();
