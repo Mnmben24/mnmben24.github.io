@@ -1,5 +1,5 @@
 // use a cacheName for cache versioning
-var cacheName = 'productCache_v1_11';
+var cacheName = 'productCache_v1_12';
 
 const cacheElements = [
     './css/styles.css',
@@ -10,7 +10,8 @@ const cacheElements = [
     './index.html',
     './ProductPage.html',
     './headTool.html',
-    './PressureBooster.html'
+    './PressureBooster.html',
+    './js/data.js'
 ];
 // during the install phase you usually want to cache static assets
 self.addEventListener('install', function(e) {
