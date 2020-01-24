@@ -3,11 +3,15 @@ var cacheName = 'productCache_v1_3';
 var prevCacheName ='productCache_v1_2';
 
 const cacheElements = [
-    './css/styles.css',
+    //'./css/styles.css',
     './css/fonts/roboto.woff',
     './offline.html',
     './images/peripheral_vane_qb1.png',
-    './images/single_stage_cpm.png'
+    './images/single_stage_cpm.png',
+    './index.html',
+    './ProductPage.html',
+    './headTool.html',
+    './PressureBooster.html'
 ];
 // during the install phase you usually want to cache static assets
 self.addEventListener('install', function(e) {
