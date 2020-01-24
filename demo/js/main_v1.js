@@ -14,6 +14,7 @@ if ('serviceWorker' in navigator) {
 window.addEventListener('offline', function(e) {
     // queue up events for server
     console.log("You are offline");
+    alert("You Are Offline");
     offline = true;
     document.getElementsByTagName('body').style = "overscroll-behavior-y: contain;"
 }, false);
