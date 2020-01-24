@@ -11,7 +11,9 @@ const cacheElements = [
     './ProductPage.html',
     './headTool.html',
     './PressureBooster.html',
-    './js/data.js'
+    './js/data1.js',
+    './js/main_v1.js',
+    './js/indexjs.js'
 ];
 // during the install phase you usually want to cache static assets
 self.addEventListener('install', function(e) {
