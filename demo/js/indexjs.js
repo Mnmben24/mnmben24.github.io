@@ -211,11 +211,6 @@
       tile.id = id;
       tile.className = "tile";
       tile.onclick = function(){onChoice(tile.id);};
-      if (count <= 4) {
-          tile.style.width = "90%";
-          tile.style.padding = "2%";
-          tile.style.margin = "10px 10px 5px 10px";
-      }
       var pic = document.createElement('img')
       pic.style.width = "matchParent";
       pic.style.height = "matchParent";
@@ -227,6 +222,12 @@
       h2.innerHTML = name;
       var div2 = document.createElement('div');
       div2.className = "content";
+      if (count <= 4) {
+          tile.style.width = "90%";
+          tile.style.padding = "2%";
+          tile.style.margin = "10px 10px 5px 10px";
+          txt.style.top = "84%";
+      }
       txt.appendChild(h2);
       txt.appendChild(div2);
       tile.appendChild(txt);
