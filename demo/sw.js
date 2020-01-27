@@ -1,5 +1,5 @@
 // use a cacheName for cache versioning
-var cacheName = 'productCache_v1_18';
+var cacheName = 'productCache_v1_19';
 
 const cacheElements = [
     './css/styles.css',
@@ -7,34 +7,6 @@ const cacheElements = [
     './offline.html',
     './images/peripheral_vane_qb1.png',
     './images/single_stage_cpm.png',
-    './images/fps_ss_series.png',
-    './images/fps_fs_series.png',
-    './images/subdrive_solar.png',
-    './images/svm_borehole_pump.png',
-    './images/fps_s_series_industrial.png',
-    './images/fps_s_series_agricultural.png',
-    './images/fps_s_series_multistage.png',
-    './images/encapsualted_submersible.png',
-    './images/j_class_sandhandler.png',
-    './images/svm_pressure_sets.png',
-    './images/fps_mh.png',
-    './images/fps_vr.png',
-    './images/mono_bp.png',
-    './images/mono_hand_pumps.png',
-    './images/mono_hd.png',
-    './images/ezstrip.png',
-    './images/mono_industrial_g_range.png',
-    './images/mono_industrial_m_range.png',
-    './images/orbit_gw.png',
-    './images/orbit_hop.png',
-    './images/orbit_power_pump.png',
-    './images/orbit_mini.png',
-    './images/mono_industrial_b_d.png',
-    './images/rotorflo.png',
-    './images/tsunami.png',
-    './images/compact_c.png',
-    './images/fps_sr.png',
-    './images/fps_t.png',
     './index.html',
     './ProductPage.html',
     './headTool.html',
@@ -47,6 +19,16 @@ const cacheElements = [
 // during the install phase you usually want to cache static assets
 self.addEventListener('install', function(e) {
     // once the SW is installed, go ahead and fetch the resources to make this work offline
+    var splt = cacheName.split("_");
+    var name = splt[0] + "_" + splt[1];
+    var no = splt[2];
+    for (i = 0; i <= no-1; i++)
+    {
+      try {
+      caches.delete(name + "_i");
+      }
+      catch (error e) {}
+    }
     e.waitUntil(
         caches.open(cacheName).then(function(cache) {
             return cache.addAll(cacheElements).then(function() {
