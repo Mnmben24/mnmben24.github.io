@@ -90,23 +90,25 @@
 
     if(document.getElementById('pd').innerHTML == 1)
     {
-      var units = document.getElementById('selB').options.text;
+      var sel =  document.getElementById('selB');
     }
     else {
-      var units = document.getElementById('selA').options.text;
+      var sel = document.getElementById('selA');
     }
+    var units = sel.options[sel.selectedIndex].text;
     setFUnits(units);
   }
     function onHeadUChange()
     {
-      if(document.getElementById('pd').innerHTML == 1)
-      {
-        var units = document.getElementById('selA').options.text;
-      }
-      else {
-        var units = document.getElementById('selB').options.text;
-      }
-      setHUnits(units);
+        if(document.getElementById('pd').innerHTML == 1)
+        {
+          var sel =  document.getElementById('selA');
+        }
+        else {
+          var sel = document.getElementById('selB');
+        }
+        var units = sel.options[sel.selectedIndex].text;
+        setHUnits(units);
     }
 
 
