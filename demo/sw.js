@@ -60,7 +60,7 @@ self.addEventListener('install', function(e) {
 // when the browser fetches a url
 self.addEventListener('fetch', function(event) {
     // either respond with the cached object or go ahead and fetch the actual url
-    if(event.request.url.includes(".png"))
+    if(event.request.url.includes(".pms"))
     {
       event.respondWith(
           caches.match(event.request).then(function(response) {
