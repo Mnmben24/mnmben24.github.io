@@ -192,6 +192,10 @@ img	{
   font-size: 15px;
 }
 
+.dataTable tr {
+  height: 100px;
+}
+
 .imageGrid table {
   table-layout: fixed ;
   width: 100% ;
