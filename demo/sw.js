@@ -27,7 +27,7 @@ self.addEventListener('install', function(e) {
       try {
       caches.delete(name + "_i");
       }
-      catch (error e) {}
+      catch (err) {}
     }
     e.waitUntil(
         caches.open(cacheName).then(function(cache) {
