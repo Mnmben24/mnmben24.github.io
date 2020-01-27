@@ -218,7 +218,7 @@ img	{
 }
 
 .imageGrid .tile {
-	width:13.5%;
+	width:100%;
   min-height: 11em;
 	line-height: 1.2;
 	display:inline-block;
@@ -294,7 +294,7 @@ html,body
 	transition-timing-function: ease;
 	transition: 0.4s;
 }
-*/
+
 
 @media (max-width: 1000px) {
 	.imageGrid .tile {
@@ -311,3 +311,4 @@ html,body
 		min-height:13em;
 	}
 }
+*/
