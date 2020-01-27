@@ -262,7 +262,7 @@ html,body
 .imageGrid .tile .textWrapper .h2 {
   font-size: 20px;
 }
-
+/*
 .imageGrid .tile:hover {
 	transform: translateY(-8px);
 	text-shadow: 12px 12px 12px #000;
@@ -273,11 +273,11 @@ html,body
 .imageGrid .tile:active	{
 	transform: translateY(8px);
 }
-
+*/
 .imageGrid .tile .textWrapper .content {
 	display: none;
 }
-
+/*
 .imageGrid .tile:hover .textWrapper .content {
 	display: block;
 }
@@ -288,7 +288,7 @@ html,body
 	transition-timing-function: ease;
 	transition: 0.4s;
 }
-
+*/
 
 @media (max-width: 1000px) {
 	.imageGrid .tile {

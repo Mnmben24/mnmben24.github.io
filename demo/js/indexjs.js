@@ -11,6 +11,7 @@
 
            var connected = false;
            var count = 0;
+           var counter = 0;
 
            function getID()
            {
@@ -204,7 +205,8 @@
       var url = "ProductPage.html";
       window.location = url;
   }
-
+var row;
+var col;
 
   function addTile(id,name,img) {
       var tile = document.createElement('div');
@@ -223,15 +225,32 @@
       var div2 = document.createElement('div');
       div2.className = "content";
       if (count <= 4) {
+          row = document.createElement('tr');
+          col = document.createElement('td');
           tile.style.width = "90%";
           tile.style.padding = "2%";
           tile.style.margin = "10px 10px 5px 10px";
           txt.style.top = "84%";
+      }
+      else
+      {
+        if (counter%2 == 0)
+        {
+          row = document.createElement('tr');
+          col = document.createElement('td');
+        }
+        else
+        {
+          col = document.createElement('td');
+        }
+        counter = (counter++)%2;
       }
       txt.appendChild(h2);
       txt.appendChild(div2);
       tile.appendChild(txt);
       tile.appendChild(pic)
       h2.align = "center"
-      document.getElementById("grid").appendChild(tile);
+      col.appendChild(tile);
+      row.appendChild(col);
+      document.getElementById("grid").appendChild(row);
   }
