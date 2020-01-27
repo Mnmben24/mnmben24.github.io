@@ -201,9 +201,7 @@ img	{
 }
 
 .bodyMain .logo {
-  padding-top: 15px;
   padding-bottom: 15px;
-  margin-left: 26vw;
   background-color: black;
 }
 
@@ -219,7 +217,7 @@ img	{
 
 .imageGrid .tile {
 	width:100%;
-  min-height: 11em;
+  min-height: 30vh;
 	line-height: 1.2;
 	display:inline-block;
 	background-size: cover;
