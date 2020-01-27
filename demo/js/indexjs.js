@@ -243,7 +243,7 @@ var col;
         {
           col = document.createElement('td');
         }
-        counter = counter++;
+        counter++;
       }
       txt.appendChild(h2);
       txt.appendChild(div2);
