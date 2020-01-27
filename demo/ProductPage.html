@@ -181,9 +181,6 @@
       }
       var fUnits = getFUnits();
       var hUnits = getHUnits();
-      if (fUnits != undefined) { setSelectBox(sA,fUnits)};
-      if (hUnits != undefined) { setSelectBox(sB,hUnits)};
-
 
       createElems("1",cursor.value.var1,cursor.value.var1n);
       createElems("2",cursor.value.var2,cursor.value.var2n);
@@ -225,7 +222,8 @@
       document.getElementById('labelB').innerHTML = "Flow Rate";
       document.getElementById('labelA').innerHTML = "Total Head";
       document.getElementById('pd').innerHTML = pd;
-
+      setSelectBox(document.getElementById('selB'),getFUnits())
+      setSelectBox(document.getElementById('selA'),getHUnits())
     }
     else {
         document.getElementById('selA').innerHTML = "<option>m³/h</option> <option>l/min</option>    <option>l/sec</option>    <option>US GPM</option>    <option>lmp GPM</option>    <option>l/h</option>    <option>cfm</option>";
@@ -233,16 +231,20 @@
         document.getElementById('labelA').innerHTML = "Flow Rate";
         document.getElementById('labelB').innerHTML = "Total Head";
         document.getElementById('pd').innerHTML = pd;
+        setSelectBox(document.getElementById('selA'),getFUnits())
+        setSelectBox(document.getElementById('selB'),getHUnits())
     }
+
+
   }
 
   function indexMatchingText(ele, text) {
     for (var i=0; i<ele.length;i++) {
-        if (ele[i].innerHTML === text){
+        if (ele.options[i].text === text){
             return i;
         }
     }
-    return undefined;
+    return 1;
 }
 
   function headTool()
@@ -250,11 +252,11 @@
     if(document.getElementById('pd').innerHTML == 1)
     {
       var flow = document.getElementById('inputB').value;
-      var units = document.getElementById('selB').options.text;
+      var units = document.getElementById('selB').options[document.getElementById('selB').selectedIndex].text;
     }
     else {
       var flow = document.getElementById('inputA').value;
-      var units = document.getElementById('selA').options.text;
+      var units = document.getElementById('selA').options[document.getElementById('selA').selectedIndex].text;
     }
     setFlow(flow);
     setFUnits(units);
