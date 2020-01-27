@@ -38,9 +38,9 @@ function indexMatchingText(ele, text) {
 function backClick()
 {
 	var flow = document.getElementById('flowRate').value;
-	var fUnits = document.getElementById('flowSel').text;
+	var fUnits = document.getElementById('flowSel').options[document.getElementById('flowSel').selectedIndex].text;
 	var head = document.getElementById('tHead').value;
-	var hUnits = document.getElementById('headUnits').text;
+	var hUnits = "m";
 	setFlow(flow);
 	setHead(head);
 	setFUnits(fUnits);
