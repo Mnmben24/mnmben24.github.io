@@ -192,7 +192,13 @@ img	{
   font-size: 15px;
 }
 
-.
+.imageGrid table {
+  table-layout: fixed ;
+  width: 100% ;
+}
+.imagegrid table td {
+  width: 50% ;
+}
 
 .bodyMain .logo {
   padding-top: 15px;
