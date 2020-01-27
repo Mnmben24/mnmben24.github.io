@@ -4,7 +4,7 @@ const pumpIndexList = [
         "PD": "0",
         "caption": "",
         "img": "single_stage_cpm.png",
-        "range": "CPM",
+        "range": "SINGLE STAGE",
         "subtitle": "SINGLE STAGE",
         "title": "Single Stage Pumps",
         "var1": "Flow Rate: max 120 L/min (7.2m³/h) | Head: max 59m",
