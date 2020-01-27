@@ -224,13 +224,10 @@ var col;
       h2.innerHTML = name;
       var div2 = document.createElement('div');
       div2.className = "content";
-      tile.style.width = "90%";
-      tile.style.padding = "2%";
-      tile.style.margin = "10px 10px 5px 10px";
-      txt.style.top = "84%";
       if (count <= 4) {
           row = document.createElement('tr');
           col = document.createElement('td');
+          txt.style.top = "84%";
       }
       else
       {
