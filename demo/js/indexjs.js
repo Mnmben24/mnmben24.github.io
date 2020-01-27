@@ -228,6 +228,7 @@ var col;
           row = document.createElement('tr');
           col = document.createElement('td');
           txt.style.top = "84%";
+          tile.style.min-width = "50vh";
       }
       else
       {
