@@ -58,17 +58,7 @@
     openAOL();
   }
 });
-if(document.getElementById('pd').innerHTML == 1)
-{
-  var flow = document.getElementById('inputB').value;
-  var units = document.getElementById('selB').options.text;
-}
-else {
-  var flow = document.getElementById('inputA').value;
-  var units = document.getElementById('selA').options.text;
-}
-setFlow(flow);
-setFUnits(units);
+
   function onFlowChange()
   {
     if(document.getElementById('pd').innerHTML == 1)
