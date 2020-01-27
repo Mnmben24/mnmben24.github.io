@@ -16,8 +16,6 @@
     var id = getID();
     var flow = getFlow();
     var head = getHead();
-    var fUnits = getFUnits();
-    var hUnits = getHUnits();
     if (flow == undefined) { flow = 0;};
     if (head == undefined) { head = 0;};
     document.getElementById('inputA').value = flow;
@@ -183,6 +181,23 @@
 
       document.getElementById('id').innerHTML = cursor.value.ID;
       document.getElementById('pd').innerHTML = cursor.value.PD;
+      var pd = document.getElementById('pd').innerHTML;
+      comboboxs(pd);
+
+      if (pd == 1)
+      {
+        var sA = document.getElementById("selA");
+        var sB = document.getElementById("selB");
+      }
+      else {
+        var sB = document.getElementById("selA");
+        var sA = document.getElementById("selB");
+      }
+      var fUnits = getFUnits();
+      var hUnits = getHUnits();
+      if (fUnits != undefined) { setSelectBox(sA,fUnits)};
+      if (hUnits != undefined) { setSelectBox(sB,hUnits)};
+
 
       createElems("1",cursor.value.var1,cursor.value.var1n);
       createElems("2",cursor.value.var2,cursor.value.var2n);
@@ -190,7 +205,6 @@
       createElems("4",cursor.value.var4,cursor.value.var4n);
       createElems("5",cursor.value.var5,cursor.value.var5n);
 
-      comboboxs(document.getElementById('pd').innerHTML);
 
 
       document.getElementById('head1').innerHTML = cursor.value.title;
