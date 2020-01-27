@@ -35,8 +35,8 @@
       var sB = document.getElementById("selA");
       var sA = document.getElementById("selB");
     }
-    if (fUnits != undefined) { sA.selectedIndex = indexMatchingText(sA,fUnits)};
-    if (hUnits != undefined) { sB.selectedIndex = indexMatchingText(sB,fUnits);};
+    if (fUnits != undefined) { setSelectBox(sA,fUnits)};
+    if (hUnits != undefined) { setSelectBox(sB,hUnits)};
   }
 
   var offline;
@@ -159,17 +159,8 @@
           document.getElementById('caption').innerHTML = cursor.value.caption;
       }
       var pmpSel = document.getElementById('pumpRange');
-      var max = pmpSel.length;
-      var index;
-      var j;
       var id = cursor.value.ID;
-      for (j = 0; j < max; j++)
-      {
-        if (id == pmpSel.options[j].value) {
-          index = j;
-        }
-      }
-      pmpSel.selectedIndex = index;
+      setSelectBox(pmpSel,id);
   }
 
   function comboboxs(pd)
@@ -224,6 +215,20 @@
     window.location = url;
   }
 
+  function setSelectBox(sBox, text)
+  {
+      var max = sBox.length;
+      var index;
+      var j;
+      var id = getID();
+      for (j = 0; j < max; j++)
+        if (id == sBox.options[j].value) {
+          index = j;
+        }
+      }
+      sBox.selectedIndex = index;
+  }
+
   function openAOL()
   {
     if (offline)
@@ -253,9 +258,9 @@
     }
 
     var fil = "pFilter2";
-    var aolURL = "http://www.aquateconline.com/aolweb/Login.aspx?Login="
-    var url; // = aolURL+comp+"&pQin=" + fR + "&cUQin=" + fRU + "&pHTot=" + tH + "&cUHin=" + tHU + "&" + fil + "=" + out + "&LoginType=MobileApp";
-    fRU = fRU.replace("m³/h","m3/h");
+    var url;
+    fRU = fRU.replace("m³/h","m3/hr");
+    rn = rn.replace(" ","_");
     url = "http://www.aquateconline.com/aolbeta/Login.aspx?Login=AQS&pQin=" + fR + "&cUQin=" + fRU + "&pHTot=" + tH + "&cUHin=" + tHU + "&" + fil + "=" + rn + "&LoginType=MobileApp"
     window.location = url;
     }
