@@ -347,7 +347,7 @@
 									<label class="lbls" id="labelA">Flow Rate</label>
                 </td>
                 <td>
-									<input type="number" class="txtBox" id="inputA" onchange="onFlowChange();"></input>
+									<input type="number" class="txtBox" id="inputA" onchange="onFlowChange();" onClick="this.setSelectionRange(0, this.value.length)"></input>
                 </td>
                 <td>
                   <div class="spacingDiv3"/>
@@ -362,7 +362,7 @@
 									<label class="lbls" id="labelB">Total Head</label>
                 </td>
                 <td>
-									<input type="number" class="txtBox" id="inputB" onchange="onHeadChange();"></input>
+									<input type="number" class="txtBox" id="inputB" onchange="onHeadChange();" onClick="this.setSelectionRange(0, this.value.length)"></input>
                 </td>
                 <td>
                   <div class="spacingDiv3"/>
