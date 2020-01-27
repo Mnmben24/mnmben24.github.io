@@ -253,7 +253,7 @@ html,body
 
 .imageGrid .tile .textWrapper {
 	text-align: center;
-	width: 95%;
+	width: 100%;
 	position: absolute;
 	top: 60%;
   color: #CCC;
