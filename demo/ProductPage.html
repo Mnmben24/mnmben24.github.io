@@ -59,6 +59,30 @@
   }
 });
 
+  function onFlowChange()
+  {
+
+  	var flow = document.getElementById('flow').value;
+  	setFlow(flow);
+  }
+
+  function onHeadChange()
+  {
+  	var head = document.getElementById('Head').value;
+  	setHead(Dhead);
+  }
+
+  function onFlowUChange()
+  {
+    var sA = document.getElementById('selA');
+    setFUnits(sA.options[sA.selectedIndex].text);
+  }
+    function onHeadUChange()
+    {
+      var sB = document.getElementById('selB');
+      setHUnits(sB.options[sB.selectedIndex].text);
+    }
+
 
   function pageUpdate()
   {
@@ -294,13 +318,13 @@
 									<label class="lbls" id="labelA">Flow Rate</label>
                 </td>
                 <td>
-									<input type="number" class="txtBox" id="inputA"></input>
+									<input type="number" class="txtBox" id="inputA" onchange="onFlowChange();"></input>
                 </td>
                 <td>
                   <div class="spacingDiv3"/>
                 </td>
                 <td>
-                  <select class="unitsBox" id="selA">
+                  <select class="unitsBox" id="selA"  onchange="onFlowUChange();">
                   </select>
                 </td>
               </tr>
@@ -309,13 +333,13 @@
 									<label class="lbls" id="labelB">Total Head</label>
                 </td>
                 <td>
-									<input type="number" class="txtBox" id="inputB"></input>
+									<input type="number" class="txtBox" id="inputB" onchange="onHeadChange();"></input>
                 </td>
                 <td>
                   <div class="spacingDiv3"/>
                 </td>
                 <td>
-                  <select class="unitsBox" id="selB">
+                  <select class="unitsBox" id="selB"  onchange="onHeadUChange();">
                   </select>
 								</td>
 							</tr>
