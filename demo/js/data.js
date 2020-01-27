@@ -4,7 +4,7 @@ const pumpIndexList = [
         "PD": "0",
         "caption": "",
         "img": "single_stage_cpm.png",
-        "range": "CPM",
+        "range": "SINGLE STAGE",
         "subtitle": "CPM",
         "title": "Single Stage Pumps",
         "var1": "Flow Rate: max 120 L/min (7.2m³/h) | Head: max 59m",
@@ -25,7 +25,7 @@ const pumpIndexList = [
         "caption": "",
         "img": "peripheral_vane_qb1.png",
         "range": "Peripheral Vane",
-        "subtitle": "QB",
+        "subtitle": "PERIPHEAL VANE",
         "title": "Peripheral Vane Pump",
         "var1": "Flow Rate: max 50 L/min (3m³/h) | Head: max 60m",
         "var1n": "Range of Performance",
@@ -40,4 +40,4 @@ const pumpIndexList = [
         "variation": ""
     }
 ];3
-const versionNumber = 14;
+const versionNumber = 15;
