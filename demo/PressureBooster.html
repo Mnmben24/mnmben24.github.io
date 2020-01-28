@@ -177,15 +177,13 @@ function calculations() {
             </td>
           </tr>
 				<!---->
-			</table>
-		</div>
-		<br/>
+        <tr>
+          <td colspan = "4">
 		<div class="btnDiv" align="center">
 			<input type ="button" value="Calculate" class="button" id="calcBtn" onclick="calculations()"></input>
 		</div>
-		<br/>
-		<div>
-			<table width="100%">
+  </td>
+</tr>
 				<tr>
 					<td>
 						<label class="lbls">Flow Rate</label>
@@ -229,13 +227,16 @@ function calculations() {
 						<label class ="lbl">m</label>
           </div>
 					</td>
-				</tr>
-			</table>
-		</div>
-		<br/>
+        </tr>
+          <tr>
+          <td colspan="4">
 			<div class="btnDiv" align="center">
 				<input type="button" value="Save and Return" class="button" id="saveBtn" onclick="backClick()"></input>
 			</div>
+      </td>
+    </tr>
+  </table>
+</div>
 			<label id="id" style="visibility:hidden;"></label>	<!-- 	 -->
 	</form>
 </div>
