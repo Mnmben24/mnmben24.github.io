@@ -67,7 +67,7 @@ form {
 }
 }
 
-.lbl {
+label .lbl {
 	font-size: 35px;
 	text-align: center;
   width: 50px;
