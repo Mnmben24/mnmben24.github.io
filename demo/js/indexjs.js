@@ -116,9 +116,14 @@
               {
                 runOnLoad();
               }
-              else if(window.location.href.includes("index.html") || window.location.href.includes("web_app_manifest"))
+              else if(window.location.href.includes("index.html"))
               {
                 readAll();
+              }
+
+              else if(window.location.href.includes("indexHome.html") || window.location.href.includes("web_app_manifest"))
+              {
+                readAllCategories();
               }
            };
 
@@ -127,6 +132,7 @@
               try
               {
                 db.deleteObjectStore("PumpDatabase");
+                db.deleteObjectStore("PumpCategories");
               }
               catch(error)
               {}
@@ -135,6 +141,12 @@
 
               for (var i in PumpDatabase) {
                  objectStore.add(PumpDatabase[i]);
+              }
+              var objectStore = db.createObjectStore("PumpCategories", {keyPath: "ID"});
+              var transaction = event.target.transaction
+
+              for (var i in PumpCategories) {
+                 objectStore.add(PumpCategories[i]);
               }
               connected =true;
            }
