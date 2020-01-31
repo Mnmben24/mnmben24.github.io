@@ -154,7 +154,7 @@
            function readInfo(indx) {
              var tx = db.transaction("PumpDatabase","readwrite")
              var objectStore = tx.objectStore("PumpDatabase");
-             objectStore.openCursor(CStr(CInt(indx)-1)).onsuccess = function(event) {
+             objectStore.openCursor(toString(parseInt(indx)-1)).onsuccess = function(event) {
                 var cursor = event.target.result;
 
                 if (cursor) {
