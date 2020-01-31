@@ -218,10 +218,12 @@
            }
 
            function readAllCategories() {
-                 var objectStore = db.transaction("PumpCategories").objectStore("PumpCategories");
-                 var tx = objectStore.openCursor()
-                 tx.onsuccess = function(event) {
-                    var cursor = event.target.result;
+             var countReq;
+              var objectStore = db.transaction("PumpCategories").objectStore("PumpCategories");
+              countReq = objectStore.count();
+              countReq.onsuccess = function () {count = countReq.result};
+              objectStore.openCursor().onsuccess = function(event) {
+                var cursor = event.target.result;
 
                     if (cursor) {
                         addTile("c" + cursor.value.ID, cursor.value.Name, cursor.value.img)
