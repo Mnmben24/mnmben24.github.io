@@ -10,7 +10,7 @@
  <script src="./js/data.js"></script>
   <script src="./js/indexjs.js"></script>
   <script>
-  function runOnLoad()
+  window.onLoad = function runOnLoad()
   {
     var urlParam = new URLSearchParams(window.location.search);
     var id = getID();
