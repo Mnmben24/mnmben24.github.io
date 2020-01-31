@@ -166,7 +166,7 @@
       var ur = "./images/" + cursor.value.img;
       document.getElementById('imgDiv').src  =  ur;
 
-      document.getElementById('id').innerHTML = cursor.value.ID;
+      document.getElementById('id').innerHTML = cursor.key;
       document.getElementById('pd').innerHTML = cursor.value.PD;
       var pd = document.getElementById('pd').innerHTML;
       comboboxs(pd);
@@ -209,7 +209,7 @@
           document.getElementById('caption').innerHTML = cursor.value.caption;
       }
       var pmpSel = document.getElementById('pumpRange');
-      var id = cursor.value.ID;
+      var id = cursor.key;
       setID(id);
       setSelectBox(pmpSel,id);
   }

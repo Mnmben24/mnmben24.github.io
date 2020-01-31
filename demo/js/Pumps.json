@@ -26,7 +26,7 @@ PumpDatabase = [
         "PD": "0",
         "caption": "",
         "img": "single_stage_cpm.png",
-        "range": "CPM",
+        "range": "Single Stage",
         "subtitle": "CPM",
         "title": "Single Stage Pumps",
         "var1": "CPM200 & CPM1XX:|Flow Rate: max 120 L/min (7.2m^3/h) | Head: max 59m | CPM0XX:|Flow Rate: max 450 L/min (27m^3/h) | Head: max 34m",
@@ -43,4 +43,4 @@ PumpDatabase = [
     }
 ]
 
-versionNumber = 21;
+versionNumber = 22;
