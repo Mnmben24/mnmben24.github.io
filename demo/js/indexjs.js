@@ -278,7 +278,7 @@ var col;
         {
           row = document.createElement('tr');
           col = document.createElement('td');
-          if (counter == count)
+          if ((counter++) == count)
           {
             col.colspan = "2";
             col.style.padding = "0vw 25vw 0vw 25vw";
@@ -288,7 +288,6 @@ var col;
         {
           col = document.createElement('td');
         }
-        counter++;
       }
       txt.appendChild(h2);
       txt.appendChild(div2);
