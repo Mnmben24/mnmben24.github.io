@@ -196,7 +196,7 @@
                  var cursor = event.target.result;
 
                  if (cursor) {
-                       addTile("m" + cursor.value.ID,cursor.value.title,cursor.value.img)
+                   if(cursor.value.Category = getCategory())  addTile("m" + cursor.value.ID,cursor.value.title,cursor.value.img);
                     cursor.continue();
                  }
               };
@@ -242,7 +242,7 @@
     }
     else if (id.startsWith("c"))
     {
-        setCategoy(id.substring(1));
+        setCategory(id.substring(1));
         var url = "index.html";
         window.location = url;
     }
@@ -284,6 +284,10 @@ var col;
           col = document.createElement('td');
         }
         counter++;
+        if (counter == count)
+        {
+          col.colspan = "2"
+        }
       }
       txt.appendChild(h2);
       txt.appendChild(div2);
