@@ -278,16 +278,17 @@ var col;
         {
           row = document.createElement('tr');
           col = document.createElement('td');
+          if (counter == count)
+          {
+            col.colspan = "2";
+            col.style.padding = "0vw 25vw 0vw 25vw";
+          }
         }
         else
         {
           col = document.createElement('td');
         }
         counter++;
-        if (counter == count)
-        {
-          col.colspan = "2"
-        }
       }
       txt.appendChild(h2);
       txt.appendChild(div2);
