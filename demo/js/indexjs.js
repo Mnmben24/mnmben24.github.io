@@ -23,6 +23,16 @@
              setCookie("id",nID);
            }
 
+           function getCategory()
+           {
+             return getCookie("category");
+           }
+
+           function setCategory(nCat)
+           {
+             setCookie("category",nCat);
+           }
+
            function getFlow()
            {
              return getCookie("flow");
@@ -116,11 +126,11 @@
               db = event.target.result;
               try
               {
-                db.deleteObjectStore("pumps");
+                db.deleteObjectStore("PumpDatabase");
               }
               catch(error)
               {}
-              var objectStore = db.createObjectStore("pumps", {keyPath: "ID"});
+              var objectStore = db.createObjectStore("PumpDatabase", {keyPath: "ID"});
               var transaction = event.target.transaction
 
               for (var i in PumpDatabase) {
@@ -130,9 +140,9 @@
            }
 
            function readInfo(indx) {
-             var tx = db.transaction("pumps","readwrite")
-             var objectStore = tx.objectStore("pumps");
-             objectStore.openCursor(indx).onsuccess = function(event) {
+             var tx = db.transaction("PumpDatabase","readwrite")
+             var objectStore = tx.objectStore("PumpDatabase");
+             objectStore.openCursor(indx-1).onsuccess = function(event) {
                 var cursor = event.target.result;
 
                 if (cursor) {
@@ -145,8 +155,8 @@
            }
 
            function getVar(indx) {
-             var tx = db.transaction("pumps","readwrite")
-             var objectStore = tx.objectStore("pumps");
+             var tx = db.transaction("PumpDatabase","readwrite")
+             var objectStore = tx.objectStore("PumpDatabase");
              objectStore.openCursor(indx).onsuccess = function(event) {
                 var cursor = event.target.result;
 
@@ -167,21 +177,21 @@
 
            function readAll() {
              var countReq;
-              var objectStore = db.transaction("pumps").objectStore("pumps");
+              var objectStore = db.transaction("PumpDatabase").objectStore("PumpDatabase");
               countReq = objectStore.count();
               countReq.onsuccess = function () {count = countReq.result};
               objectStore.openCursor().onsuccess = function(event) {
                  var cursor = event.target.result;
 
                  if (cursor) {
-                       addTile("m" + cursor.key,cursor.value.title,cursor.value.img)
+                       addTile("m" + cursor.value.ID,cursor.value.title,cursor.value.img)
                     cursor.continue();
                  }
               };
            }
 
            function readAllProducts() {
-                 var objectStore = db.transaction("pumps").objectStore("pumps");
+                 var objectStore = db.transaction("PumpDatabase").objectStore("PumpDatabase");
                  var tx = objectStore.openCursor()
                  tx.onsuccess = function(event) {
                     var cursor = event.target.result;
@@ -189,21 +199,39 @@
                     if (cursor) {
                       var text = cursor.value.range
                       if (cursor.value.variation != "/.") text += " " + cursor.value.variation;
-                        fillRangeBox(text, cursor.key)
+                        fillRangeBox(text, cursor.value.id)
                        cursor.continue();
                     }
                  };
-                 tx.oncomplete = function(event)
-                 {
+           }
 
-                 }
+           function readAllCategories() {
+                 var objectStore = db.transaction("PumpCategories").objectStore("PumpCategories");
+                 var tx = objectStore.openCursor()
+                 tx.onsuccess = function(event) {
+                    var cursor = event.target.result;
+
+                    if (cursor) {
+                        addTile("c" + cursor.value.ID, cursor.value.Name, cursor.value.img)
+                       cursor.continue();
+                    }
+                 };
            }
 
   function onChoice(id)
   {
+    if (id.startsWith("m"))
+    {
       setID(id.substring(1));
       var url = "ProductPage.html";
       window.location = url;
+    }
+    else if (id.startsWith("c"))
+    {
+        setCategoy(id.substring(1));
+        var url = "index.html";
+        window.location = url;
+    }
   }
 var row;
 var col;
