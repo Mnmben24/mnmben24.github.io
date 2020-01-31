@@ -196,7 +196,7 @@
                  var cursor = event.target.result;
 
                  if (cursor) {
-                   if(cursor.value.Category = getCategory())  addTile("m" + cursor.value.ID,cursor.value.title,cursor.value.img);
+                   if(cursor.value.Category == getCategory())  addTile("m" + cursor.value.ID,cursor.value.title,cursor.value.img);
                     cursor.continue();
                  }
               };
