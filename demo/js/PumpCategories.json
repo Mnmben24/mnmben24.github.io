@@ -17,7 +17,7 @@ PumpCategories = [
     {
         "ID": "4",
         "Name": "Submersible Range",
-        "img": "submersible.png"
+        "img": "submersible_c.png"
     },
     {
         "ID": "5",
