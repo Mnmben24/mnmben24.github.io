@@ -274,11 +274,12 @@ var col;
       }
       else
       {
-        if (counter%2 == 0)
+        counter++;
+        if (counter%2 == 1)
         {
           row = document.createElement('tr');
           col = document.createElement('td');
-          if ((counter++) == count)
+          if (counter == count)
           {
             col.colspan = "2";
             col.style.padding = "0vw 25vw 0vw 25vw";
@@ -287,7 +288,6 @@ var col;
         else
         {
           col = document.createElement('td');
-          counter++;
         }
       }
       txt.appendChild(h2);
