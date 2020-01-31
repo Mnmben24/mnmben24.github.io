@@ -123,8 +123,8 @@
               var objectStore = db.createObjectStore("pumps", {keyPath: "ID"});
               var transaction = event.target.transaction
 
-              for (var i in pumpIndexList) {
-                 objectStore.add(pumpIndexList[i]);
+              for (var i in PumpDatabase) {
+                 objectStore.add(PumpDatabase[i]);
               }
               connected =true;
            }

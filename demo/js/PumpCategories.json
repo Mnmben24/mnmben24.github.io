@@ -1,0 +1,27 @@
+PumpCategories = [
+    {
+        "ID": "1",
+        "Name": "Borehole",
+        "img": "borehole_c.png"
+    },
+    {
+        "ID": "2",
+        "Name": "Solar Solutions",
+        "img": "solar_c.png"
+    },
+    {
+        "ID": "3",
+        "Name": "End Suction Pumps",
+        "img": "end_suction_c.png"
+    },
+    {
+        "ID": "4",
+        "Name": "Submersible Range",
+        "img": "submersible.png"
+    },
+    {
+        "ID": "5",
+        "Name": "Vertical Multi Stage",
+        "img": "vertical_ms_c.png"
+    }
+]
