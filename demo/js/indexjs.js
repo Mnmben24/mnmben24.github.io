@@ -282,7 +282,7 @@ var col;
           if (counter == count)
           {
             col.colspan = "2";
-            col.style.padding = "0vw 25vw 0vw 25vw";
+            tile.style.padding = "0vw 25vw 0vw 25vw";
           }
         }
         else
