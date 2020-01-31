@@ -287,6 +287,7 @@ var col;
         else
         {
           col = document.createElement('td');
+          counter++;
         }
       }
       txt.appendChild(h2);
