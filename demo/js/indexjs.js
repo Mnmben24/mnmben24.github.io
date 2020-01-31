@@ -270,7 +270,7 @@ var col;
           row = document.createElement('tr');
           col = document.createElement('td');
           txt.style.top = "84%";
-          tile.style.minHeight = "50vh";
+          tile.style.minHeight = "42vh";
       }
       else
       {
@@ -282,7 +282,7 @@ var col;
           if (counter == count)
           {
             col.colspan = "2";
-            tile.style.padding = "0vw 25vw 0vw 25vw";
+            tile.style.margin = "0vh 25vw";
           }
         }
         else
