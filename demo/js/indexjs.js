@@ -196,7 +196,7 @@
                  var cursor = event.target.result;
 
                  if (cursor) {
-                   if(cursor.value.Category == getCategory())  addTile("m" + cursor.value.ID,cursor.value.title,cursor.value.img);
+                   if(cursor.value.Category == getCategory())  addTile("m" + cursor.key, cursor.value.title, cursor.value.img);
                     cursor.continue();
                  }
               };
@@ -211,7 +211,7 @@
                     if (cursor) {
                       var text = cursor.value.range
                       if (cursor.value.variation != "/.") text += " " + cursor.value.variation;
-                        fillRangeBox(text, cursor.value.id)
+                        fillRangeBox(text, cursor.key)
                        cursor.continue();
                     }
                  };
@@ -226,7 +226,7 @@
                 var cursor = event.target.result;
 
                     if (cursor) {
-                        addTile("c" + cursor.value.ID, cursor.value.Name, cursor.value.img)
+                        addTile("c" + cursor.key, cursor.value.Name, cursor.value.img)
                        cursor.continue();
                     }
                  };
