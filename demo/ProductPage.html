@@ -286,6 +286,7 @@
 
   function openAOL()
   {
+    var Config = require('./js/config.json');
     if (offline)
     {
       alert("Cannot Connect to AOL Web. Check your Internet Settings");
@@ -304,10 +305,10 @@
 
     var nOut = rn.replace(" " + varB,"").replace(" ","_");
 
-    var fil = "pFilter2";
+    //var fil = "pFilter2";
     var url;
     fRU = fRU.replace("m³/h","m3/hr");
-    url = "http://www.aquateconline.com/aolbeta/Login.aspx?Login=AQS&pQin=" + fR + "&cUQin=" + fRU + "&pHTot=" + tH + "&cUHin=" + tHU + "&" + fil + "=" + nOut + "&LoginType=MobileApp"
+    url = Config.url + Config.company + "&pQin=" + fR + "&cUQin=" + fRU + "&pHTot=" + tH + "&cUHin=" + tHU + "&" + Config.filter + "=" + nOut + "&LoginType=MobileApp"
     window.location = url;
     }
   }
