@@ -286,7 +286,9 @@
 
   function openAOL()
   {
-    var Config = require('./js/config.json');
+        $.getJSON("./js/config.json", function(json) {
+        console.log(json); // this will show the info it in firebug console
+    });
     if (offline)
     {
       alert("Cannot Connect to AOL Web. Check your Internet Settings");
