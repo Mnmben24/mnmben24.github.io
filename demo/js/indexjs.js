@@ -166,23 +166,14 @@
                };
            }
 
-           function getVar(indx) {
-             var tx = db.transaction("PumpDatabase","readwrite")
-             var objectStore = tx.objectStore("PumpDatabase");
-             objectStore.openCursor(indx).onsuccess = function(event) {
-                var cursor = event.target.result;
-
-                if (cursor) {
-                    if (cursor.value.variation == null || cursor.value.variation == "./" || cursor.value.variation == "null")
+           function getVar() {
+            var variation = getCookie("variation");
+                    if (variation == null || variation == "./" || variation == "null")
                     {
                       return false;
                     }
                 }
                 return true;
-             };
-               objectStore.openCursor().onerror = function(event) {
-                   alert("Error connecting to database")
-               };
            }
 
 

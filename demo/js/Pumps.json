@@ -39,8 +39,8 @@ PumpDatabase = [
         "var4n": "Construction Characteristics",
         "var5": "",
         "var5n": "",
-        "variation": "CPM"
+        "variation": "4 Inch"
     }
 ]
 
-versionNumber = 23;
+versionNumber = 24;

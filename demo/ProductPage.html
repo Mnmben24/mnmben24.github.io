@@ -212,6 +212,7 @@
       var id = cursor.key;
       setID(id);
       setSelectBox(pmpSel,id);
+      setCookie("variation" , cursor.value.variation);
   }
 
   function comboboxs(pd)
@@ -299,17 +300,10 @@
 
     var rn = document.getElementById('pumpRange').options[ document.getElementById('pumpRange').selectedIndex].text;
 
-    var varB = getVar(id);
-    var out;
+    var varB = getCookie("variation");
 
-    if(varB == "true")
-    {
-      var splt = rn.split(" ");
-      out = splt[0];
-    }
-    else {
-      out = rn.replace(" ","_");
-    }
+    var nOut = rn.replace(" " + varB,"");
+    out = rn.replace(" ","_");
 
     var fil = "pFilter2";
     var url;
