@@ -172,7 +172,6 @@
                     {
                       return false;
                     }
-                }
                 return true;
            }
 
