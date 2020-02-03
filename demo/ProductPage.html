@@ -10,6 +10,7 @@
 <script src="./js/PumpCategories.json"></script>
 <script src="./js/Pumps.json"></script>
 <script src="./js/indexjs.js"></script>
+<script src="./js/config.json"></script>
   <script type="text/javascript">
   function runOnLoad()
   {
@@ -286,9 +287,7 @@
 
   function openAOL()
   {
-        $.getJSON("./js/config.json", function(json) {
-        console.log(json); // this will show the info it in firebug console
-    });
+
     if (offline)
     {
       alert("Cannot Connect to AOL Web. Check your Internet Settings");
@@ -310,7 +309,7 @@
     //var fil = "pFilter2";
     var url;
     fRU = fRU.replace("m³/h","m3/hr");
-    url = Config.url + Config.company + "&pQin=" + fR + "&cUQin=" + fRU + "&pHTot=" + tH + "&cUHin=" + tHU + "&" + Config.filter + "=" + nOut + "&LoginType=MobileApp"
+    url = config.url + config.company + "&pQin=" + fR + "&cUQin=" + fRU + "&pHTot=" + tH + "&cUHin=" + tHU + "&" + config.filter + "=" + nOut + "&LoginType=MobileApp"
     window.location = url;
     }
   }
