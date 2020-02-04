@@ -28,7 +28,6 @@ self.addEventListener('install', function(e) {
       caches.delete(prevCacheName);
       }
       catch (err) {}
-    }
     e.waitUntil(
         caches.open(cacheName).then(function(cache) {
             return cache.addAll(cacheElements).then(function() {
