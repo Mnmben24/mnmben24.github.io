@@ -2,5 +2,5 @@
 config = {
     "url": "http://www.aquateconline.com/aolbeta/Login.aspx?Login=",
     "company": "AQS",
-    "filter": "pFIlter2"
+    "filter": "pFilter2"
  }
