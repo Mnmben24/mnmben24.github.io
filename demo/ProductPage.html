@@ -12,20 +12,7 @@
 <script src="./js/indexjs.js"></script>
 <script src="./js/config.json"></script>
   <script type="text/javascript">
-  function runOnLoad()
-  {
-    var urlParam = new URLSearchParams(window.location.search);
-    var id = getID();
-    var flow = getFlow();
-    var head = getHead();
-    if (flow == undefined) { flow = 0;};
-    if (head == undefined) { head = 0;};
-    document.getElementById('inputA').value = flow;
-    document.getElementById('inputB').value = head;
 
-    fillRangeBoxes();
-    chngDetails(id);
-  }
 
   var offline;
 
