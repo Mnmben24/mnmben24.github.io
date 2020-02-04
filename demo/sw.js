@@ -1,5 +1,6 @@
 // use a cacheName for cache versioning
-var cacheName = 'productCache_v1_21';
+var cacheName = 'productCache_v1_22';
+var prevCacheName = 'productCachev1_21';
 
 const cacheElements = [
     './css/styles.css',
@@ -10,7 +11,7 @@ const cacheElements = [
     './images/borehole_c.png',
     './images/end_suction_c.png',
     './images/submersible_c.png',
-    './images/end_suction_c.png',
+    './images/solar_c.png',
     './images/vertical_ms_c.png',
     './index.html',
     './ProductPage.html',
@@ -22,13 +23,9 @@ const cacheElements = [
 // during the install phase you usually want to cache static assets
 self.addEventListener('install', function(e) {
     // once the SW is installed, go ahead and fetch the resources to make this work offline
-    var splt = cacheName.split("_");
-    var name = splt[0] + "_" + splt[1];
-    var no = splt[2];
-    for (i = 0; i <= no-1; i++)
-    {
+
       try {
-      caches.delete(name + "_i");
+      caches.delete(prevCacheName);
       }
       catch (err) {}
     }
