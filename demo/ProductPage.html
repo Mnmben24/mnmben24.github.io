@@ -290,6 +290,7 @@
     var rn = document.getElementById('pumpRange').options[ document.getElementById('pumpRange').selectedIndex].text;
 
     var varB = getCookie("variation");
+    varB = IIF(varB = ""," ",varB);
 
     var nOut = rn.replace(" " + varB,"").replace(" ","_");
 
