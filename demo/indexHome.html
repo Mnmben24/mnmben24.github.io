@@ -15,6 +15,7 @@
     <script src="./js/Pumps.json"></script>
     <script src="./js/indexjs.js"></script>
     <script type="text/javascript">
+        setTimeout(function () {
           var urlParam = new URLSearchParams(window.location.search);
           var forwardNo = urlParam.get('page');
           if(forwardNo != null && forwardNo != "null")
@@ -27,6 +28,9 @@
           setCategory(0);
           setID(0);
         }
+
+      }, 500);
+
       </script>
 </head>
 
