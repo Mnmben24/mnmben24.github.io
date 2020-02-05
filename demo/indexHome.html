@@ -19,7 +19,7 @@
           var urlParam = new URLSearchParams(window.location.search);
           var forwardNo = urlParam.get('page');
           var prev = document.refferer;
-          if(forwardNo != null && forwardNo != "null" && prev.contains('ProductPage.html'))
+          if(forwardNo != null && forwardNo != "null")// && prev.contains('ProductPage.html'))
           {
             setID(forwardNo);
             var url = "ProductPage.html";
