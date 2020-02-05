@@ -30,9 +30,8 @@
              {
                setQR(false);
              }
-
-             fillRangeBoxes();
-             chngDetails(id);
+             readAllProducts();
+             readInfo(id);
            }
 
            function getID()

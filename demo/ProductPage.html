@@ -104,11 +104,6 @@
     chngDetails(productNo);
   }
 
-  function fillRangeBoxes()
-  {
-    readAllProducts();
-  }
-
   function fillRangeBox(titl,val)
   {
       var sel = document.getElementById("pumpRange");
@@ -144,12 +139,7 @@
         document.getElementById(divName).style.display = "hidden";
     }
   }
-
-  function chngDetails(id)
-  {
-    readInfo(id);
-  }
-
+  
   function changeDetails(cursor)
   {
       var ur = "./images/" + cursor.value.img;
