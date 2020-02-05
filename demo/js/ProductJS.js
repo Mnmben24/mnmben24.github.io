@@ -103,7 +103,7 @@ catch (err){}
   }
     list = document.getElementById('pumpRange');
     productNo = list.options[list.selectedIndex].value;
-    chngDetails(productNo);
+    readInfo(productNo);
   }
 
   function fillRangeBox(titl,val)
@@ -192,7 +192,7 @@ catch (err){}
       var pmpSel = document.getElementById('pumpRange');
       var id = cursor.key;
       setID(id);
-      setCategory(cursor.value.category);
+      setCategory(cursor.value.Category);
       setSelectBox(pmpSel,id);
       setCookie("variation" , cursor.value.variation);
   }
