@@ -13,6 +13,25 @@
            var count = 0;
            var counter = 0;
 
+           function runOnLoad()
+           {
+             var urlParam = new URLSearchParams(window.location.search);
+             var id = getID();
+             var flow = getFlow();
+             var head = getHead();
+             if (flow == undefined) { flow = 0;};
+             if (head == undefined) { head = 0;};
+             document.getElementById('inputA').value = flow;
+             document.getElementById('inputB').value = head;
+             if (getQR())
+             {
+               setQR(false);
+             }
+
+             fillRangeBoxes();
+             chngDetails(id);
+           }
+
            function getID()
            {
              return getCookie("id");
