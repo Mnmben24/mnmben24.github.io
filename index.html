@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html class="js no-touchevents" lang="en">
 <head>
-    <script type="text/javascript">
     <script src="./demo/js/indexjs.js"></script>
     <script type="text/javascript">
           var urlParam = new URLSearchParams(window.location.search);
-          var forwardNo = urlParam.get('page');
+          var forwardNo = urlParam.get('productID');
             setCategory(0);
             setID(0);
           if(forwardNo != null && forwardNo != "null")
@@ -14,8 +13,6 @@
           }
           var url = "indexHome.html";
           window.location = url;
-
-      </script>
     </script>
 </head>
 </html>
