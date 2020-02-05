@@ -189,7 +189,7 @@
                 var cursor = event.target.result;
 
                 if (cursor) {
-                  changeDetails(cursor);
+                  ProductPage.changeDetails(cursor);
                 }
              };
                objectStore.openCursor().onerror = function(event) {
@@ -232,7 +232,7 @@
                     if (cursor) {
                       var text = cursor.value.range
                       if (cursor.value.variation != "/.") text += " " + cursor.value.variation;
-                        fillRangeBox(text, cursor.key)
+                        ProductPage.fillRangeBox(text, cursor.key)
                        cursor.continue();
                     }
                  };
