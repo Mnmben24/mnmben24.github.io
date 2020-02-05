@@ -7,12 +7,32 @@
 <link rel="manifest" href="./manifest.json">
 <meta name="theme-color" content="#000000">
 <link rel="icon" sizes="144x144" href="./Logo/logo-144.png">
+</head>
+<body>
 <script src="./js/PumpCategories.json"></script>
 <script src="./js/Pumps.json"></script>
 <script src="./js/indexjs.js"></script>
 <script src="./js/config.json"></script>
   <script type="text/javascript">
 
+  function runOnLoad()
+  {
+    var urlParam = new URLSearchParams(window.location.search);
+    var id = getID();
+    var flow = getFlow();
+    var head = getHead();
+    if (flow == undefined) { flow = 0;};
+    if (head == undefined) { head = 0;};
+    document.getElementById('inputA').value = flow;
+    document.getElementById('inputB').value = head;
+    if (getQR())
+    {
+      setQR(false);
+    }
+
+    fillRangeBoxes();
+    chngDetails(id);
+  }
 
   var offline;
 
@@ -305,8 +325,6 @@
 
   </script>
 
-</head>
-<body>
 <div class="bodyMain">
 <div id= "logoDiv" class="logo" onclick="window.location.href='index.html'"><img src="./Logo/logoMain.png" border="0" alt="Company Logo" style="padding: 3vh 0 0 25vw; width: 50vw;"></div>
 	<form>
