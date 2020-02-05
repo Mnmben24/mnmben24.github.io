@@ -18,6 +18,27 @@
   }
 });
 
+function runOnLoad()
+{
+  var urlParam = new URLSearchParams(window.location.search);
+  var id = getID();
+  var flow = getFlow();
+  var head = getHead();
+  if (flow == undefined) { flow = 0;};
+  if (head == undefined) { head = 0;};
+  try{
+  document.getElementById('inputA').value = flow;
+  document.getElementById('inputB').value = head;
+}
+catch (err){}
+  if (getQR())
+  {
+    setQR(false);
+  }
+  readAllProducts();
+  readInfo(id);
+}
+
   function onFlowChange()
   {
     if(document.getElementById('pd').innerHTML == 1)
