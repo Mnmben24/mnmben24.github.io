@@ -21,8 +21,11 @@
              var head = getHead();
              if (flow == undefined) { flow = 0;};
              if (head == undefined) { head = 0;};
+             try{
              document.getElementById('inputA').value = flow;
              document.getElementById('inputB').value = head;
+           }
+           catch (err){}
              if (getQR())
              {
                setQR(false);
