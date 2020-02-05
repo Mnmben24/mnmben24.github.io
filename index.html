@@ -3,7 +3,6 @@
 <head>
     <script src="./demo/js/indexjs.js"></script>
     <script type="text/javascript">
-          setTimeout(function() {
           var urlParam = new URLSearchParams(window.location.search);
           var forwardNo = urlParam.get('productID');
             setCategory(0);
@@ -14,7 +13,6 @@
           }
           var url = "demo/indexHome.html";
           window.location = url;
-        },5000);
     </script>
 </head>
 </html>
