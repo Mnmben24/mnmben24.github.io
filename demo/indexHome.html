@@ -15,24 +15,13 @@
     <script src="./js/Pumps.json"></script>
     <script src="./js/indexjs.js"></script>
     <script type="text/javascript">
-        setTimeout(function () {
-          var urlParam = new URLSearchParams(window.location.search);
-          var forwardNo = urlParam.get('page');
-          var prev = document.refferer;
-          if(forwardNo != null && forwardNo != "null")// && prev.contains('ProductPage.html'))
-          {
-            setID(forwardNo);
-            var url = "ProductPage.html";
-            window.location = url;
-          }
-          else {
-          setCategory(0);
-          setID(0);
+      setTimeout(function(){
+        if (getID() > 0)
+        {
+          window.location = "ProductPage.html"
         }
-
-      }, 500);
-
-      </script>
+      },500);
+    </script>
 </head>
 
 <body>

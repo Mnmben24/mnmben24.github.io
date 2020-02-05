@@ -2,10 +2,20 @@
 <html class="js no-touchevents" lang="en">
 <head>
     <script type="text/javascript">
-        var urlParam = new URLSearchParams(window.location.search);
-        var forwardNo = urlParam.get('page');
-        var url = "demo/indexHome.html?page=" + forwardNo;
-        window.location = url;
+    <script src="./js/indexjs.js"></script>
+    <script type="text/javascript">
+          var urlParam = new URLSearchParams(window.location.search);
+          var forwardNo = urlParam.get('page');
+            setCategory(0);
+            setID(0);
+          if(forwardNo != null && forwardNo != "null")
+          {
+            setID(forwardNo);
+          }
+          var url = "indexHome.html";
+          window.location = url;
+
+      </script>
     </script>
 </head>
 </html>
