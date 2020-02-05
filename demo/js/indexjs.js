@@ -1,4 +1,4 @@
-
+/*
            //prefixes of implementation that we want to test
            window.indexedDB = window.indexedDB || window.mozIndexedDB ||
            window.webkitIndexedDB || window.msIndexedDB;
@@ -8,7 +8,7 @@
            window.webkitIDBTransaction || window.msIDBTransaction;
            window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange ||
            window.msIDBKeyRange
-
+*/
            var connected = false;
            var count = 0;
            var counter = 0;
@@ -127,7 +127,7 @@
           document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
         }
 
-
+/*
            if (!window.indexedDB) {
               window.alert("Your browser doesn't support a stable version of IndexedDB.")
            }
@@ -250,7 +250,7 @@
                     }
                  };
            }
-
+*/
   function onChoice(id)
   {
     if (id.startsWith("m"))
