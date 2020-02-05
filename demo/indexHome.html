@@ -18,7 +18,8 @@
         setTimeout(function () {
           var urlParam = new URLSearchParams(window.location.search);
           var forwardNo = urlParam.get('page');
-          if(forwardNo != null && forwardNo != "null")
+          var prev = document.refferer;
+          if(forwardNo != null && forwardNo != "null" && prev.contains('ProductPage.html'))
           {
             setID(forwardNo);
             var url = "ProductPage.html";
