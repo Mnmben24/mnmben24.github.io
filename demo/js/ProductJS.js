@@ -31,10 +31,8 @@ function runOnLoad()
   document.getElementById('inputB').value = head;
 }
 catch (err){}
-  if (getQR())
-  {
-    setQR(false);
-  }
+
+  setQR(false);
   readAllProducts();
   readInfo(id);
 }
