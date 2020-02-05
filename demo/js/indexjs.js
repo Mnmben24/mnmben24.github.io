@@ -23,6 +23,10 @@
              if (head == undefined) { head = 0;};
              document.getElementById('inputA').value = flow;
              document.getElementById('inputB').value = head;
+             if (getQR())
+             {
+               setQR(false);
+             }
 
              fillRangeBoxes();
              chngDetails(id);
@@ -46,6 +50,16 @@
            function setCategory(nCat)
            {
              setCookie("category",nCat);
+           }
+
+           function getQR()
+           {
+             return getCookie("qr");
+           }
+
+           function setQR(bQR)
+           {
+             setCookie("qr",bQR);
            }
 
            function getFlow()

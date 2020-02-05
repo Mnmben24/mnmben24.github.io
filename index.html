@@ -7,9 +7,11 @@
           var forwardNo = urlParam.get('productID');
             setCategory(0);
             setID(0);
+            setQR(false);
           if(forwardNo != null && forwardNo != "null")
           {
             setID(forwardNo);
+            setQR(true);
           }
           var url = "demo/indexHome.html";
           window.location = url;
