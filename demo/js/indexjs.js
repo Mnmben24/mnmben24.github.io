@@ -176,7 +176,7 @@ var col;
           col = document.createElement('td');
           txt.style.top = "84%";
           tile.style.minHeight = "40vh";
-          tableGrid.style.width = "85%";
+          tile.style.width = "85";
           row.style.textAlign = "center";
       }
       else
