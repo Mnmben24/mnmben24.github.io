@@ -7,6 +7,11 @@ window.onload = function onLoad()
 	document.getElementById('opSel').selectedIndex = 1;
 };
 
+function loading() {
+  setTimeout( function() {
+    window.location = getCookie("url");
+  }, 2000);
+}
 function backClick()
 {
 	var CFlow = document.getElementById('flow').value;
