@@ -213,6 +213,7 @@ var col;
     txt.className = "textWrapper";
     var h2 = document.createElement('h2');
     h2.innerHTML = "No Products Found";
+    h2.style = "color: white; text-align: start; font-size: 20px;"
     txt.appendChild(h2);
     h2.align = "center";
     col.appendChild(txt);
