@@ -1,6 +1,0 @@
-<!DOCTYPE html>
-<html class="js no-touchevents" lang="en">
-<head>
-    <meta http-equiv="refresh" content="1;URL='demo/index.html'">
-</head>
-</html>
