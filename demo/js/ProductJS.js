@@ -293,7 +293,6 @@ catch (err){}
     fRU = fRU.replace("m³/h","m3/hr");
     url = config.url + config.company + "&pQin=" + fR + "&cUQin=" + fRU + "&pHTot=" + tH + "&cUHin=" + tHU + "&" + config.filter + "=" + nOut + "&LoginType=MobileApp";
     setCookie("url",url);
-    window.open("LoaderPage.html","_blank");
-    window.location = url;
+    window.location = "LoaderPage.html" ;
     }
   }

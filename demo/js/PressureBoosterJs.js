@@ -8,8 +8,9 @@ window.onload = function onLoad()
 };
 
 function pdfLoader() {
+  window.open(url,"_blank");
   setTimeout( function() {
-    window.close();
+    window.history.back();
   }, 5000);
 }
 function backClick()
