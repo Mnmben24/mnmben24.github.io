@@ -18,7 +18,7 @@ PumpDatabase = [
         "var4n": "Construction Characteristics",
         "var5": "",
         "var5n": "",
-        "variation": "QB"
+        "variation": ""
     },
     {
         "Category": "3",
@@ -39,29 +39,8 @@ PumpDatabase = [
         "var4n": "Construction Characteristics",
         "var5": "",
         "var5n": "",
-        "variation": "CPM"
-    },
-    {
-        "Category": "1",
-        "ID": "3",
-        "PD": "0",
-        "caption": "",
-        "img": "borehole_3inch.png",
-        "range": "Borehole",
-        "subtitle": "SDM",
-        "title": "3\" Borehole Pump",
-        "var1": "For water supply from boreholes, wells or reservoirs|Continuous duty rated products for use in domestic,farming and irrigation applications.\n",
-        "var1n": "Applications",
-        "var2": "Maximum fluid temperature:  up to +35°C|Maximum sand content: 0.25%|Minimum well diameter: 3”",
-        "var2n": "Operating Conditions",
-        "var3": "Replaceable Pump and Motor.|Single-Phase: 220 - 240V/50Hz|Equipped with start control box or digital auto-control box.|Curve tolerance according to ISO 9906",
-        "var3n": "Motor and Pump",
-        "var4": "1 Yeat",
-        "var4n": "Warranty",
-        "var5": "",
-        "var5n": "",
-        "variation": "SDM"
+        "variation": ""
     }
 ]
 
-versionNumber = 26;
+versionNumber = 25;
