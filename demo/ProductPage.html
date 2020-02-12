@@ -16,12 +16,20 @@
 <script src="./js/indexeddb.js"></script>
 <script src="./js/config.json"></script>
 <div class="bodyMain">
-<div id= "logoDiv" class="logo" onclick="window.location.href='index.html'"><img src="./Logo/logoMain.png" border="0" alt="Company Logo" style="padding: 3vh 0 0 25vw; width: 50vw;"></div>
+<div id= "logoDiv" class="logo" onclick="window.location.href='indexHome.html'"><img src="./Logo/logoMain.png" border="0" alt="Company Logo" style="padding: 3vh 0 0 25vw; width: 50vw;"></div>
 	<form>
 		<div class="header">
 		<h2 id="head1"></h2>
 		<h3 id="head2"></h3>
 		<p id="caption"></p>
+		<a href='index.html' onclick='return reset()'>See Similar Products</a>
+		<script type='text/javascript'>
+		function reset()
+		{
+			setID(0);
+		  return true;
+		}
+		</script>
     <label id="id" style="visibility:hidden;" ></label> <!--  -->
     <label id="pd" style="visibility:hidden;" ></label> <!--  -->
 		</div>
