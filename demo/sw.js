@@ -1,6 +1,6 @@
 // use a cacheName for cache versioning
-var cacheName = 'productCache_v1_22';
-var prevCacheName = 'productCachev1_21';
+var cacheName = 'productCache_v1_23';
+var prevCacheName = 'productCachev1_22';
 
 const cacheElements = [
     './css/styles.css',
@@ -23,6 +23,8 @@ const cacheElements = [
     './js/config.json',
     './js/cookiesjs.js',
     './js/ProductJS.js',
+    './js/HeadToolJs.js',
+    './js/PressureBoosterJs.js',
     './js/PumpCategories.json',
     './js/Pumps.json'
 ];
