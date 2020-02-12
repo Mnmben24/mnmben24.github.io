@@ -102,7 +102,10 @@
                  var cursor = event.target.result;
 
                  if (cursor) {
-                   if(cursor.value.Category == getCategory()) firstTime = false; addTile("m" + cursor.key, cursor.value.title, cursor.value.img);
+                   if(cursor.value.Category == getCategory())
+                   { firstTime = false;
+                     addTile("m" + cursor.key, cursor.value.title, cursor.value.img);
+                   }
                     cursor.continue();
                  }
                  else
