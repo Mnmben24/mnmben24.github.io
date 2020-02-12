@@ -8,9 +8,7 @@ window.onload = function onLoad()
 };
 
 function loading() {
-  setTimeout( function() {
-    window.location = getCookie("url");
-  }, 2000);
+  
 }
 function backClick()
 {
