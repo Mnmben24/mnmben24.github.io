@@ -155,6 +155,7 @@ var row;
 var col;
 
   function addTile(id,name,img) {
+    var tableGrid =   document.getElementById("grid");
       var tile = document.createElement('div');
       tile.id = id;
       tile.className = "tile";
@@ -174,7 +175,9 @@ var col;
           row = document.createElement('tr');
           col = document.createElement('td');
           txt.style.top = "84%";
-          tile.style.minHeight = "42vh";
+          tile.style.minHeight = "40vh";
+          tableGrid.style.width = "85%";
+          row.style.textAlign = "center";
       }
       else
       {
@@ -201,7 +204,7 @@ var col;
       h2.align = "center";
       col.appendChild(tile);
       row.appendChild(col);
-      document.getElementById("grid").appendChild(row);
+      tableGrid.appendChild(row);
   }
 
 
