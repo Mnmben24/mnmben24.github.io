@@ -9,8 +9,7 @@ window.onload = function onLoad()
 
 function pdfLoader() {
   setTimeout( function() {
-    //window.history.back();
-      window.open(getCookie('url'),"_blank");
+    window.history.back();
   }, 5000);
 }
 function backClick()
