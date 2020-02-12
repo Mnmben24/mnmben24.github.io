@@ -37,6 +37,11 @@
   align-content: center;
 }
 
+a {
+  color: blue;
+  font-size: 25px;
+}
+
 .bodyMain	{
   align-content: center;
 	font-family:	"Calibri";
