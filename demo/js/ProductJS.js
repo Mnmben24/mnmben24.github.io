@@ -291,8 +291,7 @@ catch (err){}
     //var fil = "pFilter2";
     var url;
     fRU = fRU.replace("m³/h","m3/hr");
-    url = config.url + config.company + "&pQin=" + fR + "&cUQin=" + fRU + "&pHTot=" + tH + "&cUHin=" + tHU + "&" + config.filter + "=" + nOut + "&LoginType=MobileApp"
-    //window.location = url;
+    url = config.url + config.company + "&pQin=" + fR + "&cUQin=" + fRU + "&pHTot=" + tH + "&cUHin=" + tHU + "&" + config.filter + "=" + nOut + "&LoginType=MobileApp";
     window.location = "LoaderPage.html";
     }
   }
