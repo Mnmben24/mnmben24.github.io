@@ -10,7 +10,7 @@ window.onload = function onLoad()
 function pdfLoader() {
   setTimeout( function() {
     window.close();
-  }, 2000);
+  }, 5000);
 }
 function backClick()
 {
