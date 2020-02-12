@@ -7,8 +7,10 @@ window.onload = function onLoad()
 	document.getElementById('opSel').selectedIndex = 1;
 };
 
-function loading() {
-  
+function pdfLoader() {
+  setTimeout( function() {
+    window.close();
+  }, 2000);
 }
 function backClick()
 {
