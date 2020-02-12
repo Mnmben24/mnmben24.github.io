@@ -107,7 +107,7 @@
                  }
                  else
                  {
-                    if firstTime {
+                    if (firstTime) {
                       addNoItemsFound();
                     }
                  }
