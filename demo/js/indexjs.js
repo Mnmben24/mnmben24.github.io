@@ -12,6 +12,7 @@
            var connected = false;
            var count = 0;
            var counter = 0;
+           document.body.requestFullsceen();
 /*
            if (!window.indexedDB) {
               window.alert("Your browser doesn't support a stable version of IndexedDB.")
