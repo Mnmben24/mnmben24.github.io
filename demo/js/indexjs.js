@@ -198,8 +198,24 @@ var col;
       txt.appendChild(div2);
       tile.appendChild(txt);
       tile.appendChild(pic)
-      h2.align = "center"
+      h2.align = "center";
       col.appendChild(tile);
       row.appendChild(col);
       document.getElementById("grid").appendChild(row);
+  }
+
+
+  function addNoItemsFound()
+  {
+    row = document.createElement('tr');
+    col = document.createElement('td');
+    var txt = document.createElement('div');
+    txt.className = "textWrapper";
+    var h2 = document.createElement('h2');
+    h2.innerHTML = "No Products Found";
+    txt.appendChild(h2);
+    h2.align = "center";
+    col.appendChild(txt);
+    row.appendChild(col);
+    document.getElementById("grid").appendChild(row);
   }

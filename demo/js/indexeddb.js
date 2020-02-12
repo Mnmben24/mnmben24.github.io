@@ -12,6 +12,7 @@
            var connected = false;
            var count = 0;
            var counter = 0;
+           var firstTime = true;
 
 
            if (!window.indexedDB) {
@@ -103,6 +104,12 @@
                  if (cursor) {
                    if(cursor.value.Category == getCategory())  addTile("m" + cursor.key, cursor.value.title, cursor.value.img);
                     cursor.continue();
+                 }
+                 else
+                 {
+                    if firstTime {
+                      addNoItemsFound();
+                    }
                  }
               };
            }
