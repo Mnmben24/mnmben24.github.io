@@ -46,7 +46,7 @@ PumpDatabase = [
         "ID": "3",
         "PD": "0",
         "caption": "",
-        "img": "borehole_3inch.png",
+        "img": "Borehole_3inch.png",
         "range": "Borehole",
         "subtitle": "SDM",
         "title": "3\" Borehole Pump",
@@ -64,4 +64,4 @@ PumpDatabase = [
     }
 ]
 
-versionNumber = 26;
+versionNumber = 27;
