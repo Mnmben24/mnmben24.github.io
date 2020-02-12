@@ -9,8 +9,8 @@ window.onload = function onLoad()
 
 function pdfLoader() {
   setTimeout( function() {
-    window.history.back();
-  }, 5000);
+    window.close();
+  }, 3000);
 }
 function backClick()
 {
