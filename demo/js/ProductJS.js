@@ -295,6 +295,6 @@ catch (err){}
     setCookie("url",url);
     //window.loaction = url;
     //window.open("LoaderPage.html","_blank");
-    window.location = "forwardOn.html";
+    window.location = "LoaderPage.html";
     }
   }

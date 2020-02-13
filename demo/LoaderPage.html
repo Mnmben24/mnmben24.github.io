@@ -10,20 +10,43 @@
   <script src="./js/cookiesjs.js"></script>
 	<script src="./js/config.json"></script>
   <script src="./js/PressureBoosterJs.js"></script>
-</head>
-<script type="text/javascript">
-  setTimeout( function() {
-    window.close();
-  }, 3000);
+<style>
+    #content{
+        display: none;
+    }
+    #loader-wrapper{
+        display: block;
+    }
+</style>
+<script>
+      function switchFunction()
+      {
+          document.getElementById("content").style.display = "block";
+          document.getElementById("loader_wrapper").style.display = "none";
+      }
+
+    setTimeout( function() {
+      switchFunction();
+    }, 5000);
+
+    function LoadURL()
+    {
+      var url = getCookie("url");
+      document.getElementById("content").href= url;
+    }
+
+    LoadURL();
 </script>
 <body>
   <div class="bodyMain">
-  <div id="loader-wrapper">
+  <div id="loader_wrapper">
   <div id="loader"></div>
 
   <div class="loader-section section-left"></div>
   <div class="loader-section section-right"></div>
 </div>
+<div id="content">
+  </div>
 </div>
 </body>
 </html>
