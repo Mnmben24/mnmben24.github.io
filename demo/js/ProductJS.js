@@ -291,7 +291,7 @@ catch (err){}
     //var fil = "pFilter2";
     var url;
     fRU = fRU.replace("m³/h","m3/hr");
-    url = "https://docs.google.com/gview?embedded=true&url=" +config.url + config.company + "&pQin=" + fR + "&cUQin=" + fRU + "&pHTot=" + tH + "&cUHin=" + tHU + "&" + config.filter + "=" + nOut + "&LoginType=MobileApp";
+    url = config.url + config.company + "&pQin=" + fR + "&cUQin=" + fRU + "&pHTot=" + tH + "&cUHin=" + tHU + "&" + config.filter + "=" + nOut + "&LoginType=MobileApp";
     setCookie("url",url);
     //window.open("LoaderPage.html","_blank");
     window.location = url;
