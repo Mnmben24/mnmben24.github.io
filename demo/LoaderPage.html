@@ -28,7 +28,7 @@
       switchFunction();
     }, 5000);
 
-    function LoadURL()
+    window.onload = function LoadURL()
     {
       var url = getCookie("url");
       var inHTML = '<object type="text/html" data="' + url + '"> </object>'
@@ -37,7 +37,7 @@
 
 </script>
 <body>
-  <div class="bodyMain" onload="LoadURL();">
+  <div class="bodyMain">
   <div id="content">
     </div>
   <div id="loader_wrapper">
