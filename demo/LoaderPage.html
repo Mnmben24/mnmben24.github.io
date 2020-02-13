@@ -32,21 +32,22 @@
     function LoadURL()
     {
       var url = getCookie("url");
-      document.getElementById("content").href= url;
+      var inHTML = '<object type="text/html" data="' + url + '"> </object>'
+      document.getElementById("content").innerHTML = inHTML;
     }
 
     LoadURL();
 </script>
 <body>
   <div class="bodyMain">
+  <div id="content">
+    </div>
   <div id="loader_wrapper">
   <div id="loader"></div>
 
   <div class="loader-section section-left"></div>
   <div class="loader-section section-right"></div>
 </div>
-<div id="content">
-  </div>
 </div>
 </body>
 </html>
