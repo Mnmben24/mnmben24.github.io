@@ -18,22 +18,7 @@
     }
 </style>
 <script>
-      function switchFunction()
-      {
-          document.getElementById("content").style.display = "block";
-          document.getElementById("loader_wrapper").style.display = "none";
-      }
-
-    setTimeout( function() {
-      switchFunction();
-    }, 5000);
-
-    window.onload = function LoadURL()
-    {
-      var url = getCookie("url");
-      var inHTML = '<object type="text/html" data="' + url + '"> </object>'
-      document.getElementById("content").innerHTML = inHTML;
-    }
+      
 
 </script>
 <body>

@@ -266,8 +266,15 @@ catch (err){}
       sBox.selectedIndex = index;
   }
 
+  function switchFunction()
+  {
+      document.getElementById("content").style.display = "none";
+      document.getElementById("loader_wrapper").style.display = "block";
+  }
+
   function openAOL()
   {
+      switchFunction();
 
     if (offline)
     {
@@ -296,5 +303,7 @@ catch (err){}
     window.loaction = url;
     //window.open("LoaderPage.html","_blank");
     //window.location = "LoaderPage.html";
+    document.getElementById("content").style.display = "block";
+    document.getElementById("loader_wrapper").style.display = "none";
     }
   }
