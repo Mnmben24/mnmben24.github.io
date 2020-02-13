@@ -292,8 +292,9 @@ catch (err){}
     var url;
     fRU = fRU.replace("m³/h","m3/hr");
     url = config.url + config.company + "&pQin=" + fR + "&cUQin=" + fRU + "&pHTot=" + tH + "&cUHin=" + tHU + "&" + config.filter + "=" + nOut + "&LoginType=MobileApp";
-    //setCookie("url",url);
-    window.loaction = url;
-    window.open("LoaderPage.html","_blank");
+    setCookie("url",url);
+    //window.loaction = url;
+    //window.open("LoaderPage.html","_blank");
+    window.location = "forwardOn.html";
     }
   }
