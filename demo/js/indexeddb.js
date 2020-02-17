@@ -75,7 +75,6 @@
              objectStore.openCursor(indx).onsuccess = function(event) {
                 var cursor = event.target.result;
                 var jsonStr = "";
-                var jsn = {};
 
 
                 if (cursor) {
@@ -88,9 +87,9 @@
                   "','var4' : '" + cursor.value.var4 + "','var4n' : '" + cursor.value.var4n +
                   "','var5' : '" + cursor.value.var5 + "','var5n' : '" + cursor.value.var5 + "'}";
 
-                  var temp = {'Category' : cursor.value.Category ,'ID' : cursor.value.ID,'PD' : cursor.value.PD,
+                  var jsn = {'Category' : cursor.value.Category ,'ID' : cursor.value.ID,'PD' : cursor.value.PD,
                   'caption' : cursor.value.caption, 'img' : cursor.value.img , 'range' : cursor.value.range,
-                  'subtitle' : cursor.value.subtitle, 'title' :  cursor.value.title' '''variation' : cursor.value.variation ,
+                  'subtitle' : cursor.value.subtitle, 'title' :  cursor.value.title,'variation' : cursor.value.variation ,
                   'var1' : cursor.value.var1, 'var1n' : cursor.value.var1n,
                   'var2' : cursor.value.var2, 'var2n' : cursor.value.var2n,
                   'var3' : cursor.value.var3 ,'var3n' : cursor.value.var3n,
