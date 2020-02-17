@@ -92,9 +92,9 @@
                   'subtitle' : cursor.value.subtitle, 'title' :  cursor.value.title,'variation' : cursor.value.variation ,
                   'var1' : cursor.value.var1, 'var1n' : cursor.value.var1n,
                   'var2' : cursor.value.var2, 'var2n' : cursor.value.var2n,
-                  'var3' : cursor.value.var3 ,'var3n' : cursor.value.var3n,
-                  'var4' : cursor.value.var4 ,'var4n' : cursor.value.var4n,
-                  'var5' : cursor.value.var5 ,'var5n' : cursor.value.var5}
+                  'var3' : cursor.value.var3, 'var3n' : cursor.value.var3n,
+                  'var4' : cursor.value.var4, 'var4n' : cursor.value.var4n,
+                  'var5' : cursor.value.var5, 'var5n' : cursor.value.var5n }
                     }
                     var jsonStrNew = JSON.stringify(jsn);
                   changeDetails(jsonStr);
