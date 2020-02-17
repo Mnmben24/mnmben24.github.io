@@ -95,7 +95,6 @@
                   'var3' : cursor.value.var3, 'var3n' : cursor.value.var3n,
                   'var4' : cursor.value.var4, 'var4n' : cursor.value.var4n,
                   'var5' : cursor.value.var5, 'var5n' : cursor.value.var5n };
-                    }
                     var jsonStrNew = JSON.stringify(jsn);
                   changeDetails(jsonStr);
                 }
