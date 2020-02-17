@@ -30,6 +30,7 @@
            request.onsuccess = function(event) {
               db = request.result;
               console.log("success: "+ db);
+              alert(pumpDeets.id)
               if(window.location.href.includes("ProductPage.html"))
               {
                 runOnLoad();
