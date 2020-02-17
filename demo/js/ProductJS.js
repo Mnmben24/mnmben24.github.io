@@ -144,11 +144,12 @@ catch (err){}
 
   function changeDetails(cursor)
   {
-      var ur = "./images/" + cursor.value.img;
+      var jsonParse = JSON.parse(cursor);
+      var ur = "./images/" + jsonParse.img;
       document.getElementById('imgDiv').src  =  ur;
 
-      document.getElementById('id').innerHTML = cursor.key;
-      document.getElementById('pd').innerHTML = cursor.value.PD;
+      document.getElementById('id').innerHTML = jsonParse.ID;
+      document.getElementById('pd').innerHTML = jsonParse.PD;
       var pd = document.getElementById('pd').innerHTML;
       comboboxs(pd);
 
@@ -164,37 +165,37 @@ catch (err){}
       var fUnits = getFUnits();
       var hUnits = getHUnits();
 
-      createElems("1",cursor.value.var1,cursor.value.var1n);
-      createElems("2",cursor.value.var2,cursor.value.var2n);
-      createElems("3",cursor.value.var3,cursor.value.var3n);
-      createElems("4",cursor.value.var4,cursor.value.var4n);
-      createElems("5",cursor.value.var5,cursor.value.var5n);
+      createElems("1",jsonParse.var1,jsonParse.var1n);
+      createElems("2",jsonParse.var2,jsonParse.var2n);
+      createElems("3",jsonParse.var3,jsonParse.var3n);
+      createElems("4",jsonParse.var4,jsonParse.var4n);
+      createElems("5",jsonParse.var5,jsonParse.var5n);
 
 
 
-      document.getElementById('head1').innerHTML = cursor.value.title;
-      if(cursor.value.subtitle == "/." || cursor.value.subtitle == null)
+      document.getElementById('head1').innerHTML = jsonParse.title;
+      if(jsonParse.subtitle == "/." || jsonParse.subtitle == null)
       {
         document.getElementById('head2').innerHTML = " ";
       }
       else
       {
-        document.getElementById('head2').innerHTML = cursor.value.subtitle;
+        document.getElementById('head2').innerHTML = jsonParse.subtitle;
       }
-      if(cursor.value.caption == "/." || cursor.value.caption == null)
+      if(jsonParse.caption == "/." || jsonParse.caption == null)
       {
         document.getElementById('caption').innerHTML = "";
       }
       else
       {
-          document.getElementById('caption').innerHTML = cursor.value.caption;
+          document.getElementById('caption').innerHTML = jsonParse.caption;
       }
       var pmpSel = document.getElementById('pumpRange');
-      var id = cursor.key;
+      var id = jsonParse.ID;
       setID(id);
-      setCategory(cursor.value.Category);
+      setCategory(jsonParse.Category);
       setSelectBox(pmpSel,id);
-      setCookie("variation" , cursor.value.variation);
+      setCookie("variation" , jsonParse.variation);
   }
 
   function comboboxs(pd)
