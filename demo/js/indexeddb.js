@@ -80,20 +80,20 @@
 
                 if (cursor) {
 
-                    jsn2['Category'] = cursor.value.Category;
-                    jsn2['ID'] = cursor.value.ID;
-                    jsn2['PD'] = cursor.value.PD;
-                    jsn2['caption'] = cursor.value.caption;
-                    jsn2['img'] = cursor.value.img;
-                    jsn2['range'] = cursor.value.range;
-                    jsn2['subtitle'] = cursor.value.subtitle;
-                    jsn2['title'] = cursor.value.title;
-                    jsn2['variation'] = cursor.value.variation;
-                    jsn2['var1'] = cursor.value.var1;  jsn2['var1n'] = cursor.value.var1n;
-                    jsn2['var2'] = cursor.value.var2;  jsn2['var2n'] = cursor.value.var2n;
-                    jsn2['var3'] = cursor.value.var3;  jsn2['var3n'] = cursor.value.var3n;
-                    jsn2['var4'] = cursor.value.var4;  jsn2['var4n'] = cursor.value.var4n;
-                    jsn2['var5'] = cursor.value.var5;  jsn2['var5n'] = cursor.value.var5n;
+                    jsn['Category'] = cursor.value.Category;
+                    jsn['ID'] = cursor.value.ID;
+                    jsn['PD'] = cursor.value.PD;
+                    jsn['caption'] = cursor.value.caption;
+                    jsn['img'] = cursor.value.img;
+                    jsn['range'] = cursor.value.range;
+                    jsn['subtitle'] = cursor.value.subtitle;
+                    jsn['title'] = cursor.value.title;
+                    jsn['variation'] = cursor.value.variation;
+                    jsn['var1'] = cursor.value.var1;  jsn['var1n'] = cursor.value.var1n;
+                    jsn['var2'] = cursor.value.var2;  jsn['var2n'] = cursor.value.var2n;
+                    jsn['var3'] = cursor.value.var3;  jsn['var3n'] = cursor.value.var3n;
+                    jsn['var4'] = cursor.value.var4;  jsn['var4n'] = cursor.value.var4n;
+                    jsn['var5'] = cursor.value.var5;  jsn['var5n'] = cursor.value.var5n;
                     var jsonStr = JSON.stringify(jsn);
                     changeDetails(jsonStr);
                 }
