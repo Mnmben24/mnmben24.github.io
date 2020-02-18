@@ -75,6 +75,7 @@
              objectStore.openCursor(indx).onsuccess = function(event) {
                 var cursor = event.target.result;
                 var jsonStr = "";
+                var jsn1;
 
 
                 if (cursor) {
@@ -95,7 +96,8 @@
                   'var3' : cursor.value.var3, 'var3n' : cursor.value.var3n,
                   'var4' : cursor.value.var4, 'var4n' : cursor.value.var4n,
                   'var5' : cursor.value.var5, 'var5n' : cursor.value.var5n };
-                    var jsonStrNew = JSON.stringify(jsn);
+                    jsn1.add(jsn);
+                    var jsonStrNew = JSON.stringify(jsn1);
                   changeDetails(jsonStr);
                 }
              };
