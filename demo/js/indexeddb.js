@@ -75,7 +75,7 @@
              objectStore.openCursor(indx).onsuccess = function(event) {
                 var cursor = event.target.result;
                 var jsonStr = "";
-                var jsn1;
+                var jsn1 = {};
 
 
                 if (cursor) {
