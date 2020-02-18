@@ -97,7 +97,7 @@
                   'var3' : cursor.value.var3, 'var3n' : cursor.value.var3n,
                   'var4' : cursor.value.var4, 'var4n' : cursor.value.var4n,
                   'var5' : cursor.value.var5, 'var5n' : cursor.value.var5n };
-                    jsn1.add(jsn);
+                    //jsn1.add(jsn);
                     jsn2['Category'] = cursor.value.Category;
                     jsn2['ID'] = cursor.value.ID;
                     jsn2['PD'] = cursor.value.PD;
