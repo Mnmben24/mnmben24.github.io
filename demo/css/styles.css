@@ -250,13 +250,11 @@ img	{
 .lhDiv {
     float: right;
     position: top;
-    margin-top: -25vh;
     text-align: right;
 }
 
 
 .header	{
-	margin-top:	-5vh;
 	width:	80vw;
   color: white;
 }
@@ -288,7 +286,6 @@ img	{
 
 .dataTable {
   width: 95%;
-  margin-top: -10vh;
 }
 
 .imageGrid table {
@@ -317,9 +314,9 @@ img	{
 }
 
 .logoProd img {
-  width: 25vw;
-  float:right;
-  margin-right: 35vw;
+  width: 50vw;
+  float:left;
+  margin-left: 25vw;
 }
 
 .logoHead img {
