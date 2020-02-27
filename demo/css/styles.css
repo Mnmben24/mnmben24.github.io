@@ -394,6 +394,35 @@ html,body
 .imageGrid .tile .textWrapper .h2 {
   font-size: 20px;
 }
+
+.imageGrid .tile .textWrapper .content {
+	display: none;
+}
+
+#spec1 {
+    float: left;
+    width: 95vw;
+}
+
+#spec2 {
+    float: left;
+    width: 95vw;
+}
+
+#spec3 {
+    float: left;
+    width: 95vw;
+}
+
+#spec4 {
+    float: left;
+    width: 95vw;
+}
+
+#spec5 {
+    float: left;
+    width: 95vw;
+}
 /*
 .imageGrid .tile:hover {
 	transform: translateY(-8px);
@@ -406,9 +435,6 @@ html,body
 	transform: translateY(8px);
 }
 */
-.imageGrid .tile .textWrapper .content {
-	display: none;
-}
 /*
 .imageGrid .tile:hover .textWrapper .content {
 	display: block;
