@@ -29,7 +29,6 @@
   width: 95%;
   margin-left: 5px;
   color: white;
-  margin-top: -5vh;
 }
 
 .img	{
@@ -92,12 +91,12 @@ form {
 
 .HeadDiv1 {
   float: left;
-  width: 45vw;
+  width: 96vw;
 }
 
 .HeadDiv2 {
-  float: right;
-  width: 45vw;
+  float: left;
+  width: 96vw;
 }
 
 .HeadDiv3 {
@@ -107,22 +106,22 @@ form {
 
 .HeadDiv4 {
   float: left;
-  width: 45vw;
+  width: 96vw;
 }
 
 .HeadDiv5 {
-  float: right;
-  width: 45vw;
+  float: left;
+  width: 96vw;
 }
 
 .HeadDiv6 {
   float: left;
-  width: 45vw;
+  width: 96vw;
 }
 
 .HeadDiv7 {
-  float: right;
-  width: 45vw;
+  float: left;
+  width: 96vw;
 }
 
 label .lbl {
@@ -197,12 +196,12 @@ img	{
 }
 
 .pressureRightTable {
-  float: right;
-  margin-top: -25vh;
+  padding-left: 2vw;
+  float: left;
 }
 
 .pressureCentreTable {
-  padding-left: 25vw;
+  padding-left: 2vw;
   float: left;
 }
 
