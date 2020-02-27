@@ -161,8 +161,7 @@ label .lbl {
 
 
 img	{
-	max-width:100%;
-	max-height:100%;
+  width: 100%;
 }
 
 .label	{
@@ -296,39 +295,39 @@ img	{
   width: 30% ;
 }
 
-.bodyMain .logoProd, .bodyMain .logoPress, .bodyMain .logoHead  {
+.bodyMain .logoProd, .bodyMain .logoPress, .bodyMain .logoHead, .bodyMain .logoIndex  {
   padding-bottom: 15px;
   background-color: black;
 }
 
 .bodyMain .logoIndex {
-  padding: 3vh 0 0 25vw;
-   width: 50vw;
-   display: none;
-}
-
-.logoPress img {
-  width: 25vw;
-  float:right;
-  margin-right: 5vw;
-}
-
-.logoProd img {
-  width: 50vw;
-  float:left;
+  float: left;
   margin-left: 25vw;
+  margin-top: 3vh;
+  width: 50vw;
 }
 
-.logoHead img {
-  width: 25vw;
-  float:right;
+.bodyMain .logoPress {
+  float: right;
   margin-right: 5vw;
+  margin-top: 3vh;
+  width: 40vw;
 }
 
-.logoIndx img {
-  display: none;
+.bodyMain .logoHead {
+  float: right;
+  margin-right: 5vw;
+  margin-top: 3vh;
+  width: 40vw;
 }
 
+
+.bodyMain .logoProd {
+  float: left;
+  margin-left: 25vw;
+  margin-top: 3vh;
+  width: 50vw;
+}
 
 .imageGrid {
   padding-left: 1px;
