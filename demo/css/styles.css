@@ -6,13 +6,12 @@
   border: black;
   color: #DDD;
   text-align: center;
-  font-size: 14px;
   transition: all 0.5s;
   cursor: pointer;
   width: 100%;
   height: 40px;
   margin: 3px;
-  font-size: 23px;
+  font-size: 36px;
 }
 
 
@@ -86,7 +85,7 @@ form {
 }
 
 .headToolTable {
-  width: 45vw;
+  width: 95vw;
 }
 
 .HeadDiv1 {
@@ -121,6 +120,10 @@ form {
 
 .HeadDiv7 {
   float: left;
+  width: 96vw;
+}
+
+.HeadDiv1 .headToolTable {
   width: 96vw;
 }
 
@@ -185,13 +188,21 @@ img	{
     white-space:nowrap;
 }
 
+.pressureTable tr {
+    height: 7vh;
+}
+
 .pressureTable {
-  width: 90vw;
+  width: 95vw;
 }
 
 .pressureLeftTable {
   padding-left: 2vw;
   float: left;
+}
+
+.pressureLeftTable .pressureTable {
+  width: 66vw;
 }
 
 .pressureRightTable {
@@ -206,14 +217,14 @@ img	{
 
 .lbls , .matBoxP , .matBox, .txtBox , .unitsBox {
   text-align: center;
-  font-size: 20px;
+  font-size: 36px;
   margin: 5px 5px 5px 5px;
   width: 100%;
   color: white;
   white-space: nowrap;
   min-width: 10vw;
   border-radius: 15px;
-  height: 50px;
+  height: 60px;
   padding: 0px;
 }
 
@@ -231,9 +242,9 @@ img	{
 
 .txtBox {
     background-color: #111111;
-    max-width: 8vw;
-    min-width: 8vw;
-    height: 44px;
+    max-width: 15vw;
+    min-width: 15vw;
+    height: 60px;
 }
 
 .specify	{
