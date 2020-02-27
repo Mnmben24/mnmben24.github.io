@@ -277,6 +277,7 @@ img	{
 .header	{
 	width:	80vw;
   color: white;
+  float: left;
 }
 
 .header h2 {
@@ -293,11 +294,11 @@ img	{
 }
 
 .data h3 {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .data ul li {
-  font-size: 18px;
+  font-size: 25px;
 }
 
 .dataTable tr {
