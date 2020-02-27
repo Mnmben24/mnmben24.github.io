@@ -1,4 +1,4 @@
-
+/*
            //prefixes of implementation that we want to test
            window.indexedDB = window.indexedDB || window.mozIndexedDB ||
            window.webkitIndexedDB || window.msIndexedDB;
@@ -8,13 +8,11 @@
            window.webkitIDBTransaction || window.msIDBTransaction;
            window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange ||
            window.msIDBKeyRange
-
+*/
            var connected = false;
            var count = 0;
            var counter = 0;
-           var firstTime = true;
-
-
+/*
            if (!window.indexedDB) {
               window.alert("Your browser doesn't support a stable version of IndexedDB.")
            }
@@ -74,27 +72,9 @@
              var objectStore = tx.objectStore("PumpDatabase");
              objectStore.openCursor(indx).onsuccess = function(event) {
                 var cursor = event.target.result;
-                var jsn = {};
-
 
                 if (cursor) {
-
-                    jsn['Category'] = cursor.value.Category;
-                    jsn['ID'] = cursor.value.ID;
-                    jsn['PD'] = cursor.value.PD;
-                    jsn['caption'] = cursor.value.caption;
-                    jsn['img'] = cursor.value.img;
-                    jsn['range'] = cursor.value.range;
-                    jsn['subtitle'] = cursor.value.subtitle;
-                    jsn['title'] = cursor.value.title;
-                    jsn['variation'] = cursor.value.variation;
-                    jsn['var1'] = cursor.value.var1;  jsn['var1n'] = cursor.value.var1n;
-                    jsn['var2'] = cursor.value.var2;  jsn['var2n'] = cursor.value.var2n;
-                    jsn['var3'] = cursor.value.var3;  jsn['var3n'] = cursor.value.var3n;
-                    jsn['var4'] = cursor.value.var4;  jsn['var4n'] = cursor.value.var4n;
-                    jsn['var5'] = cursor.value.var5;  jsn['var5n'] = cursor.value.var5n;
-                    var jsonStr = JSON.stringify(jsn);
-                    changeDetails(jsonStr);
+                  changeDetails(cursor);
                 }
              };
                objectStore.openCursor().onerror = function(event) {
@@ -120,17 +100,8 @@
                  var cursor = event.target.result;
 
                  if (cursor) {
-                   if(cursor.value.Category == getCategory())
-                   { firstTime = false;
-                     addTile("m" + cursor.key, cursor.value.title, cursor.value.img);
-                   }
+                   if(cursor.value.Category == getCategory())  addTile("m" + cursor.key, cursor.value.title, cursor.value.img);
                     cursor.continue();
-                 }
-                 else
-                 {
-                    if (firstTime) {
-                      addNoItemsFound();
-                    }
                  }
               };
            }
@@ -164,3 +135,91 @@
                     }
                  };
            }
+*/
+  function onChoice(id)
+  {
+    if (id.startsWith("m"))
+    {
+      setID(id.substring(1));
+      var url = "ProductPage.html";
+      window.location = url;
+    }
+    else if (id.startsWith("c"))
+    {
+        setCategory(id.substring(1));
+        var url = "index.html";
+        window.location = url;
+    }
+  }
+var row;
+var col;
+
+  function addTile(id,name,img) {
+    var tableGrid =   document.getElementById("grid");
+      var tile = document.createElement('div');
+      tile.id = id;
+      tile.className = "tile";
+      tile.onclick = function(){onChoice(tile.id);};
+      var pic = document.createElement('img')
+      pic.style.width = "matchParent";
+      pic.style.height = "matchParent";
+      pic.src = "images/"+img;
+      pic.alt = name;
+      var txt = document.createElement('div');
+      txt.className = "textWrapper";
+      var h2 = document.createElement('h2');
+      h2.innerHTML = name;
+      var div2 = document.createElement('div');
+      div2.className = "content";
+      if (count <= 4) {
+          row = document.createElement('tr');
+          col = document.createElement('td');
+          txt.style.top = "84%";
+          tile.style.minHeight = "40vh";
+          tile.style.width = "85%";
+          row.style.textAlign = "center";
+      }
+      else
+      {
+        counter++;
+        if (counter%2 == 1)
+        {
+          row = document.createElement('tr');
+          col = document.createElement('td');
+          if (counter == count)
+          {
+            col.colspan = "2";
+            tile.style.margin = "0vh 25vw";
+          }
+        }
+        else
+        {
+          col = document.createElement('td');
+        }
+      }
+      txt.appendChild(h2);
+      txt.appendChild(div2);
+      tile.appendChild(txt);
+      tile.appendChild(pic)
+      h2.align = "center";
+      col.appendChild(tile);
+      row.appendChild(col);
+      tableGrid.appendChild(row);
+  }
+
+
+  function addNoItemsFound()
+  {
+    row = document.createElement('tr');
+    col = document.createElement('td');
+    var txt = document.createElement('div');
+    txt.className = "textWrapper";
+    var h2 = document.createElement('h2');
+    h2.innerHTML = "No Products Found";
+    h2.style = "color: white; text-align: start; font-size: 20px;"
+    txt.appendChild(h2);
+    h2.align = "center";
+    col.appendChild(txt);
+    row.appendChild(col);
+    document.getElementById("grid").appendChild(row);
+  }

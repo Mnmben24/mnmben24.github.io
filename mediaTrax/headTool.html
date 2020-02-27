@@ -13,27 +13,26 @@
 </head>
 <body>
 <div class="bodyMain">
-	<br/>
-<div id= "logoDiv" class="logoHead" onclick="window.location.href='indexHome.html'"><img src="./Logo/logoMain.png" border="0" alt="Company Logo"></div>
+<div id= "logoDiv" class="logo" onclick="window.location.href='indexHome.html'"><img src="./Logo/logoMain.png" border="0" alt="Company Logo" style="padding: 3vh 0 0 25vw; width: 50vw;"></div>
 	<form>
 		<div class="header">
-			<h2 id="head1">System Head Tool</h2>
+		<h2 id="head1">System Head Tool</h2>
 		</div>
 		<div>
-			<div class="HeadDiv1">
-				<table class="headToolTable">
+			<table>
 				<tr>
 					<td>
-						<div class="spacingDiv4">
 						<label class="lbls">Flow Rate</label>
-					</div>
+					</td>
+					<td>
+						<div class="spacingDiv1"/>
 					</td>
           <td>
             <input type="number" class="txtBox" id="flowRate"  onfocus="this.value = '';"></input>
           </td>
           <td>
             <select class="unitsBox" id="flowSel">
-							<option value="3.60">m&sup3/h</option>
+							<option value="3.60">m³/h</option>
 							<option value="1">l/min</option>
 							<option value="0.016667">l/sec</option>
 							<option value="0.26417">US GPM</option>
@@ -42,37 +41,14 @@
 							<option value="0.035315">cfm</option>
             </select>
           </td>
-				</tr>
+        </tr>
+				<!---->
 				<tr>
 					<td>
-						<div class="spacingDiv4">
-						<label class="lbls">Downstream Pressure</label>
-					</div>
-					</td>
-          <td>
-            <input type="number" class="txtBox" id="dPres"  onfocus="this.value = '';"></input>
-          </td>
-          <td>
-            <select class="unitsBox" id="dpSel">
-							<option value="1">m</option>
-							<option value="9.98041">kPa</option>
-							<option value="0.098041">bar</option>
-							<option value="3.28">ft</option>
-							<option value="1.42197">psi</option>
-							<option value="2.89516">inHg</option>
-							<option value="75.53709">Torr</option>
-            </select>
-          </td>
-				</tr>
-			</table>
-			</div>
-				<div class="HeadDiv2">
-			<table class="headToolTable">
-					<tr>
-					<td>
-							<div class="spacingDiv4">
 						<label class="lbls">Suction Height</label>
-					</div>
+					</td>
+					<td>
+						<div class="spacingDiv1"/>
 					</td>
           <td>
             <input type="number" class="txtBox" id="sHeight" onfocus="this.value = '';"></input>
@@ -89,11 +65,13 @@
             </select>
           </td>
         </tr>
+				<!---->
 				<tr>
 					<td>
-							<div class="spacingDiv4">
 						<label class="lbls">Discharge Height</label>
-					</div>
+					</td>
+					<td>
+						<div class="spacingDiv1"/>
 					</td>
           <td>
             <input type="number" class="txtBox"  id="dHeight"  onfocus="this.value = '';"></input>
@@ -110,17 +88,38 @@
             </select>
           </td>
         </tr>
-			</table>
-			</div>
-			<div class="HeadDiv3">
-			<table class="headToolTable">
+				<!---->
 				<tr>
 					<td>
-						<div class="spacingDiv4">
-						<label class="lbls">Pipe Material</label>
-					</div>
+						<label class="lbls">Downstream Pressure</label>
+					</td>
+					<td>
+						<div class="spacingDiv1"/>
 					</td>
           <td>
+            <input type="number" class="txtBox" id="dPres"  onfocus="this.value = '';"></input>
+          </td>
+          <td>
+            <select class="unitsBox" id="dpSel">
+							<option value="1">m</option>
+							<option value="9.98041">kPa</option>
+							<option value="0.098041">bar</option>
+							<option value="3.28">ft</option>
+							<option value="1.42197">psi</option>
+							<option value="2.89516">inHg</option>
+							<option value="75.53709">Torr</option>
+            </select>
+          </td>
+        </tr>
+				<!---->
+				<tr>
+					<td>
+						<label class="lbls">Pipe Material</label>
+					</td>
+					<td>
+						<div class="spacingDiv1"/>
+					</td>
+          <td colspan="2">
             <select class="matBoxP" id="pMat">
 							<option value="0None">None</option>
 							<option selected="selected" value="130">ASBESTOS</option>
@@ -144,15 +143,13 @@
             </select>
           </td>
         </tr>
-			</table>
-			</div>
-			<div class="HeadDiv4">
-			<table class="headToolTable">
+				<!---->
 				<tr>
 					<td>
-						<div class="spacingDiv4">
 						<label class="lbls">Pipe Diameter</label>
-					</div>
+					</td>
+					<td>
+						<div class="spacingDiv1"/>
 					</td>
           <td>
             <input type="number" class="txtBox" id="pDiam"  onfocus="this.value = '';"></input>
@@ -162,15 +159,13 @@
             <label class ="lbls">mm</label>
 					</div>
           </td>
-				</tr>
-			</table>
-			</div>
-			<div class="HeadDiv5">
-			<table class="headToolTable">
+        </tr>
+				<!----><tr>
 					<td>
-						<div class="spacingDiv4">
 						<label class="lbls">Length</label>
-					</div>
+					</td>
+					<td>
+						<div class="spacingDiv1"/>
 					</td>
           <td>
             <input type="number" class="txtBox"  id="len"  onfocus="this.value = '';"></input>
@@ -178,56 +173,22 @@
           <td>
 						<div class="spacingDiv2"/>
             <label  id="headUnits" class ="lbls">m</label>
+          </div>
 				</td>
         </tr>
-			</table>
-			</div>
-		<div class="btnDivPressure" align="center">
+			<tr>
+				<td colspan="4">
+		<div class="btnDiv" align="center">
 			<input type ="button" value="Calculate" class="button" id="calcBtn" onclick="calCulate()"></input>
 		</div>
-				<div class="HeadDiv6">
-			<table class="headToolTable">
-
+	</td>
+</tr>
 				<tr>
 					<td>
-						<div class="spacingDiv4">
-						<label class="lbls">Static Head</label>
-					</div>
-					</td>
-					<td>
-						<input id="sHead" readonly class="txtBox" value="0"></input>
-					</td>
-					<td>
-						<div class="spacingDiv2">
-						<label class ="lbls">m</label>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<div class="spacingDiv4">
-						<label class="lbls">Friction Head</label>
-					</div>
-					</td>
-					<td>
-						<input id="fHead" readonly class="txtBox" value="0"></input>
-					</td>
-					<td>
-						<div class="spacingDiv2">
-						<label class ="lbls">m</label>
-					</div>
-					</td>
-				</tr>
-			</table>
-		</div>
-		<div class="HeadDiv7">
-				<!---->
-				<table class="headToolTable">
-				<tr>
-					<td>
-						<div class="spacingDiv4">
 						<label class="lbls">Velocity</label>
-					</div>
+					</td>
+					<td>
+						<div class="spacingDiv1"/>
 					</td>
 					<td>
 						<input id="vel" readonly class="txtBox" value="0"></input>
@@ -238,11 +199,47 @@
 					</div>
 					</td>
 				</tr>
+				<!---->
 				<tr>
 					<td>
-						<div class="spacingDiv4">
-						<label class="lbls">Total Head</label>
+						<label class="lbls">Static Head</label>
+					</td>
+					<td>
+						<div class="spacingDiv1"/>
+					</td>
+					<td>
+						<input id="sHead" readonly class="txtBox" value="0"></input>
+					</td>
+					<td>
+						<div class="spacingDiv2">
+						<label class ="lbls">m</label>
+						</div>
+					</td>
+				</tr>
+				<!---->
+				<tr>
+					<td>
+						<label class="lbls">Friction Head</label>
+					</td>
+					<td>
+						<div class="spacingDiv1"/>
+					</td>
+					<td>
+						<input id="fHead" readonly class="txtBox" value="0"></input>
+					</td>
+					<td>
+						<div class="spacingDiv2">
+						<label class ="lbls">m</label>
 					</div>
+					</td>
+				</tr>
+				<!---->
+				<tr>
+					<td>
+						<label class="lbls">Total Head</label>
+					</td>
+					<td>
+						<div class="spacingDiv1"/>
 					</td>
 					<td>
 						<input id="tHead" readonly class="txtBox" value="0"></input>
@@ -256,11 +253,10 @@
 			</table>
 		</div>
 		<br/>
-			<div class="btnDivPressure" align="center">
+			<div class="btnDiv" align="center">
 				<input type="button" value="Save and Return" class="button" id="saveBtn" onclick="backClick()"></input>
 			</div>
 			<label id="id" style="visibility:hidden;"></label>	<!-- 	 -->
-	</div>
 	</form>
 </div>
 </body>

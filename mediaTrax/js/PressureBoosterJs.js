@@ -2,7 +2,7 @@
 window.onload = function onLoad()
 {
 	var id = getID();
-    document.getElementById('id').value=id;
+  document.getElementById('id').value=id;
 	document.getElementById('ipSel').selectedIndex = 2;
 	document.getElementById('opSel').selectedIndex = 1;
 };
@@ -17,7 +17,7 @@ function backClick()
 	var id = document.getElementById('id').value;
 	setFlow(CFlow);
 	setHead(Dhead);
-	setFUnits("m&sup3;/h");
+	setFUnits("m³/h");
 	setHUnits("m");
 	var url = "ProductPage.html";
 	window.location = url;
@@ -33,17 +33,17 @@ function calculateFlow(bed,bath)
                     [ 2.3 , 2.7 , 3.2 , 3.6 , 4.1 , 4.5 , 5.0],
                     [ null, 3.0 , 3.4 , 3.9 , 4.3 , 4.8 , 5.2],
                     [ null, 3.2 , 3.6 , 4.1 , 4.5 , 5.0 , 5.5]];
-  var bedIndex = findIndex(beds,bed);
-  var bathIndex = findIndex(baths,bath);
+  var bedIndex = beds.findIndex(function(bd) {return bd == bed;});
+  var bathIndex = baths.findIndex(function(bd) {return bd == bath;});
   var flow = flowTable[bedIndex][bathIndex];
   return flow;
 }
 
-function calculateFrictionLoss(floor,bath,tflow)
+function calculateFrictionLoss(floor,bath, tflow)
 {
     var baths = [1,1.5,2,3,4,5,6];
     var pLengthTable =  [8 , 10 , 12 , 15 , 18 , 21 , 24];
-    var bathIndex = findIndex(baths,bath);
+    var bathIndex = baths.findIndex(function(bd) {return bd == bath;});
     var pLength = pLengthTable[bathIndex] + (5*(floor-1));
     var nFlow = tflow/3600;
 
@@ -55,19 +55,6 @@ function calculateFrictionLoss(floor,bath,tflow)
     fricHead = fHead * pLength;
     return fricHead;
 
-}
-
-function findIndex(arr,ele)
-{
-    var i;
-    for (i = 0; i < arr.length; i++)
-    {
-        if(arr[i] == ele)
-        {
-            return i;
-        }
-    }
-    return -1;
 }
 
 function calculations() {

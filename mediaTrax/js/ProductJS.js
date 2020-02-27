@@ -20,6 +20,7 @@
 
 function runOnLoad()
 {
+  var urlParam = new URLSearchParams(window.location.search);
   var id = getID();
   var flow = getFlow();
   var head = getHead();
@@ -30,6 +31,7 @@ function runOnLoad()
   document.getElementById('inputB').value = head;
 }
 catch (err){}
+
   setQR(false);
   readAllProducts();
   readInfo(id);
@@ -101,7 +103,6 @@ catch (err){}
   }
     list = document.getElementById('pumpRange');
     productNo = list.options[list.selectedIndex].value;
-    setID(productNo);
     readInfo(productNo);
   }
 
@@ -128,9 +129,9 @@ catch (err){}
       {
         var node = document.createElement("li");                 // Create a <li> node
         var txt = splt[i];
-        txt = txt.replace("m^3","m&sup3;");
-        txt = txt.replace("^C","&deg;C");
-        node.innerHTML = txt;
+        txt.replace("m^3","m³")
+        var textnode = document.createTextNode(txt);         // Create a text node
+        node.appendChild(textnode);                              // Append the text to <li>
         document.getElementById(parName).appendChild(node);     // Append <li> to <ul> with id="myList"
         i++;
       }
@@ -201,7 +202,7 @@ catch (err){}
   {
     if (pd == 1)
     {
-      document.getElementById('selB').innerHTML = "<option>m&sup3;/h</option> <option>l/min</option>    <option>l/sec</option>    <option>US GPM</option>    <option>lmp GPM</option>    <option>l/h</option>    <option>cfm</option>";
+      document.getElementById('selB').innerHTML = "<option>m³/h</option> <option>l/min</option>    <option>l/sec</option>    <option>US GPM</option>    <option>lmp GPM</option>    <option>l/h</option>    <option>cfm</option>";
       document.getElementById('selA').innerHTML = "<option>m</option>          <option>kPa</option>          <option>bar</option>          <option>ft</option>          <option>psi</option>          <option>inHg</option>          <option>Torr</option>";
       document.getElementById('labelB').innerHTML = "Flow Rate";
       document.getElementById('labelA').innerHTML = "Total Head";
@@ -210,7 +211,7 @@ catch (err){}
       setSelectBox(document.getElementById('selA'),getHUnits())
     }
     else {
-        document.getElementById('selA').innerHTML = "<option>m&sup3;/h</option> <option>l/min</option>    <option>l/sec</option>    <option>US GPM</option>    <option>lmp GPM</option>    <option>l/h</option>    <option>cfm</option>";
+        document.getElementById('selA').innerHTML = "<option>m³/h</option> <option>l/min</option>    <option>l/sec</option>    <option>US GPM</option>    <option>lmp GPM</option>    <option>l/h</option>    <option>cfm</option>";
         document.getElementById('selB').innerHTML = "<option>m</option>          <option>kPa</option>          <option>bar</option>          <option>ft</option>          <option>psi</option>          <option>inHg</option>          <option>Torr</option>";
         document.getElementById('labelA').innerHTML = "Flow Rate";
         document.getElementById('labelB').innerHTML = "Total Head";

@@ -9,12 +9,11 @@
   font-size: 14px;
   transition: all 0.5s;
   cursor: pointer;
-  width: 100%;
-  height: 40px;
-  margin: 3px;
-  font-size: 23px;
+  margin: 5px;
+  width: 980%;
+  height: 60px;
+  font-size: 35px;
 }
-
 
 .first-half {
     float: left;
@@ -28,14 +27,14 @@
 .data {
   width: 95%;
   margin-left: 5px;
-  color: white;
-  margin-top: -5vh;
+  color: white
 }
 
 .img	{
 	overflow:	hidden;
-  margin: -20vh 40px;
+  margin-left: 5px;
   width: 40vw;
+  align-content: center;
 }
 
 a {
@@ -51,7 +50,7 @@ a {
 
 .bodyMain	{
   align-content: center;
-  font-family:	"Calibri";
+	font-family:	"Calibri";
   background-color: black;
   align-self: center;
   overflow-x: hidden;
@@ -70,59 +69,13 @@ form {
 	width:100%;
 }
 
-.btnDiv, .btnDivPressure {
+.btnDiv {
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid white;
   border-radius: 15px;
 }
-
-.spacingDiv4 {
-  width: 24vw;
-}
-
-.btnDivPressure {
-  width: 96vw;
-}
-
-.headToolTable {
-  width: 45vw;
-}
-
-.HeadDiv1 {
-  float: left;
-  width: 45vw;
-}
-
-.HeadDiv2 {
-  float: right;
-  width: 45vw;
-}
-
-.HeadDiv3 {
-  float: left;
-  width: 96vw;
-}
-
-.HeadDiv4 {
-  float: left;
-  width: 45vw;
-}
-
-.HeadDiv5 {
-  float: right;
-  width: 45vw;
-}
-
-.HeadDiv6 {
-  float: left;
-  width: 45vw;
-}
-
-.HeadDiv7 {
-  float: right;
-  width: 45vw;
 }
 
 label .lbl {
@@ -135,8 +88,8 @@ label .lbl {
 
 .lbls {
   width: 100%;
-  min-width: 10vw;
-  height: 70px;
+  min-width: 20vw;
+  height: 83px;
   color: white;
   background-color: black;
   padding: 2px 2px 2px 2px;
@@ -146,10 +99,8 @@ label .lbl {
   background-color: #111111;
   color: white;
   width: 100%;
-  height: 50px;
-  float: left;
-  max-width: 11vw;
-
+  max-width: 15vw;
+  height: 83px;
 }
 
 .headImg
@@ -168,169 +119,105 @@ img	{
 
 .label	{
 	width: 100px;
-	height: 30px;
+	height: 40px;
 }
 
 .spacingDiv1 {
-  width: 0px;
+  width: 20vw;
 }
 
 .spacingDiv2 {
-  width: 10vw;
+  width: 15vw;
 }
 .spacingDiv3 {
-  width: 0vw;
+  width: 20px;
 }
 
-.pressureTable td {
-    width:1%;
-    white-space:nowrap;
-}
-
-.pressureTable {
-  width: 50vw;
-}
-
-.pressureLeftTable {
-  padding-left: 2vw;
-  float: left;
-}
-
-.pressureRightTable {
-  float: right;
-  margin-top: -25vh;
-}
-
-.pressureCentreTable {
-  padding-left: 25vw;
-  float: left;
-}
 
 .lbls , .matBoxP , .matBox, .txtBox , .unitsBox {
   text-align: center;
-  font-size: 20px;
+  font-size: 35px;
   margin: 5px 5px 5px 5px;
   width: 100%;
   color: white;
   white-space: nowrap;
-  min-width: 10vw;
+  min-width: 15vw;
   border-radius: 15px;
-  height: 50px;
-  padding: 0px;
 }
 
 .matBox {
-  width: 100%;
+  max-width: 34vw;
   background-color: #111111;
+  margin-left: 0px;
+  height: 83px;
 }
 
 .matBoxP {
+  max-width: 48vw;
   background-color: #111111;
-  margin: 0;
-  width: 102%;
-
+  height: 83px;
 }
 
 .txtBox {
+    max-width: 18vw;
     background-color: #111111;
-    max-width: 8vw;
-    min-width: 8vw;
-    height: 44px;
+    height: 75px;
 }
 
 .specify	{
 	color:	#FFF;
-	width:120vw;
+	width:108%;
 	text-align:	center;
-  margin-left: -10vw;
-  margin-top: 10vh;
+  margin-left: -4vw;
   background-color: #222222;
   font-size: 45px;
 }
 
-.lhDiv {
-    float: right;
-    position: top;
-    margin-top: -25vh;
-    text-align: right;
-}
-
 
 .header	{
-	margin-top:	-5vh;
-	width:	80vw;
+	display:	inline-block;
+	margin-top:	0px;
+	margin-bottom:	0px;
+	width:	100%;
   color: white;
 }
 
 .header h2 {
-  font-size: 40px;
+  font-size: 60px;
 }
 
 .header h3 {
-  font-size: 30px;
+  font-size: 45px;
   color: #888;
 }
 
 .header p {
-  font-size: 20px;
-}
-
-.data h3 {
   font-size: 30px;
 }
 
-.data ul li {
-  font-size: 18px;
+.data h3 {
+  font-size: 35px;
+}
+
+.data ul {
+  font-size: 15px;
 }
 
 .dataTable tr {
-  height: 60px;
-}
-
-.dataTable {
-  width: 95%;
-  margin-top: -10vh;
+  height: 100px;
 }
 
 .imageGrid table {
   table-layout: fixed ;
   width: 100% ;
 }
-.imageGrid table td {
-  width: 30% ;
+.imagegrid table td {
+  width: 50% ;
 }
 
-.bodyMain .logoProd, .bodyMain .logoPress, .bodyMain .logoHead  {
+.bodyMain .logo {
   padding-bottom: 15px;
   background-color: black;
-}
-
-.bodyMain .logoIndex {
-  padding: 3vh 0 0 25vw;
-   width: 50vw;
-   display: none;
-}
-
-.logoPress img {
-  width: 25vw;
-  float:right;
-  margin-right: 5vw;
-}
-
-.logoProd img {
-  width: 25vw;
-  float:right;
-  margin-right: 35vw;
-}
-
-.logoHead img {
-  width: 25vw;
-  float:right;
-  margin-right: 5vw;
-}
-
-.logoIndx img {
-  display: none;
 }
 
 
@@ -345,7 +232,7 @@ img	{
 
 .imageGrid .tile {
 	width:100%;
-  min-height: 25vh;
+  min-height: 30vh;
 	line-height: 1.2;
 	display:inline-block;
 	background-size: cover;

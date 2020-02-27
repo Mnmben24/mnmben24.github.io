@@ -74,6 +74,7 @@
              var objectStore = tx.objectStore("PumpDatabase");
              objectStore.openCursor(indx).onsuccess = function(event) {
                 var cursor = event.target.result;
+                var jsonStr = "";
                 var jsn = {};
 
 

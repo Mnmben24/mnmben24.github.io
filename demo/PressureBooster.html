@@ -1,118 +1,117 @@
 <!DOCTYPE html>
-
-<html>
-<head>
-<title>AQS Pressure Boost Calculations</title>
-<link async rel="stylesheet" href="./css/styles.css">
-<link rel="manifest" href="./manifest.json">
-<meta name="theme-color" content="#000000">
-<link rel="icon" sizes="144x144" href="./Logo/logo-144.png">
-  <script src="./js/cookiesjs.js"></script>
+<html><head>
+	<title>AQS Pressure Boost Calculations</title>
+	<link async="" rel="stylesheet" href="./css/styles.css">
+	<link rel="manifest" href="./manifest.json">
+	<meta name="theme-color" content="#000000">
+	<link rel="icon" sizes="144x144" href="./Logo/logo-144.png">
+	<script src="./js/cookiesjs.js"></script>
 	<script src="./js/config.json"></script>
-  <script src="./js/PressureBoosterJs.js"></script>
-  <script src="./js/main_v1.js"></script>
-  
+	<script src="./js/PressureBoosterJs.js"></script>
+
 
 
 </head>
 <body>
 <div class="bodyMain">
-<div id= "logoDiv" class="logo" onclick="window.location.href='indexHome.html'"><img src="./Logo/logoMain.png" border="0" alt="Company Logo" style="padding: 3vh 0 0 25vw; width: 50vw;"></div>
+	<div id= "logoDivPress" class="logoPress" onclick="window.location.href='indexHome.html'"><img src="./Logo/logoMain.png" border="0" alt="Company Logo"></div>
 	<form>
 		<div class="header">
-		<h2 id="head1">Pressure Booster Tool</h2>
+			<h2 id="head1">Pressure Booster Tool</h2>
 		</div>
 		<div>
-			<table>
-				<tr>
-					<td>
-						<label class="lbls">Number of Bedrooms</label>
-					</td>
-          <td> <div class="spacingDiv1"> </td>
-          <td>
-            <input type="number" class="txtBox" id="nBedrooms" onfocus="this.value = '';"></input>
-          </td>
-        </tr>
+		<div style="margin-top: -5vh;">
+			<div class="pressureLeftTable">
+				<table class="pressureTable">
+							<tr>
+								<td>
+									<label class="lbls">Number of Bedrooms</label>
+								</td>
+								<td>
+									<input type="number" class="txtBox" id="nBedrooms" onfocus="this.value = '';">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="lbls">Number of Bathrooms</label>
+								</td>
+								<td>
+									<input type="number" class="txtBox" id="nBathrooms" onfocus="this.value = '';">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="lbls">Number of Floors</label>
+								</td>
+								<td>
+									<input type="number" class="txtBox" id="nFloors" onfocus="this.value = '';">
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="pressureRightTable">
+						<table class="pressureTable">
+							<tr>
+								<td>
+									<label class="lbls">Inlet Pressure</label>
+								</td>
+								<td>
+									<input type="number" class="txtBox" id="inPressure" onfocus="this.value = '';">
+								</td>
+								<td>
+									<select class="unitsBox" id="ipSel">
+										<option value="1">m</option>
+										<option value="9.9804">kPa</option>
+										<option value="0.09804">bar</option>
+										<option value="3.28">ft</option>
+										<option value="1.42197">psi</option>
+										<option value="2.89516">inHg</option>
+										<option value="75.53709">Torr</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="lbls">Discharge Pressure</label>
+								</td>
+								<td>
+									<input type="number" class="txtBox" id="outPressure" onfocus="this.value = '';">
+								</td>
+								<td>
+									<select class="unitsBox" id="opSel">
+										<option value="1">m</option>
+										<option value="9.98041">kPa</option>
+										<option value="0.098041">bar</option>
+										<option value="3.28">ft</option>
+										<option value="1.42197">psi</option>
+										<option value="2.89516">inHg</option>
+										<option value="75.53709">Torr</option>
+									</select>
+								</td>
+							</tr>
+						</table>
+					</div>
 				<!---->
-				<tr>
-					<td>
-						<label class="lbls">Number of Bathrooms</label>
-					</td>
-          <td> <div class="spacingDiv1"> </td>
-          <td>
-            <input type="number" class="txtBox" id="nBathrooms"  onfocus="this.value = '';"></input>
-          </td>
-        </tr>
-				<!---->
-				<tr>
-					<td>
-						<label class="lbls">Number of Floors</label>
-					</td>
-          <td> <div class="spacingDiv1"> </td>
-          <td>
-            <input type="number" class="txtBox"  id="nFloors"  onfocus="this.value = '';"></input>
-          </td>
-        </tr>
-				<!---->
-				<tr>
-					<td>
-						<label class="lbls">Inlet Pressure</label>
-					</td>
-          <td> <div class="spacingDiv1"> </td>
-          <td>
-            <input type="number" class="txtBox" id="inPressure"  onfocus="this.value = '';"></input>
-          </td>
-          <td>
-            <select class="unitsBox" id="ipSel">
-							<option value="1">m</option>
-							<option value="9.9804">kPa</option>
-							<option value="0.09804">bar</option>
-							<option value="3.28">ft</option>
-							<option value="1.42197">psi</option>
-							<option value="2.89516">inHg</option>
-							<option value="75.53709">Torr</option>
-            </select>
-          </td>
-        </tr>	<tr>
-  					<td>
-  						<label class="lbls">Discharge Pressure</label>
-  					</td>
-            <td> <div class="spacingDiv1"> </td>
-            <td>
-              <input type="number" class="txtBox" id="outPressure"  onfocus="this.value = '';"></input>
-            </td>
-            <td>
-              <select class="unitsBox" id="opSel">
-  							<option value="1">m</option>
-  							<option value="9.98041">kPa</option>
-  							<option value="0.098041">bar</option>
-  							<option value="3.28">ft</option>
-  							<option value="1.42197">psi</option>
-  							<option value="2.89516">inHg</option>
-  							<option value="75.53709">Torr</option>
-              </select>
-            </td>
-          </tr>
-				<!---->
-        <tr>
-          <td colspan = "4">
-		<div class="btnDiv" align="center">
-			<input type ="button" value="Calculate" class="button" id="calcBtn" onclick="calculations()"></input>
-		</div>
-  </td>
-</tr>
+				<br/>
+				<br/>
+						<div class="btnDivPressure" align="center">
+							<input type="button" value="Calculate" class="button" id="calcBtn" onclick="calculations()">
+						</div>
+			</div>
+		<div class="pressureCentreTable">
+		<table class="pressureTable">
+			<tbody>
 				<tr>
 					<td>
 						<label class="lbls">Flow Rate</label>
 					</td>
-          <td> <div class="spacingDiv1"> </td>
 					<td>
-						<input id="flow" readonly class="txtBox" value="0"></input>
+						<input id="flow" readonly="" class="txtBox" value="0">
 					</td>
 					<td>
-            <div class="spacingDiv2">
-						<label class ="lbls">m³/h</label>
-          </div>
+						<div class="spacingDiv2">
+							<label class="lbls">m&sup3;/h</label>
+						</div>
 					</td>
 				</tr>
 				<!---->
@@ -120,14 +119,13 @@
 					<td>
 						<label class="lbls">Friction Loss</label>
 					</td>
-          <td> <div class="spacingDiv1"> </td>
 					<td>
-						<input id="frictionHead" readonly class="txtBox" value="0"></input>
+						<input id="frictionHead" readonly="" class="txtBox" value="0">
 					</td>
 					<td>
-            <div class="spacingDiv2">
-						<label class ="lbls">m</label>
-          </div>
+						<div class="spacingDiv2">
+							<label class="lbls">m</label>
+						</div>
 					</td>
 				</tr>
 				<!---->
@@ -135,27 +133,25 @@
 					<td>
 						<label class="lbls">Total Dynamic Head</label>
 					</td>
-          <td> <div class="spacingDiv1"> </td>
 					<td>
-						<input id="dynamicHead" readonly class="txtBox" value="0"></input>
+						<input id="dynamicHead" readonly="" class="txtBox" value="0">
 					</td>
 					<td>
-            <div class="spacingDiv2">
-						<label class ="lbls">m</label>
-          </div>
+						<div class="spacingDiv2">
+							<label class="lbls">m</label>
+						</div>
 					</td>
-        </tr>
-          <tr>
-          <td colspan="4">
-			<div class="btnDiv" align="center">
-				<input type="button" value="Save and Return" class="button" id="saveBtn" onclick="backClick()"></input>
-			</div>
-      </td>
-    </tr>
-  </table>
-</div>
-			<label id="id" style="visibility:hidden;"></label>	<!-- 	 -->
+				</tr>
+				</tbody>
+			</table>
+		</div>
+			<div class="btnDivPressure" align="center">
+					<input type="button" value="Save and Return" class="button" id="saveBtn" onclick="backClick()">
+				</div>
+		</div>
+		<label id="id" style="visibility:hidden;"></label>	<!-- 	 -->
 	</form>
 </div>
-</body>
-</html>
+
+
+</body></html>
