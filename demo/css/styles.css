@@ -162,7 +162,7 @@ label .lbl {
   height: 50px;
   float: left;
   max-width: 11vw;
-  direction: rtl;
+  text-align-last: right; 
 
 }
 
