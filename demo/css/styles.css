@@ -162,7 +162,7 @@ label .lbl {
   height: 50px;
   float: left;
   max-width: 11vw;
-  text-align-last: right; 
+  text-align-last: right;
 
 }
 
@@ -238,6 +238,7 @@ img	{
   border-radius: 15px;
   height: 60px;
   padding: 0px;
+  float: right;
 }
 
 .matBox {
@@ -257,6 +258,7 @@ img	{
     max-width: 15vw;
     min-width: 15vw;
     height: 60px;
+    float: right;
 }
 
 .specify	{
