@@ -13,7 +13,6 @@ else {
 
 function readInfo(indx) {
     var data = Interface.getInfo();
-    //var data = JSON.stringify(PumpInfo);
     changeDetails(data);
 }
 
