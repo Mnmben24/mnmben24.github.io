@@ -209,13 +209,12 @@ img	{
 }
 
 .pressureLeftTable {
-  width: 93vw;
   padding: 2vh 0 0 2vw;
   float: left;
 }
 
 .pressureLeftTable .pressureTable {
-  width: 66vw;
+  width: 70vw;
 }
 
 .pressureRightTable {
